@@ -38,15 +38,17 @@ def copy_qor_folder(jobid_folder, rsync_directory):
     else:
         print(f"QOR folder does not exist in {jobid_folder}.")
 
-
 def main():
     parser = argparse.ArgumentParser(description="Process log files and manage job directories.")
     parser.add_argument('-l', '--location', required=True, help="Path to the directory containing jobid folders.")
     parser.add_argument('-id', '--jobid', required=True, help="ID of the job (jobid folder name).")
-    parser.add_argument('-p', '--parse', action='store_true',required=True, help="Parse the log file and save as fermi.txt in qor folder.")
-    parser.add_argument('-r', '--rsync', help="Copy QOR folder to the rsync directory.")
+    parser.add_argument('-p', '--parse', action='store_true', required=True, help="Parse the log file and save as fermi.txt in qor folder.")
+    parser.add_argument('-r', '--rsync', action='store_true', help="Copy QOR folder to the default rsync directory.")
 
     args = parser.parse_args()
+
+    # Hardcoded rsync directory path
+    rsync_directory = '/home/emumba/Desktop/Rsync'  
 
     # Construct paths for the log file and fermi.txt output
     jobid_folder = os.path.join(args.location, args.jobid)
@@ -64,10 +66,7 @@ def main():
 
     # Copy QOR folder to rsync directory if -r is provided
     if args.rsync:
-        if not os.path.exists(args.rsync):
-            print(f"Rsync directory {args.rsync} not found.")
-            return
-        copy_qor_folder(jobid_folder, args.rsync)
+        copy_qor_folder(jobid_folder, rsync_directory)
 
 if __name__ == '__main__':
     main()
