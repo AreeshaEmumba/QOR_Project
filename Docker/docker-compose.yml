@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"  # Maps container's port 5000 to localhost:5000
+    environment:
+      - DATABASE_USER=d2s  # MySQL user
+      - DATABASE_PASSWORD=d2s_1234  # MySQL password
+      - DATABASE_HOST=mysql  # Reference the MySQL service
+      - DATABASE_NAME=emumba_qor  # Database name
+    depends_on:
+      - mysql  # Ensures MySQL starts first
+
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: emumba
+      MYSQL_DATABASE: emumba_qor
+      MYSQL_USER: d2s
+      MYSQL_PASSWORD: d2s_1234
+    ports:
+      - "3307:3306"  # Maps MySQL’s port to 3307 on the host
+    volumes:
+      - mysql_data:/var/lib/mysql  # Persists MySQL data
+      - ./db_init/emumba_qor_dump.sql:/docker-entrypoint-initdb.d/emumba_qor_dump.sql  # Initialize database with dump
+
+volumes:
+  mysql_data:

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Data Retrieval</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin: 20px 0;
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 5px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+        }
+        #result {
+            margin-top: 20px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Job Data Retrieval</h1>
+
+<form id="data-form">
+    <input type="text" id="jobid" placeholder="Job ID">
+    <input type="text" id="job_name" placeholder="Job Name">
+    <input type="text" id="revision_name" placeholder="Revision Name">
+    <button type="submit">Fetch Data</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+    document.getElementById('data-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+
+        // Get values from input fields
+        const jobid = document.getElementById('jobid').value;
+        const job_name = document.getElementById('job_name').value;
+        const revision_name = document.getElementById('revision_name').value;
+
+        // Build the query string
+        const queryParams = new URLSearchParams();
+        if (jobid) queryParams.append('jobid', jobid);
+        if (job_name) queryParams.append('job_name', job_name);
+        if (revision_name) queryParams.append('revision_name', revision_name);
+
+        // Fetch data from the API
+        fetch(`/api/data?${queryParams.toString()}`)
+            .then(response => response.json())
+            .then(data => {
+                // Display the result
+                const resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = ''; // Clear previous results
+
+                if (data.length === 0) {
+                    resultDiv.innerHTML = '<p>No data found.</p>';
+                    return;
+                }
+
+                // Create a table to display the data
+                let table = '<table><tr><th>ID</th><th>Job ID</th><th>Job Name</th><th>Revision Name</th><th>Stat Name</th><th>Stat Value</th></tr>';
+                data.forEach(item => {
+                    table += `<tr>
+                        <td>${item.id}</td>
+                        <td>${item.jobid}</td>
+                        <td>${item.job_name}</td>
+                        <td>${item.revision_name}</td>
+                        <td>${item.stat_name}</td>
+                        <td>${item.stat_value}</td>
+                    </tr>`;
+                });
+                table += '</table>';
+                resultDiv.innerHTML = table;
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+                document.getElementById('result').innerHTML = '<p>Error fetching data.</p>';
+            });
+    });
+</script>
+
+</body>
+</html>
