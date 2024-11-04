@@ -25,7 +25,19 @@ def create_table():
 
 # Function to read fermi.txt and insert data into the database
 def insert_fermi_data(session, jobid, fermi_file):
+    with open(fermi_file, 'r') as file:
+        for line in file:
+            if ':' in line:
+                stat_name, stat_value = line.split(':', 1)  # Split only on the first colon
+                stat_name = stat_name.strip()
+                stat_value = stat_value.strip()
 
+                # Create a new FermiStats instance
+                fermi_stat = FermiStats(jobid=jobid, stat_name=stat_name, stat_value=stat_value)
+                session.add(fermi_stat)
+
+    session.commit()
+    
 # Function to traverse directories and record statistics
 def record_statistics(session, base_directory):
     
