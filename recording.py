@@ -16,7 +16,7 @@ class FermiStats(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     jobid = Column(Integer, nullable=False)
     stat_name = Column(String(255), nullable=False)
-    stat_value = Column(Text, nullable=False)  
+    stat_value = Column(Text, nullable=False)  # Changed from FLOAT to TEXT
 
 # Function to create the fermi_stats table if it doesn't exist
 def create_table():
@@ -37,17 +37,25 @@ def insert_fermi_data(session, jobid, fermi_file):
                 session.add(fermi_stat)
 
     session.commit()
-    
-# Function to traverse directories and record statistics
+
+# Function to traverse directories and record stats
 def record_statistics(session, base_directory):
-    
+    # Traverse jobid folders
+    for jobid in os.listdir(base_directory):
+        jobid_path = os.path.join(base_directory, jobid)
+        qor_path = os.path.join(jobid_path, 'qor', 'fermi.txt')
+
+        if os.path.isdir(jobid_path) and os.path.isfile(qor_path):
+            insert_fermi_data(session, jobid, qor_path)
+            print(f"Data recorded for jobid: {jobid}")
+
 # Main function to run the script
 def main():
     create_table()  # Create the table
     Session = sessionmaker(bind=engine)
     session = Session()  # Create a new session
-    base_directory = '/home/emumba/Desktop/Designs'  # Path to design directory
-    record_statistics(session, base_directory)  # Record statistics from fermi.txt files
+    base_directory = '/home/emumba/Desktop/Designs'  # Set the path to your design directory
+    record_statistics(session, base_directory)  # Record stats from fermi.txt files
     session.close()  # Close the database session
 
 if __name__ == '__main__':
