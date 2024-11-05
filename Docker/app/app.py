@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import os
@@ -11,15 +11,9 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://d2s:d2s_1234@mysql:3306/emumba_qor'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db = SQLAlchemy(app)
+time.sleep(5)
 
-# Retry connection
-for _ in range(5):
-    try:
-        db.create_all()  # Or any other operation that triggers a connection
-        break
-    except OperationalError:
-        time.sleep(5)  # Wait 5 seconds before retrying
+db = SQLAlchemy(app)
 
 @app.route('/')
 def index():
@@ -66,10 +60,6 @@ def get_data():
         })
 
     return jsonify(output)
-'''
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)  # Allow access from outside the container
-'''
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port=5000)
