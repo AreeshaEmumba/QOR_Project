@@ -157,6 +157,7 @@ def parse_log_file(log_file_path, output_file_path):
             for stat, value in stats.items():
                 output_file.write(f'{stat}: {value}\n')
 
+    print("Data Parsed and and saved to fermi.txt")
 def copy_qor_folder(jobid_folder, rsync_directory):
     qor_folder = os.path.join(jobid_folder, 'qor')
     if os.path.exists(qor_folder):
