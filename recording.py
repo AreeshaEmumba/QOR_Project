@@ -1,104 +1,76 @@
-import os
-from sqlalchemy import create_engine, Column, Integer, String, Text
-from sqlalchemy.ext.declarative import declarative_base
+import re
+from sqlalchemy import create_engine, Column, Integer, String, MetaData, Table
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.exc import IntegrityError
 
-# Database Connection
-engine = create_engine('mysql+pymysql://d2s:d2s_1234@localhost/emumba_qor')
+# Database setup
+DATABASE_URL = "mysql+pymysql://d2s:d2s_1234@localhost/emumba_qor"
+engine = create_engine(DATABASE_URL)
+Session = sessionmaker(bind=engine)
+session = Session()
+metadata = MetaData()
 
-# Create a base class for declarative class definitions
-Base = declarative_base()
+# Read data from the text file
+with open("/home/emumba/Desktop/Designs/9871/qor/fermi.txt", "r") as file:
+    data = file.read()
 
-# Define the fermi_stats table with additional job_name and revision columns
-class FermiStats(Base):
-    __tablename__ = 'fermi_stats'
+def create_table(table_name):
+    # Creates a table in the database with an auto-incrementing ID column.
+    columns_def = [
+        Column("id", Integer, primary_key=True, autoincrement=True),  # Auto-incrementing ID
+        Column("Stat_Name", String(255), unique=True),  # Ensure Stat_Name is unique
+        Column("Stat_Value", String(255))  # Stat_Value will be a string
+    ]
+    
+    table = Table(table_name, metadata, *columns_def, extend_existing=True)
+    metadata.create_all(engine)
+    return table
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    jobid = Column(Integer, nullable=False)
-    job_name = Column(String(255), nullable=False)
-    revision_name = Column(String(255), nullable=False)
-    stat_name = Column(String(255), nullable=False)
-    stat_value = Column(Text, nullable=False)
+def upsert_data(table, data):
+    for entry in data:
+        stat_name = entry['Stat_Name']
+        stat_value = entry['Stat_Value']
+        
+        # Try to find an existing record with the same Stat_Name
+        existing_entry = session.query(table).filter_by(Stat_Name=stat_name).first()
+        
+        if existing_entry:
+            # If found, update the Stat_Value using the update() method
+            session.query(table).filter_by(Stat_Name=stat_name).update({"Stat_Value": stat_value})
+        else:
+            # If not found, insert a new record
+            insert_statement = table.insert().values(Stat_Name=stat_name, Stat_Value=stat_value)
+            session.execute(insert_statement)
+    
+    # Commit the changes to the database
+    try:
+        session.commit()
+    except IntegrityError:
+        session.rollback()
 
-# Function to create the fermi_stats table if it doesn't exist
-def create_table():
-    Base.metadata.create_all(engine)
-    print("Table fermi_stats created successfully")
+def parse_data(data):
+    # Parses data, identifies table names, and processes key-value pairs
+    sections = re.split(r"\[(.*?)\]\n", data)[1:]
+    
+    for i in range(0, len(sections), 2):
+        table_name = sections[i].strip().replace(":", "_").replace(" ", "_")
+        table_data = sections[i + 1].strip()
+        
+        data_list = []
+        
+        for line in table_data.splitlines():
+            if ":" in line:
+                key, value = line.split(":", 1)
+                key = key.strip()
+                value = value.strip()
+                # Save Stat_Name and Stat_Value as pairs
+                data_list.append({"Stat_Name": key, "Stat_Value": value})
+        
+        # Create table and upsert data
+        table = create_table(table_name)
+        upsert_data(table, data_list)
 
-# Function to read fermi.txt and insert or update data in the database
-def insert_fermi_data(session, jobid, fermi_file):
-    job_name = ""
-    revision_name = ""
-
-    # First pass: Find "name" and "revision" values
-    with open(fermi_file, 'r') as file:
-        for line in file:
-            if ':' in line:
-                stat_name, stat_value = line.split(':', 1)
-                stat_name = stat_name.strip().lower()
-                stat_value = stat_value.strip()
-
-                # Only fetch values for "name" and "revision"
-                if stat_name == "name":
-                    job_name = stat_value
-                elif stat_name == "revision":
-                    revision_name = stat_value
-
-    # Second pass: Insert or update other stats using job_name and revision_name
-    with open(fermi_file, 'r') as file:
-        for line in file:
-            if ':' in line:
-                stat_name, stat_value = line.split(':', 1)
-                stat_name = stat_name.strip()
-                stat_value = stat_value.strip()
-
-                # Skip "name" and "revision" stats for insertion
-                if stat_name.lower() in ["name", "revision"]:
-                    continue
-
-                # Check if the stat already exists for the jobid, job_name, revision_name, and stat_name
-                existing_stat = session.query(FermiStats).filter_by(
-                    jobid=jobid,
-                    job_name=job_name,
-                    revision_name=revision_name,
-                    stat_name=stat_name
-                ).first()
-
-                if existing_stat:
-                    # Update existing stat value
-                    existing_stat.stat_value = stat_value
-                else:
-                    # Create a new FermiStats instance if stat does not exist
-                    fermi_stat = FermiStats(
-                        jobid=jobid,
-                        job_name=job_name,
-                        revision_name=revision_name,
-                        stat_name=stat_name,
-                        stat_value=stat_value
-                    )
-                    session.add(fermi_stat)
-
-    session.commit()
-
-# Function to traverse directories and record stats
-def record_statistics(session, base_directory):
-    # Traverse jobid folders
-    for jobid in os.listdir(base_directory):
-        jobid_path = os.path.join(base_directory, jobid)
-        qor_path = os.path.join(jobid_path, 'qor', 'fermi.txt')
-
-        if os.path.isdir(jobid_path) and os.path.isfile(qor_path):
-            insert_fermi_data(session, int(jobid), qor_path)
-            print(f"Data recorded or updated for jobid: {jobid}")
-
-# Main function to run the script
-def main():
-    create_table()  # Create the table
-    Session = sessionmaker(bind=engine)
-    session = Session()  # Create a new session
-    base_directory = '/home/emumba/Desktop/Designs'  # Set the path to your design directory
-    record_statistics(session, base_directory)  # Record stats from fermi.txt files
-    session.close()  # Close the database session
-
-if __name__ == '__main__':
-    main()
+# Parse the data and insert/update into the database
+parse_data(data)
+print("Tables processed and updated.")
+session.close()
