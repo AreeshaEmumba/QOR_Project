@@ -1,33 +1,6 @@
-'''
-# Open the log file and output file
-with open('/home/emumba/Desktop/Designs/9871/logs/optimization/dummy_logfile.txt', 'r') as log_file, open('/home/emumba/Desktop/9871/qor/fermi.txt', 'w') as output_file:
-    for line in log_file:
-        # Check if the line contains "stat = value" pattern
-        if '=' in line:
-            # Split the line by '=' and strip any extra spaces
-            stat, value = map(str.strip, line.split('=', 1))
-            # Write to output file in the format "stat : value"
-            output_file.write(f"{stat} : {value}\n")
-
-print("fermi.txt file has been generated with the desired format.")
-'''
-
 import argparse
 import os
 import shutil
-
-"""
-def parse_log_file(log_file_path, output_file_path):
-    with open(log_file_path, 'r') as log_file, open(output_file_path, 'w') as output_file:
-        for line in log_file:
-            # Check if the line contains "stat = value" pattern
-            if '=' in line:
-                # Split the line by '=' and strip any extra spaces
-                stat, value = map(str.strip, line.split('=', 1))
-                # Write to output file in the format "stat : value"
-                output_file.write(f"{stat} : {value}\n")
-    print(f"fermi.txt file has been generated at {output_file_path}.")
-"""
 
 def parse_log_file(log_file_path, output_file_path):
     # Define categories for the stats based on the key names
@@ -157,7 +130,7 @@ def parse_log_file(log_file_path, output_file_path):
             for stat, value in stats.items():
                 output_file.write(f'{stat}: {value}\n')
 
-    print("Data Parsed and and saved to fermi.txt")
+    print(f"Data Parsed and and saved to {output_file_path}")
 def copy_qor_folder(jobid_folder, rsync_directory):
     qor_folder = os.path.join(jobid_folder, 'qor')
     if os.path.exists(qor_folder):
