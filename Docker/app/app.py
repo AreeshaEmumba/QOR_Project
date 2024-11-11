@@ -6,60 +6,159 @@ import time
 from sqlalchemy.exc import OperationalError
 
 app = Flask(__name__)
-
-# Database configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://d2s:d2s_1234@mysql:3306/emumba_qor'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-time.sleep(5)
-
+time.sleep(10)
 db = SQLAlchemy(app)
 
-@app.route('/')
+# Define models for each table you want to query
+class MetaData(db.Model):
+    __tablename__ = 'MetaData'
+    Fermi_ID = db.Column(db.Integer, primary_key=True)
+    Fermi_Name = db.Column(db.String(150))
+    Revision_Commit = db.Column(db.String(150))
+    UniqueKey = db.Column(db.Integer)
+
+# Table for Main_Stats
+class MainStats(db.Model):
+    __tablename__ = 'Main_Stats'
+    Id = db.Column(db.Integer, primary_key=True)
+    Stat_Name = db.Column(db.String(50))  # Changed to 50
+    Stat_Value = db.Column(db.String(50))  # Changed to 50
+    UniqueKey = db.Column(db.Integer)
+
+# Table for Runtime_Analysis_Stats (already defined above)
+class RuntimeAnalysisStats(db.Model):
+    __tablename__ = 'Runtime_Analysis_Stats'
+    Id = db.Column(db.Integer, primary_key=True)
+    Stat_Name = db.Column(db.String(50))  # Changed to 50
+    Stat_Value = db.Column(db.String(50))  # Changed to 50
+    UniqueKey = db.Column(db.Integer)
+
+class GeometricAnalysisStats(db.Model):
+    __tablename__ = 'Geometric_Analysis_Stats'
+    Id = db.Column(db.Integer, primary_key=True)
+    Stat_Name = db.Column(db.String(50))
+    Stat_Value = db.Column(db.String(50))
+    UniqueKey = db.Column(db.Integer)
+
+# Table for Statistical_Analysis_EPE_Target_vs_Mask_Simulation_Negdose
+class StatisticalAnalysisEPETargetVsMaskSimulationNegdose(db.Model):
+    __tablename__ = 'Statistical_Analysis_EPE_Target_vs_Mask_Simulation_Negdose'
+    Id = db.Column(db.Integer, primary_key=True)
+    Stat_Name = db.Column(db.String(50))  # Changed to 50
+    Stat_Value = db.Column(db.String(50))  # Changed to 50
+    UniqueKey = db.Column(db.Integer)
+
+# Table for Statistical_Analysis_EPE_Target_vs_Mask_Simulation_Negfocus
+class StatisticalAnalysisEPETargetVsMaskSimulationNegfocus(db.Model):
+    __tablename__ = 'Statistical_Analysis_EPE_Target_vs_Mask_Simulation_Negfocus'
+    Id = db.Column(db.Integer, primary_key=True)
+    Stat_Name = db.Column(db.String(50))  # Changed to 50
+    Stat_Value = db.Column(db.String(50))  # Changed to 50
+    UniqueKey = db.Column(db.Integer)
+
+# Table for Statistical_Analysis_EPE_Target_vs_Mask_Simulation_Posdose
+class StatisticalAnalysisEPETargetVsMaskSimulationPosdose(db.Model):
+    __tablename__ = 'Statistical_Analysis_EPE_Target_vs_Mask_Simulation_Posdose'
+    Id = db.Column(db.Integer, primary_key=True)
+    Stat_Name = db.Column(db.String(50))  # Changed to 50
+    Stat_Value = db.Column(db.String(50))  # Changed to 50
+    UniqueKey = db.Column(db.Integer)
+
+# Table for Statistical_Analysis_EPE_Target_vs_Mask_Simulation_Posfocus
+class StatisticalAnalysisEPETargetVsMaskSimulationPosfocus(db.Model):
+    __tablename__ = 'Statistical_Analysis_EPE_Target_vs_Mask_Simulation_Posfocus'
+    Id = db.Column(db.Integer, primary_key=True)
+    Stat_Name = db.Column(db.String(50))  # Changed to 50
+    Stat_Value = db.Column(db.String(50))  # Changed to 50
+    UniqueKey = db.Column(db.Integer)
+
+# Table for Statistical_Analysis_EPE_Target_vs_Nominal_Mask_Simulation_f0d0
+class StatisticalAnalysisEPETargetVsNominalMaskSimulationF0d0(db.Model):
+    __tablename__ = 'Statistical_Analysis_EPE_Target_vs_Nominal_Mask_Simulation_f0d0'
+    Id = db.Column(db.Integer, primary_key=True)
+    Stat_Name = db.Column(db.String(50))  # Changed to 50
+    Stat_Value = db.Column(db.String(50))  # Changed to 50
+    UniqueKey = db.Column(db.Integer)
+
+# Table for Statistical_Analysis_Width_of_PV_Band_by_Dose
+class StatisticalAnalysisWidthOfPVBandByDose(db.Model):
+    __tablename__ = 'Statistical_Analysis_Width_of_PV_Band_by_Dose'
+    Id = db.Column(db.Integer, primary_key=True)
+    Stat_Name = db.Column(db.String(50))  # Changed to 50
+    Stat_Value = db.Column(db.String(50))  # Changed to 50
+    UniqueKey = db.Column(db.Integer)
+
+# Table for Statistical_Analysis_Width_of_PV_Band_by_Focus
+class StatisticalAnalysisWidthOfPVBandByFocus(db.Model):
+    __tablename__ = 'Statistical_Analysis_Width_of_PV_Band_by_Focus'
+    Id = db.Column(db.Integer, primary_key=True)
+    Stat_Name = db.Column(db.String(50))  # Changed to 50
+    Stat_Value = db.Column(db.String(50))  # Changed to 50
+    UniqueKey = db.Column(db.Integer)
+
+@app.route("/", methods=["GET", "POST"])
 def index():
-    return render_template('index.html')
+    table_data = {}
+    if request.method == "POST":
+        search_term = request.form.get("search_term")
+        
+        # Check if the search term is a valid number (for job ID or UniqueKey)
+        try:
+            search_term_int = int(search_term)
+            metadata = MetaData.query.filter(
+                (MetaData.Fermi_ID == search_term_int) | 
+                (MetaData.UniqueKey == search_term_int) | 
+                (MetaData.Fermi_Name == search_term) | 
+                (MetaData.Revision_Commit == search_term)
+            ).first()
+        except ValueError:
+            # If it's not an integer, assume it's a string (for job name or revision)
+            metadata = MetaData.query.filter(
+                (MetaData.Fermi_Name == search_term) |
+                (MetaData.Revision_Commit == search_term)
+            ).first()
 
-# Define the model corresponding to table
-class JobData(db.Model):
-    __tablename__ = 'fermi_stats'  
+        if metadata:
+            unique_key = metadata.UniqueKey
+            fermi_id = metadata.Fermi_ID
+            fermi_name = metadata.Fermi_Name
+            revision_commit = metadata.Revision_Commit
+            
+            # Fetch all tables with the same unique_key
+            tables = [
+                MainStats,
+                RuntimeAnalysisStats,
+                GeometricAnalysisStats,
+                StatisticalAnalysisEPETargetVsMaskSimulationNegdose,
+                StatisticalAnalysisEPETargetVsMaskSimulationNegfocus,
+                StatisticalAnalysisEPETargetVsMaskSimulationPosdose,
+                StatisticalAnalysisEPETargetVsMaskSimulationPosfocus,
+                StatisticalAnalysisEPETargetVsMaskSimulationPosdose,
+                StatisticalAnalysisEPETargetVsNominalMaskSimulationF0d0,
+                StatisticalAnalysisWidthOfPVBandByDose,
+                StatisticalAnalysisWidthOfPVBandByFocus,
+            ]
+            
 
-    id = db.Column(db.Integer, primary_key=True)
-    jobid = db.Column(db.Integer)
-    job_name = db.Column(db.String(255))
-    revision_name = db.Column(db.String(255))
-    stat_name = db.Column(db.String(255))
-    stat_value = db.Column(db.String(255))
+            for table in tables:
+                data = db.session.query(table.Stat_Name, table.Stat_Value).filter(table.UniqueKey == unique_key).all()
+                table_data[table.__tablename__] = data
 
-@app.route('/api/data', methods=['GET'])
-def get_data():
-    jobid = request.args.get('jobid')
-    job_name = request.args.get('job_name')
-    revision_name = request.args.get('revision_name')
+            # Pass metadata and table data to the template
+            return render_template("index.html", 
+                                   table_data=table_data, 
+                                   search_term=search_term,
+                                   fermi_id=fermi_id, 
+                                   fermi_name=fermi_name, 
+                                   revision_commit=revision_commit)
 
-    query = JobData.query
+        else:
+            return f"No results found for {search_term}"
 
-    if jobid:
-        query = query.filter(JobData.jobid == jobid)
-    if job_name:
-        query = query.filter(JobData.job_name == job_name)
-    if revision_name:
-        query = query.filter(JobData.revision_name == revision_name)
+    return render_template("index.html", table_data=table_data)
 
-    results = query.all()
 
-    # Convert results to a list of dictionaries
-    output = []
-    for job in results:
-        output.append({
-            'id': job.id,
-            'jobid': job.jobid,
-            'job_name': job.job_name,
-            'revision_name': job.revision_name,
-            'stat_name': job.stat_name,
-            'stat_value': job.stat_value
-        })
-
-    return jsonify(output)
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)

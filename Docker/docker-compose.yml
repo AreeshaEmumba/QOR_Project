@@ -23,8 +23,8 @@ services:
     ports:
       - "3307:3306"  # Maps MySQL’s port to 3307 on the host
     volumes:
-      - mysql_data:/var/lib/mysql  # Persists MySQL data
+      - mysql_data2:/var/lib/mysql  # Persists MySQL data
       - ./db_init/emumba_qor_dump.sql:/docker-entrypoint-initdb.d/emumba_qor_dump.sql  # Initialize database with dump
 
 volumes:
-  mysql_data:
+  mysql_data2:
