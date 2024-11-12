@@ -4,20 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fermi Metadata</title>
+        <style>
+        form {
+            margin-bottom: 20px;
+        }
+        label, input, button {
+            display: block;
+            margin-bottom: 10px;
+        }
+        </style>
 </head>
 <body>
     <h1>Search Job Metadata</h1>
 
     <form method="POST">
+        <label for="search_fermi_id">Enter Job ID (Fermi ID):</label>
+        <input type="text" id="search_fermi_id" name="search_fermi_id">
 
-        <label for="search_term">Enter Job ID, Job Name, or Revision Name:</label>
+        <label for="search_fermi_name">Enter Job Name (Fermi Name):</label>
+        <input type="text" id="search_fermi_name" name="search_fermi_name">
 
-        <input type="text" id="search_term" name="search_term" required>
+        <label for="search_revision_commit">Enter Revision Commit:</label>
+        <input type="text" id="search_revision_commit" name="search_revision_commit">
 
         <button type="submit">Search</button>
-
     </form>
-    <h1>Search Results for "{{ search_term }}"</h1>
+
+    <h1>Search Results</h1>
 
     {% if fermi_id %}
         <h3>Metadata</h3>
