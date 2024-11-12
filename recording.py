@@ -1,4 +1,5 @@
 import os
+import argparse
 import re
 from sqlalchemy import create_engine, Column, String, Integer, ForeignKey
 from sqlalchemy.orm import sessionmaker, declarative_base, relationship
@@ -121,7 +122,6 @@ TABLE_CLASS_MAPPING = {
     "Statistical Analysis:Width_of_PV_Band_by_Focus": Statistical_Analysis_Width_of_PV_Band_by_Focus
 }
 
-
 def insert_stats(session, table_class, stat_name, stat_value, unique_key):
     logging.info("Now in Function insert_stats \n")
     try:
@@ -129,7 +129,7 @@ def insert_stats(session, table_class, stat_name, stat_value, unique_key):
         existing_entry = session.query(table_class).filter_by(Stat_Name=stat_name, Stat_Value=stat_value, UniqueKey=unique_key).first()
         
         if existing_entry:
-            # Optionally, update the existing entry (if needed, otherwise just skip this step)
+            # Update the existing entry 
             logging.info(f"Entry already exists for Stat_Name: {stat_name}, Stat_Value: {stat_value}, UniqueKey: {unique_key}")
         else:
             # Insert a new entry if none found
@@ -197,8 +197,7 @@ def insert_meta(session, table_class, file_path):
             )
             session.add(stat_entry)
             logging.info(f"Inserting new entry for Fermi_ID: {fermi_id} with Fermi_Name: {fermi_job_name}, Revision_Commit: {revision_commit}")
-
-        
+    
         # Commit changes
         session.commit()
         
@@ -252,7 +251,7 @@ def process_all_jobid_folders(root_folder):
     for jobid_folder in os.listdir(root_folder):
         jobid_path = os.path.join(root_folder, jobid_folder)
         if os.path.isdir(jobid_path):
-            qor_folder = os.path.join(jobid_path, 'qor')
+            qor_folder = os.path.join(jobid_path, 'qor') 
             fermi_file_path = os.path.join(qor_folder, 'fermi.txt')
 
             if os.path.isfile(fermi_file_path):
@@ -272,6 +271,44 @@ def process_all_jobid_folders(root_folder):
                 
     session.close()
 
+# function to process a single job ID folder
+def process_single_jobid_folder(job_id):
+    logging.info("Now in Function process_single_jobid_folder")
+    engine, session = create_engine_and_session()
+
+    # Define the path based on the given job ID
+    file_path = f"/home/emumba/Desktop/Rsync/{job_id}/qor/fermi.txt"
+
+    # Query to filter by Fermi_ID and get the UniqueKey
+    result = session.query(MetaData.UniqueKey).filter(MetaData.Fermi_ID == job_id).first()
+
+    # Assign the UniqueKey to unique_key variable
+    unique_key = result[0] if result else None
+
+    # Check if fermi.txt exists and process it
+    if os.path.isfile(file_path):
+        insert_meta(session, MetaData, file_path)
+        process_fermi_file(file_path, session, unique_key)
+        logging.info(f"Processed fermi.txt for job ID {job_id} and recorded data.")
+    else:
+        logging.info(f"File not found: {file_path}")
+
+    session.close()
+
+# Main function
+def main():
+    # Parse command-line arguments
+    parser = argparse.ArgumentParser(description="Process job ID folders")
+    parser.add_argument("-id", type=str, help="Specify a single job ID to process")
+    args = parser.parse_args()
+
+    # Check if the user provided a job ID with the -id flag
+    if args.id:
+        process_single_jobid_folder(args.id)
+    else:
+        # Default behavior, process all folders
+        root_folder = "/home/emumba/Desktop/Rsync"
+        process_all_jobid_folders(root_folder)
+
 if __name__ == "__main__":
-    root_folder = '/home/emumba/Desktop/Designs'
-    process_all_jobid_folders(root_folder)
+    main()
