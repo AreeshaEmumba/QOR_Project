@@ -102,22 +102,34 @@ class StatisticalAnalysisWidthOfPVBandByFocus(db.Model):
 def index():
     table_data = {}
     if request.method == "POST":
-        search_term = request.form.get("search_term")
-        
-        # Check if the search term is a valid number (for job ID or UniqueKey)
-        try:
-            search_term_int = int(search_term)
+        # Get the search terms from the individual fields
+        search_fermi_id = request.form.get("search_fermi_id")
+        search_fermi_name = request.form.get("search_fermi_name")
+        search_revision_commit = request.form.get("search_revision_commit")
+
+        # Initialize metadata variable
+        metadata = None
+
+        # Check each search term separately
+        if search_fermi_id:
+            try:
+                search_fermi_id_int = int(search_fermi_id)
+                metadata = MetaData.query.filter(
+                    (MetaData.Fermi_ID == search_fermi_id_int) | 
+                    (MetaData.UniqueKey == search_fermi_id_int)
+                ).first()
+            except ValueError:
+                return "Invalid Job ID entered."
+
+        if search_fermi_name and not metadata:
             metadata = MetaData.query.filter(
-                (MetaData.Fermi_ID == search_term_int) | 
-                (MetaData.UniqueKey == search_term_int) | 
-                (MetaData.Fermi_Name == search_term) | 
-                (MetaData.Revision_Commit == search_term)
+                (MetaData.Fermi_Name == search_fermi_name) |
+                (MetaData.Revision_Commit == search_fermi_name)
             ).first()
-        except ValueError:
-            # If it's not an integer, assume it's a string (for job name or revision)
+
+        if search_revision_commit and not metadata:
             metadata = MetaData.query.filter(
-                (MetaData.Fermi_Name == search_term) |
-                (MetaData.Revision_Commit == search_term)
+                (MetaData.Revision_Commit == search_revision_commit)
             ).first()
 
         if metadata:
@@ -125,7 +137,7 @@ def index():
             fermi_id = metadata.Fermi_ID
             fermi_name = metadata.Fermi_Name
             revision_commit = metadata.Revision_Commit
-            
+
             # Fetch all tables with the same unique_key
             tables = [
                 MainStats,
@@ -141,7 +153,6 @@ def index():
                 StatisticalAnalysisWidthOfPVBandByFocus,
             ]
             
-
             for table in tables:
                 data = db.session.query(table.Stat_Name, table.Stat_Value).filter(table.UniqueKey == unique_key).all()
                 table_data[table.__tablename__] = data
@@ -149,16 +160,14 @@ def index():
             # Pass metadata and table data to the template
             return render_template("index.html", 
                                    table_data=table_data, 
-                                   search_term=search_term,
                                    fermi_id=fermi_id, 
                                    fermi_name=fermi_name, 
                                    revision_commit=revision_commit)
 
         else:
-            return f"No results found for {search_term}"
+            return "No results found."
 
     return render_template("index.html", table_data=table_data)
-
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)
