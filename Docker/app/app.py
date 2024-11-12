@@ -110,28 +110,44 @@ def index():
         # Initialize metadata variable
         metadata = None
 
-        # Check each search term separately
+        # Validate fields and check for matching records
         if search_fermi_id:
             try:
                 search_fermi_id_int = int(search_fermi_id)
-                metadata = MetaData.query.filter(
-                    (MetaData.Fermi_ID == search_fermi_id_int) | 
-                    (MetaData.UniqueKey == search_fermi_id_int)
-                ).first()
+                metadata = MetaData.query.filter_by(Fermi_ID=search_fermi_id_int).first()
             except ValueError:
                 return "Invalid Job ID entered."
 
-        if search_fermi_name and not metadata:
-            metadata = MetaData.query.filter(
-                (MetaData.Fermi_Name == search_fermi_name) |
-                (MetaData.Revision_Commit == search_fermi_name)
-            ).first()
+        # If two or more fields are provided, validate that they match the same record
+        if search_fermi_id and search_fermi_name:
+            if metadata and metadata.Fermi_Name != search_fermi_name:
+                return "The fields entered are not correct. Fermi Name does not match the Fermi ID."
+            if not metadata:
+                metadata = MetaData.query.filter_by(Fermi_Name=search_fermi_name).first()
+        
+        if search_fermi_id and search_revision_commit:
+            if metadata and metadata.Revision_Commit != search_revision_commit:
+                return "The fields entered are not correct. Revision Commit does not match the Fermi ID."
+            if not metadata:
+                metadata = MetaData.query.filter_by(Revision_Commit=search_revision_commit).first()
 
-        if search_revision_commit and not metadata:
-            metadata = MetaData.query.filter(
-                (MetaData.Revision_Commit == search_revision_commit)
-            ).first()
+        if search_fermi_name and search_revision_commit:
+            if metadata and metadata.Revision_Commit != search_revision_commit:
+                return "The fields entered are not correct. Revision Commit does not match the Fermi Name."
+            if not metadata:
+                metadata = MetaData.query.filter_by(Revision_Commit=search_revision_commit).first()
+        
+        if search_fermi_id and search_fermi_name and search_revision_commit:
+            if metadata and (metadata.Fermi_Name != search_fermi_name or metadata.Revision_Commit != search_revision_commit):
+                return "The fields entered are not correct. One or more fields do not match."
+            if not metadata:
+                metadata = MetaData.query.filter_by(
+                    Fermi_ID=search_fermi_id_int,
+                    Fermi_Name=search_fermi_name,
+                    Revision_Commit=search_revision_commit
+                ).first()
 
+        # If metadata is found, retrieve related data and render the template
         if metadata:
             unique_key = metadata.UniqueKey
             fermi_id = metadata.Fermi_ID
@@ -147,7 +163,6 @@ def index():
                 StatisticalAnalysisEPETargetVsMaskSimulationNegfocus,
                 StatisticalAnalysisEPETargetVsMaskSimulationPosdose,
                 StatisticalAnalysisEPETargetVsMaskSimulationPosfocus,
-                StatisticalAnalysisEPETargetVsMaskSimulationPosdose,
                 StatisticalAnalysisEPETargetVsNominalMaskSimulationF0d0,
                 StatisticalAnalysisWidthOfPVBandByDose,
                 StatisticalAnalysisWidthOfPVBandByFocus,
