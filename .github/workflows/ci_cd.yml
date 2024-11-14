@@ -46,6 +46,7 @@ jobs:
           docker build -t qor_project .
 
       - name: Deploy the app
+        working-directory: Docker
         run: |
           # Deploy using your method (Docker, Kubernetes, etc.)
           # For example, use Docker Compose
