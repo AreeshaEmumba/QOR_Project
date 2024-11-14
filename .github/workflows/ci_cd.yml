@@ -1,0 +1,79 @@
+name: CI/CD Pipeline
+
+# Trigger workflow on push or pull request to main or other branches
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  # Job to set up environment, install dependencies, and run tests
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22.11.0'
+
+      - name: Install dependencies
+        run: |
+          pip install -r Docker/app/requirements.txt
+          npm install -g newman
+
+      - name: Run Postman tests with Newman
+        run: |
+          newman run Postman/QOR_Project.postman_collection.json -r html --reporter-html-export Postman/newman_results.html
+
+      - name: Send email with test results
+        run: |
+          python3 Postman/send_email.py
+
+  # Job to deploy the app (e.g., using Docker or another service)
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test  # This job runs only after the test job is successful
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build Docker image
+        run: |
+          docker build -t qor_project .
+
+      - name: Deploy the app
+        run: |
+          # Deploy using your method (Docker, Kubernetes, etc.)
+          # For example, use Docker Compose
+          docker-compose -f Docker/docker-compose.yml up -d
+
+  # Job to send Slack notification upon successful deployment
+  notify:
+    runs-on: ubuntu-latest
+    needs: deploy  # Runs after deploy job
+
+    steps:
+      - name: Send Slack notification
+        uses: slackapi/slack-github-action@v1.23.0
+        with:
+          channel: '#deployment-notifications'
+          text: 'Deployment has been successfully completed.'
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+
