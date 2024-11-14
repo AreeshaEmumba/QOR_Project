@@ -33,17 +33,20 @@ jobs:
           ls -l Postman/QOR_Project.postman_collection.json
 
       - name: Install dependencies
+        working-directory: Docker/app
         run: |
-          pip install -r Docker/app/requirements.txt
+          pip install -r requirements.txt
+        # Node.js packages need to be installed in the root directory
+      - name: Install Node.js dependencies
+        run: |
           npm install newman@4
-          npm install newman-reporter-html  # Install the html reporter for newman
+          npm install newman-reporter-html  # Install the HTML reporter for Newman
           npm install --legacy-peer-deps
-          working-directory: ./Postman
 
       - name: Run Postman tests with Newman
+        working-directory: Postman
         run: |
-          npx newman run Postman/QOR_Project.postman_collection.json -r html --reporter-html-export Postman/newman_results.html --verbose
-          working-directory: ./Postman
+          npx newman run QOR_Project.postman_collection.json -r html --reporter-html-export newman_results.html --verbose
           
       - name: Send email with test results
         run: |
@@ -84,4 +87,3 @@ jobs:
           text: 'Deployment has been successfully completed.'
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-
