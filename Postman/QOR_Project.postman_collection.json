@@ -61,18 +61,6 @@
 							"  pm.response.to.have.status(200);",
 							"});",
 							"",
-							"// Test for error when invalid Fermi ID is entered",
-							"pm.test(\"Invalid Fermi ID returns error\", function () {",
-							"    var responseText = pm.response.text();",
-							"    pm.expect(responseText).to.include(\"Invalid Job ID entered.\");",
-							"});",
-							"",
-							"// Test for no results when no matching records found",
-							"pm.test(\"No matching records returns 'No results found'\", function () {",
-							"    var responseText = pm.response.text();",
-							"    pm.expect(responseText).to.include(\"No results found.\");",
-							"});",
-							"",
 							"// Test for error when correct fields are entered and the tables are displayed accordingly",
 							"pm.test(\"Response contains expected HTML content\", function () {",
 							"    pm.expect(pm.response.text()).to.include(\"<h3>Metadata</h3>\"); ",
@@ -106,6 +94,162 @@
 						{
 							"key": "search_fermi_id",
 							"value": "9871",
+							"type": "text"
+						},
+						{
+							"key": "search_fermi_name",
+							"value": "5555",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "search_revision_commit",
+							"value": "heads/feature/fermi/qtm3split-0-g44d2dea0a4a315e3e685475f7dc4288ee37d4155",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Search Invalid ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Test for error when invalid Fermi ID is entered",
+							"pm.test(\"Invalid Fermi ID returns error\", function () {",
+							"    var responseText = pm.response.text();",
+							"    pm.expect(responseText).to.include(\"Invalid Job ID entered.\");",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "search_fermi_id",
+							"value": "aa",
+							"type": "text"
+						},
+						{
+							"key": "search_fermi_name",
+							"value": "5555",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "search_revision_commit",
+							"value": "heads/feature/fermi/qtm3split-0-g44d2dea0a4a315e3e685475f7dc4288ee37d4155",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Search No results found",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Test for no results when no matching records found",
+							"pm.test(\"No matching records returns 'No results found'\", function () {",
+							"    var responseText = pm.response.text();",
+							"    pm.expect(responseText).to.include(\"No results found.\");",
+							"});",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "search_fermi_id",
+							"value": "9870",
 							"type": "text"
 						},
 						{
