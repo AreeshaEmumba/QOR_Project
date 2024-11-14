@@ -31,12 +31,12 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r Docker/app/requirements.txt
-          npm install -g newman
+          npm install newman
           npm install newman-reporter-html  # Install the html reporter for newman
 
       - name: Run Postman tests with Newman
         run: |
-          newman run Postman/QOR_Project.postman_collection.json -r html --reporter-html-export Postman/newman_results.html
+          npx newman run Postman/QOR_Project.postman_collection.json -r html --reporter-html-export Postman/newman_results.html
 
       - name: Send email with test results
         run: |
