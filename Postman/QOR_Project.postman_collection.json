@@ -34,9 +34,17 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}",
+					"raw": "http://127.0.0.1:5000/",
+					"protocol": "http",
 					"host": [
-						"{{baseUrl}}"
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						""
 					]
 				}
 			},
@@ -45,16 +53,6 @@
 		{
 			"name": "Post Search",
 			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				},
 				{
 					"listen": "test",
 					"script": {
@@ -76,12 +74,22 @@
 							"});",
 							"",
 							"// Test for error when correct fields are entered and the tables are displayed accordingly",
-							"pm.test(\"Correct Fields entered\", function () {",
-							"    var responseText = pm.response.text()",
-							"    pm.expect(responseText).to.include(\"Metadata\")",
-							"    pm.expect(responseText).to.include(\"Table Data\")",
+							"pm.test(\"Response contains expected HTML content\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"<h3>Metadata</h3>\"); ",
+							"    pm.expect(pm.response.text()).to.include(\"<h3>Table Data</h3>\"); ",
 							"});",
 							"",
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
 							""
 						],
 						"type": "text/javascript",
@@ -115,9 +123,17 @@
 					]
 				},
 				"url": {
-					"raw": "{{baseUrl}}",
+					"raw": "http://127.0.0.1:5000/",
+					"protocol": "http",
 					"host": [
-						"{{baseUrl}}"
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						""
 					]
 				}
 			},
