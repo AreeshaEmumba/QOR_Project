@@ -31,7 +31,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r Docker/app/requirements.txt
-          npm install newman
+          npm install newman@4
           npm install newman-reporter-html  # Install the html reporter for newman
 
       - name: Run Postman tests with Newman
