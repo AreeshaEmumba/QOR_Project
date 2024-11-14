@@ -79,7 +79,7 @@ jobs:
       - name: Send Slack notification
         uses: slackapi/slack-github-action@v1.23.0
         with:
-          channel-id: '#deployment-notifications'  # Ensure this is the correct channel ID
+          channel-id: 'U07J17B6WLX'  # My member ID
           slack-message: 'Deployment has been successfully completed.'
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}  # Make sure the token is set in GitHub secrets
