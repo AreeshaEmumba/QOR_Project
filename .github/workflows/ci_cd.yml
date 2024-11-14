@@ -35,9 +35,13 @@ jobs:
           npm install newman-reporter-html  # Install the html reporter for newman
           npm install --legacy-peer-deps
 
+      - name: Verify Postman collection file exists
+        run: |
+          ls -l Postman/QOR_Project.postman_collection.json
+
       - name: Run Postman tests with Newman
         run: |
-          npx newman run Postman/QOR_Project.postman_collection.json -r html --reporter-html-export Postman/newman_results.html
+          npx newman run Postman/QOR_Project.postman_collection.json -r html --reporter-html-export Postman/newman_results.html --verbose
 
       - name: Send email with test results
         run: |
