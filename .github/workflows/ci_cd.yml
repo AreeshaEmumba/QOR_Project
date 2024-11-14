@@ -36,12 +36,19 @@ jobs:
         working-directory: Docker/app
         run: |
           pip install -r requirements.txt
+          
         # Node.js packages need to be installed in the root directory
       - name: Install Node.js dependencies
         run: |
           npm install newman@4
           npm install newman-reporter-html  # Install the HTML reporter for Newman
           npm install --legacy-peer-deps
+
+      - name: Start Flask server
+        run: |
+          export FLASK_APP=app.py
+          flask run --host=0.0.0.0 --port=5000 &
+        working-directory: Docker/app
 
       - name: Run Postman tests with Newman
         run: |
