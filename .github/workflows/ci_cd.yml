@@ -46,7 +46,7 @@ jobs:
       - name: Run Postman tests with Newman
         working-directory: Postman
         run: |
-          npx newman run QOR_Project.postman_collection.json -r html --reporter-html-export newman_results.html --verbose
+          npx newman run Postman/QOR_Project.postman_collection.json -r html --reporter-html-export Postman/newman_results.html --verbose --bail false
           
       - name: Send email with test results
         run: |
