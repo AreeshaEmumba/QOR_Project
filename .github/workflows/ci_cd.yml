@@ -69,7 +69,7 @@ jobs:
   # Job to send Slack notification upon successful deployment
   notify:
     runs-on: ubuntu-latest
-    needs: deploy  # Runs after deploy job
+    needs: test  # Runs after test job
 
     steps:
       - name: Send Slack notification
