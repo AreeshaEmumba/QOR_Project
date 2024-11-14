@@ -30,11 +30,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r Docker/app/requirements.txt
-          npm install newman@4
-          npm install newman-reporter-html  # Install the html reporter for newman
-          npm install --legacy-peer-deps
-
+          npm install newman@5  # Install version 5 of newman
+          npm install newman-reporter-html@1.0.5  # Compatible version of the reporter
+          
       - name: Verify Postman collection file exists
         run: |
           ls -l Postman/QOR_Project.postman_collection.json
