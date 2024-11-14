@@ -53,7 +53,7 @@ jobs:
       - name: Deploy the app
         run: |
           # Deploy using Docker Compose
-          /usr/local/bin/docker-compose -f Docker/docker-compose.yml up -d
+          docker-compose -f Docker/docker-compose.yml up -d
           
         # Node.js packages need to be installed in the root directory
       - name: Install Node.js dependencies
