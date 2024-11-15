@@ -68,7 +68,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: newman_results
-          path: QOR_Project/Postman/newman_results.html
+          path: Postman/newman_results.html
 
   # Build job, runs only if tests pass
   build:
