@@ -76,7 +76,7 @@ jobs:
   # Merge job, only on pull requests, runs if tests pass
   merge:
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
+    if: github.event_name == 'pull_request'
     needs: test
 
     steps:
