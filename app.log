@@ -1,0 +1,2698 @@
+2024-11-12 13:20:05,999 - INFO - Now in Function process_all_jobid_folders 
+2024-11-12 13:20:05,999 - INFO - Now in Function create_engine_and_session
+2024-11-12 13:20:06,226 - INFO - Processing /home/emumba/Desktop/Rsync/9872/qor/fermi.txt...
+2024-11-12 13:20:06,227 - INFO - Now in Function insert_meta 
+
+2024-11-12 13:20:06,227 - INFO - fermi_job_name : v7bgciso
+2024-11-12 13:20:06,227 - INFO - revision_commit : heads/feature/fermi/qtm3split-0-g44d2dea0a4a315e3e685475f7dc4288ee37d4155
+2024-11-12 13:20:06,228 - INFO - fermi_id : 9872
+2024-11-12 13:20:06,228 - INFO - Value assigned to fermi_job_name, fermi_id  and revision_commit
+2024-11-12 13:20:06,228 - INFO - fermi_job_name : v7bgciso
+2024-11-12 13:20:06,228 - INFO - fermi_id : 9872
+2024-11-12 13:20:06,228 - INFO - revision_commit : heads/feature/fermi/qtm3split-0-g44d2dea0a4a315e3e685475f7dc4288ee37d4155
+2024-11-12 13:20:06,234 - INFO - Updating existing entry for Fermi ID: 9872, Fermi_Job: v7bgciso, Revision_Commit: heads/feature/fermi/qtm3split-0-g44d2dea0a4a315e3e685475f7dc4288ee37d4155 
+2024-11-12 13:20:06,241 - INFO - Now in function process_fermi_file 
+2024-11-12 13:20:06,241 - INFO - file_path = /home/emumba/Desktop/Rsync/9872/qor/fermi.txt
+2024-11-12 13:20:06,241 - INFO - unique_key : 1
+2024-11-12 13:20:06,242 - INFO - 
+ Line starts with [
+2024-11-12 13:20:06,242 - INFO - Table found : Main Stats
+2024-11-12 13:20:06,242 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,242 - INFO - match = <re.Match object; span=(0, 24), match='fermi_job_name: v7bgciso'>
+2024-11-12 13:20:06,242 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,242 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,248 - INFO - Entry already exists for Stat_Name: fermi_job_name, Stat_Value: v7bgciso, UniqueKey: 1
+2024-11-12 13:20:06,249 - INFO - Inserted Data to table
+2024-11-12 13:20:06,249 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,249 - INFO - match = <re.Match object; span=(0, 40), match='revision_branch: feature/fermi/qtm3split'>
+2024-11-12 13:20:06,250 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,250 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,252 - INFO - Entry already exists for Stat_Name: revision_branch, Stat_Value: feature/fermi/qtm3split, UniqueKey: 1
+2024-11-12 13:20:06,254 - INFO - Inserted Data to table
+2024-11-12 13:20:06,254 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,254 - INFO - match = <re.Match object; span=(0, 90), match='revision_commit: heads/feature/fermi/qtm3split-0->
+2024-11-12 13:20:06,255 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,255 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,257 - INFO - Inserting new entry for Stat_Name: revision_commit with Stat_Value: heads/feature/fermi/qtm3split-0-g44d2dea0a4a315e3e685475f7dc4288ee37d4155, UniqueKey: 1
+2024-11-12 13:20:06,262 - ERROR - Error upserting stats for Stat_Name: revision_commit - (pymysql.err.DataError) (1406, "Data too long for column 'Stat_Value' at row 1")
+[SQL: INSERT INTO `Main_Stats` (`Stat_Name`, `Stat_Value`, `UniqueKey`) VALUES (%(Stat_Name)s, %(Stat_Value)s, %(UniqueKey)s)]
+[parameters: {'Stat_Name': 'revision_commit', 'Stat_Value': 'heads/feature/fermi/qtm3split-0-g44d2dea0a4a315e3e685475f7dc4288ee37d4155', 'UniqueKey': 1}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2024-11-12 13:20:06,262 - INFO - Inserted Data to table
+2024-11-12 13:20:06,263 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,263 - INFO - match = <re.Match object; span=(0, 25), match='revision_date: 2023-08-14'>
+2024-11-12 13:20:06,263 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,263 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,266 - INFO - Entry already exists for Stat_Name: revision_date, Stat_Value: 2023-08-14, UniqueKey: 1
+2024-11-12 13:20:06,268 - INFO - Inserted Data to table
+2024-11-12 13:20:06,268 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,268 - INFO - match = <re.Match object; span=(0, 14), match='fermi_id: 9872'>
+2024-11-12 13:20:06,268 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,268 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,271 - INFO - Entry already exists for Stat_Name: fermi_id, Stat_Value: 9872, UniqueKey: 1
+2024-11-12 13:20:06,272 - INFO - Inserted Data to table
+2024-11-12 13:20:06,273 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,273 - INFO - match = <re.Match object; span=(0, 6), match='gpu: 4'>
+2024-11-12 13:20:06,273 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,273 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,276 - INFO - Entry already exists for Stat_Name: gpu, Stat_Value: 4, UniqueKey: 1
+2024-11-12 13:20:06,277 - INFO - Inserted Data to table
+2024-11-12 13:20:06,277 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,277 - INFO - match = <re.Match object; span=(0, 30), match='expect_run_time_50_gpu: 720.15'>
+2024-11-12 13:20:06,278 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,278 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,280 - INFO - Entry already exists for Stat_Name: expect_run_time_50_gpu, Stat_Value: 720.15, UniqueKey: 1
+2024-11-12 13:20:06,282 - INFO - Inserted Data to table
+2024-11-12 13:20:06,282 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,282 - INFO - match = <re.Match object; span=(0, 31), match='expect_run_time_1_gpu: 34500.25'>
+2024-11-12 13:20:06,282 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,282 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,285 - INFO - Entry already exists for Stat_Name: expect_run_time_1_gpu, Stat_Value: 34500.25, UniqueKey: 1
+2024-11-12 13:20:06,287 - INFO - Inserted Data to table
+2024-11-12 13:20:06,287 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,287 - INFO - match = <re.Match object; span=(0, 17), match='user: exampleuser'>
+2024-11-12 13:20:06,287 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,287 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,290 - INFO - Entry already exists for Stat_Name: user, Stat_Value: exampleuser, UniqueKey: 1
+2024-11-12 13:20:06,291 - INFO - Inserted Data to table
+2024-11-12 13:20:06,291 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,292 - INFO - match = <re.Match object; span=(0, 21), match='name: exampleDesign01'>
+2024-11-12 13:20:06,292 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,292 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,294 - INFO - Entry already exists for Stat_Name: name, Stat_Value: exampleDesign01, UniqueKey: 1
+2024-11-12 13:20:06,296 - INFO - Inserted Data to table
+2024-11-12 13:20:06,296 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,296 - INFO - match = <re.Match object; span=(0, 25), match='max_err_per_partion: None'>
+2024-11-12 13:20:06,296 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,297 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,299 - INFO - Entry already exists for Stat_Name: max_err_per_partion, Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,301 - INFO - Inserted Data to table
+2024-11-12 13:20:06,301 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,301 - INFO - match = <re.Match object; span=(0, 18), match='total_errors: None'>
+2024-11-12 13:20:06,301 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,301 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,304 - INFO - Entry already exists for Stat_Name: total_errors, Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,305 - INFO - Inserted Data to table
+2024-11-12 13:20:06,305 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,306 - INFO - match = <re.Match object; span=(0, 13), match='partition: 36'>
+2024-11-12 13:20:06,306 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,306 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,308 - INFO - Entry already exists for Stat_Name: partition, Stat_Value: 36, UniqueKey: 1
+2024-11-12 13:20:06,310 - INFO - Inserted Data to table
+2024-11-12 13:20:06,310 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,310 - INFO - match = <re.Match object; span=(0, 7), match='grid: 8'>
+2024-11-12 13:20:06,310 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,310 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,313 - INFO - Entry already exists for Stat_Name: grid, Stat_Value: 8, UniqueKey: 1
+2024-11-12 13:20:06,315 - INFO - Inserted Data to table
+2024-11-12 13:20:06,315 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,315 - INFO - match = <re.Match object; span=(0, 26), match='optimizer_iterations: None'>
+2024-11-12 13:20:06,315 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,315 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,318 - INFO - Entry already exists for Stat_Name: optimizer_iterations, Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,320 - INFO - Inserted Data to table
+2024-11-12 13:20:06,320 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,320 - INFO - match = <re.Match object; span=(0, 17), match='force_flag: False'>
+2024-11-12 13:20:06,320 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,320 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,323 - INFO - Entry already exists for Stat_Name: force_flag, Stat_Value: False, UniqueKey: 1
+2024-11-12 13:20:06,324 - INFO - Inserted Data to table
+2024-11-12 13:20:06,324 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,325 - INFO - match = <re.Match object; span=(0, 23), match='force_screenshot: False'>
+2024-11-12 13:20:06,325 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,325 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,328 - INFO - Entry already exists for Stat_Name: force_screenshot, Stat_Value: False, UniqueKey: 1
+2024-11-12 13:20:06,329 - INFO - Inserted Data to table
+2024-11-12 13:20:06,329 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,330 - INFO - match = <re.Match object; span=(0, 21), match='mpi_retry_count: None'>
+2024-11-12 13:20:06,330 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,330 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,333 - INFO - Entry already exists for Stat_Name: mpi_retry_count, Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,334 - INFO - Inserted Data to table
+2024-11-12 13:20:06,335 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,335 - INFO - match = <re.Match object; span=(0, 25), match='num_qtm3_iterations: None'>
+2024-11-12 13:20:06,335 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,335 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,338 - INFO - Entry already exists for Stat_Name: num_qtm3_iterations, Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,339 - INFO - Inserted Data to table
+2024-11-12 13:20:06,339 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,339 - INFO - match = <re.Match object; span=(0, 25), match='num_qtm4_iterations: None'>
+2024-11-12 13:20:06,339 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,340 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,342 - INFO - Entry already exists for Stat_Name: num_qtm4_iterations, Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,343 - INFO - Inserted Data to table
+2024-11-12 13:20:06,344 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,344 - INFO - match = <re.Match object; span=(0, 25), match='num_qtm5_iterations: None'>
+2024-11-12 13:20:06,344 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,344 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,347 - INFO - Entry already exists for Stat_Name: num_qtm5_iterations, Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,348 - INFO - Inserted Data to table
+2024-11-12 13:20:06,348 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,348 - INFO - match = <re.Match object; span=(0, 29), match='mask_num_deleted_shapes: None'>
+2024-11-12 13:20:06,348 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,348 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,351 - INFO - Entry already exists for Stat_Name: mask_num_deleted_shapes, Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,352 - INFO - Inserted Data to table
+2024-11-12 13:20:06,352 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,352 - INFO - match = <re.Match object; span=(0, 29), match='mask_num_upsized_shapes: None'>
+2024-11-12 13:20:06,353 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,353 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,356 - INFO - Entry already exists for Stat_Name: mask_num_upsized_shapes, Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,357 - INFO - Inserted Data to table
+2024-11-12 13:20:06,357 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,357 - INFO - match = <re.Match object; span=(0, 27), match='num_pixel_corrections: None'>
+2024-11-12 13:20:06,357 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,357 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,360 - INFO - Entry already exists for Stat_Name: num_pixel_corrections, Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,362 - INFO - Inserted Data to table
+2024-11-12 13:20:06,362 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,362 - INFO - match = <re.Match object; span=(0, 26), match='num_part_corrections: None'>
+2024-11-12 13:20:06,362 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,362 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,365 - INFO - Entry already exists for Stat_Name: num_part_corrections, Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,366 - INFO - Inserted Data to table
+2024-11-12 13:20:06,366 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,367 - INFO - match = <re.Match object; span=(0, 31), match='delete_mask_polygon_count: None'>
+2024-11-12 13:20:06,367 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,367 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,369 - INFO - Entry already exists for Stat_Name: delete_mask_polygon_count, Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,371 - INFO - Inserted Data to table
+2024-11-12 13:20:06,371 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,371 - INFO - match = <re.Match object; span=(0, 29), match='delete_mask_polygon_max: None'>
+2024-11-12 13:20:06,371 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,371 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,374 - INFO - Entry already exists for Stat_Name: delete_mask_polygon_max, Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,375 - INFO - Inserted Data to table
+2024-11-12 13:20:06,375 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,376 - INFO - match = <re.Match object; span=(0, 29), match='delete_mask_polygon_min: None'>
+2024-11-12 13:20:06,376 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,376 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,379 - INFO - Entry already exists for Stat_Name: delete_mask_polygon_min, Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,380 - INFO - Inserted Data to table
+2024-11-12 13:20:06,380 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,380 - INFO - match = <re.Match object; span=(0, 33), match='upsizing_mask_polygon_count: None'>
+2024-11-12 13:20:06,380 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,381 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,383 - INFO - Entry already exists for Stat_Name: upsizing_mask_polygon_count, Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,385 - INFO - Inserted Data to table
+2024-11-12 13:20:06,385 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,385 - INFO - match = <re.Match object; span=(0, 31), match='upsizing_mask_polygon_max: None'>
+2024-11-12 13:20:06,385 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,385 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,388 - INFO - Entry already exists for Stat_Name: upsizing_mask_polygon_max, Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,389 - INFO - Inserted Data to table
+2024-11-12 13:20:06,389 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,389 - INFO - match = <re.Match object; span=(0, 31), match='upsizing_mask_polygon_min: None'>
+2024-11-12 13:20:06,390 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,390 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,393 - INFO - Entry already exists for Stat_Name: upsizing_mask_polygon_min, Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,394 - INFO - Inserted Data to table
+2024-11-12 13:20:06,394 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,394 - INFO - match = <re.Match object; span=(0, 36), match='number_of_optimized_partitions: 1024'>
+2024-11-12 13:20:06,394 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,395 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,398 - INFO - Entry already exists for Stat_Name: number_of_optimized_partitions, Stat_Value: 1024, UniqueKey: 1
+2024-11-12 13:20:06,399 - INFO - Inserted Data to table
+2024-11-12 13:20:06,399 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,399 - INFO - match = <re.Match object; span=(0, 32), match='total_number_of_partitions: 1024'>
+2024-11-12 13:20:06,400 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,400 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,403 - INFO - Entry already exists for Stat_Name: total_number_of_partitions, Stat_Value: 1024, UniqueKey: 1
+2024-11-12 13:20:06,404 - INFO - Inserted Data to table
+2024-11-12 13:20:06,404 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,404 - INFO - match = <re.Match object; span=(0, 19), match='parsing_time: False'>
+2024-11-12 13:20:06,405 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,405 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,408 - INFO - Entry already exists for Stat_Name: parsing_time, Stat_Value: False, UniqueKey: 1
+2024-11-12 13:20:06,409 - INFO - Inserted Data to table
+2024-11-12 13:20:06,409 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,409 - INFO - match = <re.Match object; span=(0, 20), match='design_size: 0.85785'>
+2024-11-12 13:20:06,409 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,410 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,412 - INFO - Entry already exists for Stat_Name: design_size, Stat_Value: 0.85785, UniqueKey: 1
+2024-11-12 13:20:06,414 - INFO - Inserted Data to table
+2024-11-12 13:20:06,414 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,414 - INFO - match = <re.Match object; span=(0, 23), match='mask_file_size: 2258.88'>
+2024-11-12 13:20:06,414 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,414 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,417 - INFO - Entry already exists for Stat_Name: mask_file_size, Stat_Value: 2258.88, UniqueKey: 1
+2024-11-12 13:20:06,418 - INFO - Inserted Data to table
+2024-11-12 13:20:06,418 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,419 - INFO - match = <re.Match object; span=(0, 19), match='machine_name: cdp51'>
+2024-11-12 13:20:06,419 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,419 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,422 - INFO - Entry already exists for Stat_Name: machine_name, Stat_Value: cdp51, UniqueKey: 1
+2024-11-12 13:20:06,423 - INFO - Inserted Data to table
+2024-11-12 13:20:06,423 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,424 - INFO - match = <re.Match object; span=(0, 25), match='run_date_time: 2024-08-01'>
+2024-11-12 13:20:06,424 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,424 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,427 - INFO - Entry already exists for Stat_Name: run_date_time, Stat_Value: 2024-08-01, UniqueKey: 1
+2024-11-12 13:20:06,428 - INFO - Inserted Data to table
+2024-11-12 13:20:06,429 - INFO - 
+ Line starts with [
+2024-11-12 13:20:06,429 - INFO - Table found : Runtime Analysis Stats
+2024-11-12 13:20:06,429 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,429 - INFO - match = <re.Match object; span=(0, 27), match='target_prep_runtime: 420.75'>
+2024-11-12 13:20:06,429 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,429 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,434 - INFO - Entry already exists for Stat_Name: target_prep_runtime, Stat_Value: 420.75, UniqueKey: 1
+2024-11-12 13:20:06,436 - INFO - Inserted Data to table
+2024-11-12 13:20:06,436 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,436 - INFO - match = <re.Match object; span=(0, 14), match='ctm_fg: 830.40'>
+2024-11-12 13:20:06,436 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,436 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,439 - INFO - Entry already exists for Stat_Name: ctm_fg, Stat_Value: 830.40, UniqueKey: 1
+2024-11-12 13:20:06,441 - INFO - Inserted Data to table
+2024-11-12 13:20:06,441 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,441 - INFO - match = <re.Match object; span=(0, 15), match='qtm_fg: 3960.60'>
+2024-11-12 13:20:06,441 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,442 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,445 - INFO - Entry already exists for Stat_Name: qtm_fg, Stat_Value: 3960.60, UniqueKey: 1
+2024-11-12 13:20:06,446 - INFO - Inserted Data to table
+2024-11-12 13:20:06,447 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,447 - INFO - match = <re.Match object; span=(0, 17), match='ctm_prep: 2300.25'>
+2024-11-12 13:20:06,447 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,447 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,450 - INFO - Entry already exists for Stat_Name: ctm_prep, Stat_Value: 2300.25, UniqueKey: 1
+2024-11-12 13:20:06,451 - INFO - Inserted Data to table
+2024-11-12 13:20:06,451 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,451 - INFO - match = <re.Match object; span=(0, 17), match='qtm0_prep: 880.00'>
+2024-11-12 13:20:06,452 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,452 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,454 - INFO - Entry already exists for Stat_Name: qtm0_prep, Stat_Value: 880.00, UniqueKey: 1
+2024-11-12 13:20:06,456 - INFO - Inserted Data to table
+2024-11-12 13:20:06,456 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,456 - INFO - match = <re.Match object; span=(0, 18), match='qtm1_prep: 1070.50'>
+2024-11-12 13:20:06,456 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,456 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,459 - INFO - Entry already exists for Stat_Name: qtm1_prep, Stat_Value: 1070.50, UniqueKey: 1
+2024-11-12 13:20:06,461 - INFO - Inserted Data to table
+2024-11-12 13:20:06,461 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,461 - INFO - match = <re.Match object; span=(0, 18), match='qtm2_prep: 1150.60'>
+2024-11-12 13:20:06,461 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,461 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,464 - INFO - Entry already exists for Stat_Name: qtm2_prep, Stat_Value: 1150.60, UniqueKey: 1
+2024-11-12 13:20:06,466 - INFO - Inserted Data to table
+2024-11-12 13:20:06,466 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,466 - INFO - match = <re.Match object; span=(0, 17), match='qtm3_prep: 630.75'>
+2024-11-12 13:20:06,466 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,466 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,469 - INFO - Entry already exists for Stat_Name: qtm3_prep, Stat_Value: 630.75, UniqueKey: 1
+2024-11-12 13:20:06,471 - INFO - Inserted Data to table
+2024-11-12 13:20:06,471 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,471 - INFO - match = <re.Match object; span=(0, 12), match='qtm4_prep: 0'>
+2024-11-12 13:20:06,471 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,471 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,474 - INFO - Entry already exists for Stat_Name: qtm4_prep, Stat_Value: 0, UniqueKey: 1
+2024-11-12 13:20:06,476 - INFO - Inserted Data to table
+2024-11-12 13:20:06,476 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,476 - INFO - match = <re.Match object; span=(0, 12), match='qtm5_prep: 0'>
+2024-11-12 13:20:06,476 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,476 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,479 - INFO - Entry already exists for Stat_Name: qtm5_prep, Stat_Value: 0, UniqueKey: 1
+2024-11-12 13:20:06,481 - INFO - Inserted Data to table
+2024-11-12 13:20:06,481 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,481 - INFO - match = <re.Match object; span=(0, 19), match='qtm0_total: 1300.00'>
+2024-11-12 13:20:06,481 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,481 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,484 - INFO - Entry already exists for Stat_Name: qtm0_total, Stat_Value: 1300.00, UniqueKey: 1
+2024-11-12 13:20:06,485 - INFO - Inserted Data to table
+2024-11-12 13:20:06,486 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,486 - INFO - match = <re.Match object; span=(0, 19), match='qtm1_total: 1650.75'>
+2024-11-12 13:20:06,486 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,486 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,489 - INFO - Entry already exists for Stat_Name: qtm1_total, Stat_Value: 1650.75, UniqueKey: 1
+2024-11-12 13:20:06,490 - INFO - Inserted Data to table
+2024-11-12 13:20:06,490 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,490 - INFO - match = <re.Match object; span=(0, 19), match='qtm2_total: 2000.90'>
+2024-11-12 13:20:06,490 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,490 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,493 - INFO - Entry already exists for Stat_Name: qtm2_total, Stat_Value: 2000.90, UniqueKey: 1
+2024-11-12 13:20:06,495 - INFO - Inserted Data to table
+2024-11-12 13:20:06,495 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,495 - INFO - match = <re.Match object; span=(0, 19), match='qtm3_total: 4550.00'>
+2024-11-12 13:20:06,495 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,495 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,498 - INFO - Entry already exists for Stat_Name: qtm3_total, Stat_Value: 4550.00, UniqueKey: 1
+2024-11-12 13:20:06,500 - INFO - Inserted Data to table
+2024-11-12 13:20:06,500 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,500 - INFO - match = <re.Match object; span=(0, 13), match='qtm4_total: 0'>
+2024-11-12 13:20:06,500 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,500 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,503 - INFO - Entry already exists for Stat_Name: qtm4_total, Stat_Value: 0, UniqueKey: 1
+2024-11-12 13:20:06,505 - INFO - Inserted Data to table
+2024-11-12 13:20:06,505 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,505 - INFO - match = <re.Match object; span=(0, 13), match='qtm5_total: 0'>
+2024-11-12 13:20:06,505 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,505 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,508 - INFO - Entry already exists for Stat_Name: qtm5_total, Stat_Value: 0, UniqueKey: 1
+2024-11-12 13:20:06,509 - INFO - Inserted Data to table
+2024-11-12 13:20:06,509 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,509 - INFO - match = <re.Match object; span=(0, 22), match='ctm_exec_time: 3200.00'>
+2024-11-12 13:20:06,510 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,510 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,512 - INFO - Entry already exists for Stat_Name: ctm_exec_time, Stat_Value: 3200.00, UniqueKey: 1
+2024-11-12 13:20:06,513 - INFO - Inserted Data to table
+2024-11-12 13:20:06,514 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,514 - INFO - match = <re.Match object; span=(0, 23), match='qtm_exec_time: 11200.00'>
+2024-11-12 13:20:06,514 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,514 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,516 - INFO - Entry already exists for Stat_Name: qtm_exec_time, Stat_Value: 11200.00, UniqueKey: 1
+2024-11-12 13:20:06,518 - INFO - Inserted Data to table
+2024-11-12 13:20:06,518 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,518 - INFO - match = <re.Match object; span=(0, 30), match='postprocess_exec_time: 1400.00'>
+2024-11-12 13:20:06,518 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,518 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,521 - INFO - Entry already exists for Stat_Name: postprocess_exec_time, Stat_Value: 1400.00, UniqueKey: 1
+2024-11-12 13:20:06,522 - INFO - Inserted Data to table
+2024-11-12 13:20:06,522 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,522 - INFO - match = <re.Match object; span=(0, 29), match='total_fermi_runtime: 16200.00'>
+2024-11-12 13:20:06,522 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,522 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,525 - INFO - Entry already exists for Stat_Name: total_fermi_runtime, Stat_Value: 16200.00, UniqueKey: 1
+2024-11-12 13:20:06,526 - INFO - Inserted Data to table
+2024-11-12 13:20:06,527 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,527 - INFO - match = <re.Match object; span=(0, 25), match='the_checker_runtime: None'>
+2024-11-12 13:20:06,527 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,527 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,530 - INFO - Entry already exists for Stat_Name: the_checker_runtime, Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,531 - INFO - Inserted Data to table
+2024-11-12 13:20:06,531 - INFO - 
+ Line starts with [
+2024-11-12 13:20:06,531 - INFO - Table found : Geometric Analysis Stats
+2024-11-12 13:20:06,531 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,531 - INFO - match = <re.Match object; span=(0, 41), match='high_curvature_internal_checking_count: 0'>
+2024-11-12 13:20:06,531 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,531 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,544 - INFO - Entry already exists for Stat_Name: high_curvature_internal_checking_count, Stat_Value: 0, UniqueKey: 1
+2024-11-12 13:20:06,546 - INFO - Inserted Data to table
+2024-11-12 13:20:06,546 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,546 - INFO - match = <re.Match object; span=(0, 47), match='high_curvature_internal_checking_max_value: 0.0'>
+2024-11-12 13:20:06,546 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,546 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,550 - INFO - Entry already exists for Stat_Name: high_curvature_internal_checking_max_value, Stat_Value: 0.0, UniqueKey: 1
+2024-11-12 13:20:06,551 - INFO - Inserted Data to table
+2024-11-12 13:20:06,551 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,552 - INFO - match = <re.Match object; span=(0, 47), match='high_curvature_internal_checking_min_value: 0.0'>
+2024-11-12 13:20:06,552 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,552 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,555 - INFO - Entry already exists for Stat_Name: high_curvature_internal_checking_min_value, Stat_Value: 0.0, UniqueKey: 1
+2024-11-12 13:20:06,556 - INFO - Inserted Data to table
+2024-11-12 13:20:06,556 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,557 - INFO - match = <re.Match object; span=(0, 44), match='high_curvature_internal_checking_marker_x: 0'>
+2024-11-12 13:20:06,557 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,557 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,560 - INFO - Entry already exists for Stat_Name: high_curvature_internal_checking_marker_x, Stat_Value: 0, UniqueKey: 1
+2024-11-12 13:20:06,562 - INFO - Inserted Data to table
+2024-11-12 13:20:06,562 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,562 - INFO - match = <re.Match object; span=(0, 44), match='high_curvature_internal_checking_marker_y: 0'>
+2024-11-12 13:20:06,562 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,562 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,565 - INFO - Entry already exists for Stat_Name: high_curvature_internal_checking_marker_y, Stat_Value: 0, UniqueKey: 1
+2024-11-12 13:20:06,566 - INFO - Inserted Data to table
+2024-11-12 13:20:06,567 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,567 - INFO - match = <re.Match object; span=(0, 41), match='high_curvature_external_checking_count: 0'>
+2024-11-12 13:20:06,567 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,567 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,569 - INFO - Entry already exists for Stat_Name: high_curvature_external_checking_count, Stat_Value: 0, UniqueKey: 1
+2024-11-12 13:20:06,571 - INFO - Inserted Data to table
+2024-11-12 13:20:06,571 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,571 - INFO - match = <re.Match object; span=(0, 47), match='high_curvature_external_checking_max_value: 0.0'>
+2024-11-12 13:20:06,571 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,571 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,574 - INFO - Entry already exists for Stat_Name: high_curvature_external_checking_max_value, Stat_Value: 0.0, UniqueKey: 1
+2024-11-12 13:20:06,575 - INFO - Inserted Data to table
+2024-11-12 13:20:06,575 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,575 - INFO - match = <re.Match object; span=(0, 47), match='high_curvature_external_checking_min_value: 0.0'>
+2024-11-12 13:20:06,575 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,575 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,578 - INFO - Entry already exists for Stat_Name: high_curvature_external_checking_min_value, Stat_Value: 0.0, UniqueKey: 1
+2024-11-12 13:20:06,579 - INFO - Inserted Data to table
+2024-11-12 13:20:06,579 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,579 - INFO - match = <re.Match object; span=(0, 44), match='high_curvature_external_checking_marker_x: 0'>
+2024-11-12 13:20:06,579 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,579 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,582 - INFO - Entry already exists for Stat_Name: high_curvature_external_checking_marker_x, Stat_Value: 0, UniqueKey: 1
+2024-11-12 13:20:06,583 - INFO - Inserted Data to table
+2024-11-12 13:20:06,583 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,583 - INFO - match = <re.Match object; span=(0, 44), match='high_curvature_external_checking_marker_y: 0'>
+2024-11-12 13:20:06,583 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,583 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,586 - INFO - Entry already exists for Stat_Name: high_curvature_external_checking_marker_y, Stat_Value: 0, UniqueKey: 1
+2024-11-12 13:20:06,587 - INFO - Inserted Data to table
+2024-11-12 13:20:06,587 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,587 - INFO - match = <re.Match object; span=(0, 17), match='mrc_area_count: 0'>
+2024-11-12 13:20:06,587 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,587 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,590 - INFO - Entry already exists for Stat_Name: mrc_area_count, Stat_Value: 0, UniqueKey: 1
+2024-11-12 13:20:06,591 - INFO - Inserted Data to table
+2024-11-12 13:20:06,591 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,591 - INFO - match = <re.Match object; span=(0, 23), match='mrc_area_max_value: 0.0'>
+2024-11-12 13:20:06,592 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,592 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,594 - INFO - Entry already exists for Stat_Name: mrc_area_max_value, Stat_Value: 0.0, UniqueKey: 1
+2024-11-12 13:20:06,596 - INFO - Inserted Data to table
+2024-11-12 13:20:06,596 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,596 - INFO - match = <re.Match object; span=(0, 23), match='mrc_area_min_value: 0.0'>
+2024-11-12 13:20:06,596 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,596 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,599 - INFO - Entry already exists for Stat_Name: mrc_area_min_value, Stat_Value: 0.0, UniqueKey: 1
+2024-11-12 13:20:06,600 - INFO - Inserted Data to table
+2024-11-12 13:20:06,600 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,600 - INFO - match = <re.Match object; span=(0, 20), match='mrc_area_marker_x: 0'>
+2024-11-12 13:20:06,600 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,600 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,603 - INFO - Entry already exists for Stat_Name: mrc_area_marker_x, Stat_Value: 0, UniqueKey: 1
+2024-11-12 13:20:06,604 - INFO - Inserted Data to table
+2024-11-12 13:20:06,604 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,604 - INFO - match = <re.Match object; span=(0, 20), match='mrc_area_marker_y: 0'>
+2024-11-12 13:20:06,604 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,604 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,607 - INFO - Entry already exists for Stat_Name: mrc_area_marker_y, Stat_Value: 0, UniqueKey: 1
+2024-11-12 13:20:06,608 - INFO - Inserted Data to table
+2024-11-12 13:20:06,608 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,608 - INFO - match = <re.Match object; span=(0, 38), match='imrcfix_max_correction_max_value: None'>
+2024-11-12 13:20:06,608 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,608 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,611 - INFO - Entry already exists for Stat_Name: imrcfix_max_correction_max_value, Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,612 - INFO - Inserted Data to table
+2024-11-12 13:20:06,613 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,613 - INFO - match = <re.Match object; span=(0, 58), match='imrcfix_total_number_of_fixed_mrc_width_errors_co>
+2024-11-12 13:20:06,613 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,613 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,615 - INFO - Inserting new entry for Stat_Name: imrcfix_total_number_of_fixed_mrc_width_errors_count with Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,619 - ERROR - Error upserting stats for Stat_Name: imrcfix_total_number_of_fixed_mrc_width_errors_count - (pymysql.err.DataError) (1406, "Data too long for column 'Stat_Name' at row 1")
+[SQL: INSERT INTO `Geometric_Analysis_Stats` (`Stat_Name`, `Stat_Value`, `UniqueKey`) VALUES (%(Stat_Name)s, %(Stat_Value)s, %(UniqueKey)s)]
+[parameters: {'Stat_Name': 'imrcfix_total_number_of_fixed_mrc_width_errors_count', 'Stat_Value': 'None', 'UniqueKey': 1}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2024-11-12 13:20:06,619 - INFO - Inserted Data to table
+2024-11-12 13:20:06,619 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,619 - INFO - match = <re.Match object; span=(0, 68), match='imrcfix_total_number_of_partially_fixed_mrc_width>
+2024-11-12 13:20:06,620 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,620 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,622 - INFO - Inserting new entry for Stat_Name: imrcfix_total_number_of_partially_fixed_mrc_width_errors_count with Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,625 - ERROR - Error upserting stats for Stat_Name: imrcfix_total_number_of_partially_fixed_mrc_width_errors_count - (pymysql.err.DataError) (1406, "Data too long for column 'Stat_Name' at row 1")
+[SQL: INSERT INTO `Geometric_Analysis_Stats` (`Stat_Name`, `Stat_Value`, `UniqueKey`) VALUES (%(Stat_Name)s, %(Stat_Value)s, %(UniqueKey)s)]
+[parameters: {'Stat_Name': 'imrcfix_total_number_of_partially_fixed_mrc_width_errors_count', 'Stat_Value': 'None', 'UniqueKey': 1}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2024-11-12 13:20:06,625 - INFO - Inserted Data to table
+2024-11-12 13:20:06,625 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,626 - INFO - match = <re.Match object; span=(0, 53), match='imrcfix_the_worst_width_error_overall_max_value: >
+2024-11-12 13:20:06,626 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,626 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,629 - INFO - Entry already exists for Stat_Name: imrcfix_the_worst_width_error_overall_max_value, Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,630 - INFO - Inserted Data to table
+2024-11-12 13:20:06,630 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,630 - INFO - match = <re.Match object; span=(0, 60), match='imrcfix_total_number_of_fixed_mrc_spacing_errors_>
+2024-11-12 13:20:06,630 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,630 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,633 - INFO - Inserting new entry for Stat_Name: imrcfix_total_number_of_fixed_mrc_spacing_errors_count with Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,635 - ERROR - Error upserting stats for Stat_Name: imrcfix_total_number_of_fixed_mrc_spacing_errors_count - (pymysql.err.DataError) (1406, "Data too long for column 'Stat_Name' at row 1")
+[SQL: INSERT INTO `Geometric_Analysis_Stats` (`Stat_Name`, `Stat_Value`, `UniqueKey`) VALUES (%(Stat_Name)s, %(Stat_Value)s, %(UniqueKey)s)]
+[parameters: {'Stat_Name': 'imrcfix_total_number_of_fixed_mrc_spacing_errors_count', 'Stat_Value': 'None', 'UniqueKey': 1}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2024-11-12 13:20:06,635 - INFO - Inserted Data to table
+2024-11-12 13:20:06,636 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,636 - INFO - match = <re.Match object; span=(0, 70), match='imrcfix_total_number_of_partially_fixed_mrc_spaci>
+2024-11-12 13:20:06,636 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,636 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,639 - INFO - Inserting new entry for Stat_Name: imrcfix_total_number_of_partially_fixed_mrc_spacing_errors_count with Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,641 - ERROR - Error upserting stats for Stat_Name: imrcfix_total_number_of_partially_fixed_mrc_spacing_errors_count - (pymysql.err.DataError) (1406, "Data too long for column 'Stat_Name' at row 1")
+[SQL: INSERT INTO `Geometric_Analysis_Stats` (`Stat_Name`, `Stat_Value`, `UniqueKey`) VALUES (%(Stat_Name)s, %(Stat_Value)s, %(UniqueKey)s)]
+[parameters: {'Stat_Name': 'imrcfix_total_number_of_partially_fixed_mrc_spacing_errors_count', 'Stat_Value': 'None', 'UniqueKey': 1}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2024-11-12 13:20:06,642 - INFO - Inserted Data to table
+2024-11-12 13:20:06,642 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,642 - INFO - match = <re.Match object; span=(0, 55), match='imrcfix_the_worst_spacing_error_overall_max_value>
+2024-11-12 13:20:06,642 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,642 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,653 - INFO - Entry already exists for Stat_Name: imrcfix_the_worst_spacing_error_overall_max_value, Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,654 - INFO - Inserted Data to table
+2024-11-12 13:20:06,655 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,655 - INFO - match = <re.Match object; span=(0, 57), match='imrcfix_total_number_of_unimproved_mrc_errors_cou>
+2024-11-12 13:20:06,655 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,655 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,658 - INFO - Inserting new entry for Stat_Name: imrcfix_total_number_of_unimproved_mrc_errors_count with Stat_Value: None, UniqueKey: 1
+2024-11-12 13:20:06,661 - ERROR - Error upserting stats for Stat_Name: imrcfix_total_number_of_unimproved_mrc_errors_count - (pymysql.err.DataError) (1406, "Data too long for column 'Stat_Name' at row 1")
+[SQL: INSERT INTO `Geometric_Analysis_Stats` (`Stat_Name`, `Stat_Value`, `UniqueKey`) VALUES (%(Stat_Name)s, %(Stat_Value)s, %(UniqueKey)s)]
+[parameters: {'Stat_Name': 'imrcfix_total_number_of_unimproved_mrc_errors_count', 'Stat_Value': 'None', 'UniqueKey': 1}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2024-11-12 13:20:06,661 - INFO - Inserted Data to table
+2024-11-12 13:20:06,661 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,661 - INFO - match = <re.Match object; span=(0, 43), match='high_curvature_internal_checking_setting: 7'>
+2024-11-12 13:20:06,662 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,662 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,665 - INFO - Entry already exists for Stat_Name: high_curvature_internal_checking_setting, Stat_Value: 7, UniqueKey: 1
+2024-11-12 13:20:06,667 - INFO - Inserted Data to table
+2024-11-12 13:20:06,667 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,667 - INFO - match = <re.Match object; span=(0, 43), match='high_curvature_external_checking_setting: 7'>
+2024-11-12 13:20:06,667 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,667 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,670 - INFO - Entry already exists for Stat_Name: high_curvature_external_checking_setting, Stat_Value: 7, UniqueKey: 1
+2024-11-12 13:20:06,672 - INFO - Inserted Data to table
+2024-11-12 13:20:06,672 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,672 - INFO - match = <re.Match object; span=(0, 21), match='mrc_area_setting: 520'>
+2024-11-12 13:20:06,672 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,672 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,675 - INFO - Entry already exists for Stat_Name: mrc_area_setting, Stat_Value: 520, UniqueKey: 1
+2024-11-12 13:20:06,677 - INFO - Inserted Data to table
+2024-11-12 13:20:06,677 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,677 - INFO - match = <re.Match object; span=(0, 25), match='mrc_spacing_setting: 13.0'>
+2024-11-12 13:20:06,677 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,677 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,680 - INFO - Entry already exists for Stat_Name: mrc_spacing_setting, Stat_Value: 13.0, UniqueKey: 1
+2024-11-12 13:20:06,682 - INFO - Inserted Data to table
+2024-11-12 13:20:06,682 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,682 - INFO - match = <re.Match object; span=(0, 23), match='mrc_width_setting: 13.0'>
+2024-11-12 13:20:06,683 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,683 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,685 - INFO - Entry already exists for Stat_Name: mrc_width_setting, Stat_Value: 13.0, UniqueKey: 1
+2024-11-12 13:20:06,687 - INFO - Inserted Data to table
+2024-11-12 13:20:06,687 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,688 - INFO - match = <re.Match object; span=(0, 18), match='mrc_width_count: 0'>
+2024-11-12 13:20:06,688 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,688 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,691 - INFO - Entry already exists for Stat_Name: mrc_width_count, Stat_Value: 0, UniqueKey: 1
+2024-11-12 13:20:06,692 - INFO - Inserted Data to table
+2024-11-12 13:20:06,692 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,692 - INFO - match = <re.Match object; span=(0, 24), match='mrc_width_max_value: 0.0'>
+2024-11-12 13:20:06,692 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,692 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,695 - INFO - Entry already exists for Stat_Name: mrc_width_max_value, Stat_Value: 0.0, UniqueKey: 1
+2024-11-12 13:20:06,697 - INFO - Inserted Data to table
+2024-11-12 13:20:06,697 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,697 - INFO - match = <re.Match object; span=(0, 24), match='mrc_width_min_value: 0.0'>
+2024-11-12 13:20:06,697 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,697 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,700 - INFO - Entry already exists for Stat_Name: mrc_width_min_value, Stat_Value: 0.0, UniqueKey: 1
+2024-11-12 13:20:06,701 - INFO - Inserted Data to table
+2024-11-12 13:20:06,701 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,701 - INFO - match = <re.Match object; span=(0, 21), match='mrc_width_marker_x: 0'>
+2024-11-12 13:20:06,701 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,701 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,704 - INFO - Entry already exists for Stat_Name: mrc_width_marker_x, Stat_Value: 0, UniqueKey: 1
+2024-11-12 13:20:06,705 - INFO - Inserted Data to table
+2024-11-12 13:20:06,705 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,705 - INFO - match = <re.Match object; span=(0, 21), match='mrc_width_marker_y: 0'>
+2024-11-12 13:20:06,705 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,705 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,708 - INFO - Entry already exists for Stat_Name: mrc_width_marker_y, Stat_Value: 0, UniqueKey: 1
+2024-11-12 13:20:06,709 - INFO - Inserted Data to table
+2024-11-12 13:20:06,709 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,709 - INFO - match = <re.Match object; span=(0, 20), match='mrc_spacing_count: 0'>
+2024-11-12 13:20:06,710 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,710 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,712 - INFO - Entry already exists for Stat_Name: mrc_spacing_count, Stat_Value: 0, UniqueKey: 1
+2024-11-12 13:20:06,713 - INFO - Inserted Data to table
+2024-11-12 13:20:06,714 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,714 - INFO - match = <re.Match object; span=(0, 26), match='mrc_spacing_max_value: 0.0'>
+2024-11-12 13:20:06,714 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,714 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,716 - INFO - Entry already exists for Stat_Name: mrc_spacing_max_value, Stat_Value: 0.0, UniqueKey: 1
+2024-11-12 13:20:06,717 - INFO - Inserted Data to table
+2024-11-12 13:20:06,717 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,718 - INFO - match = <re.Match object; span=(0, 26), match='mrc_spacing_min_value: 0.0'>
+2024-11-12 13:20:06,718 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,718 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,720 - INFO - Entry already exists for Stat_Name: mrc_spacing_min_value, Stat_Value: 0.0, UniqueKey: 1
+2024-11-12 13:20:06,721 - INFO - Inserted Data to table
+2024-11-12 13:20:06,721 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,722 - INFO - match = <re.Match object; span=(0, 23), match='mrc_spacing_marker_x: 0'>
+2024-11-12 13:20:06,722 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,722 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,724 - INFO - Entry already exists for Stat_Name: mrc_spacing_marker_x, Stat_Value: 0, UniqueKey: 1
+2024-11-12 13:20:06,725 - INFO - Inserted Data to table
+2024-11-12 13:20:06,725 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,726 - INFO - match = <re.Match object; span=(0, 23), match='mrc_spacing_marker_y: 0'>
+2024-11-12 13:20:06,726 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,726 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,728 - INFO - Entry already exists for Stat_Name: mrc_spacing_marker_y, Stat_Value: 0, UniqueKey: 1
+2024-11-12 13:20:06,729 - INFO - Inserted Data to table
+2024-11-12 13:20:06,729 - INFO - 
+ Line starts with [
+2024-11-12 13:20:06,730 - INFO - Table found : Statistical Analysis:EPE_Target_vs_Mask_Simulation_Negfocus
+2024-11-12 13:20:06,730 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,730 - INFO - match = None
+2024-11-12 13:20:06,730 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,730 - INFO - match = <re.Match object; span=(0, 17), match='mean_fermi: -1.15'>
+2024-11-12 13:20:06,730 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,730 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,735 - INFO - Entry already exists for Stat_Name: mean_fermi, Stat_Value: -1.15, UniqueKey: 1
+2024-11-12 13:20:06,736 - INFO - Inserted Data to table
+2024-11-12 13:20:06,736 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,736 - INFO - match = <re.Match object; span=(0, 15), match='std_fermi: 0.51'>
+2024-11-12 13:20:06,736 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,736 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,739 - INFO - Entry already exists for Stat_Name: std_fermi, Stat_Value: 0.51, UniqueKey: 1
+2024-11-12 13:20:06,740 - INFO - Inserted Data to table
+2024-11-12 13:20:06,740 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,740 - INFO - match = <re.Match object; span=(0, 15), match='max_fermi: 3.80'>
+2024-11-12 13:20:06,740 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,741 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,743 - INFO - Entry already exists for Stat_Name: max_fermi, Stat_Value: 3.80, UniqueKey: 1
+2024-11-12 13:20:06,744 - INFO - Inserted Data to table
+2024-11-12 13:20:06,744 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,745 - INFO - match = <re.Match object; span=(0, 18), match='count_fermi: 30000'>
+2024-11-12 13:20:06,745 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,745 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,747 - INFO - Entry already exists for Stat_Name: count_fermi, Stat_Value: 30000, UniqueKey: 1
+2024-11-12 13:20:06,749 - INFO - Inserted Data to table
+2024-11-12 13:20:06,749 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,749 - INFO - match = <re.Match object; span=(0, 24), match='marker_x_fermi: 828000.0'>
+2024-11-12 13:20:06,749 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,749 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,752 - INFO - Entry already exists for Stat_Name: marker_x_fermi, Stat_Value: 828000.0, UniqueKey: 1
+2024-11-12 13:20:06,753 - INFO - Inserted Data to table
+2024-11-12 13:20:06,753 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,753 - INFO - match = <re.Match object; span=(0, 23), match='marker_y_fermi: 36000.0'>
+2024-11-12 13:20:06,753 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,753 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,756 - INFO - Entry already exists for Stat_Name: marker_y_fermi, Stat_Value: 36000.0, UniqueKey: 1
+2024-11-12 13:20:06,757 - INFO - Inserted Data to table
+2024-11-12 13:20:06,757 - INFO - 
+ Line starts with [
+2024-11-12 13:20:06,758 - INFO - Table found : Statistical Analysis:EPE_Target_vs_Mask_Simulation_Negdose
+2024-11-12 13:20:06,758 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,758 - INFO - match = None
+2024-11-12 13:20:06,758 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,758 - INFO - match = <re.Match object; span=(0, 17), match='mean_fermi: -1.15'>
+2024-11-12 13:20:06,758 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,758 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,764 - INFO - Entry already exists for Stat_Name: mean_fermi, Stat_Value: -1.15, UniqueKey: 1
+2024-11-12 13:20:06,765 - INFO - Inserted Data to table
+2024-11-12 13:20:06,765 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,765 - INFO - match = <re.Match object; span=(0, 15), match='std_fermi: 0.51'>
+2024-11-12 13:20:06,765 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,765 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,768 - INFO - Entry already exists for Stat_Name: std_fermi, Stat_Value: 0.51, UniqueKey: 1
+2024-11-12 13:20:06,769 - INFO - Inserted Data to table
+2024-11-12 13:20:06,770 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,770 - INFO - match = <re.Match object; span=(0, 15), match='max_fermi: 3.80'>
+2024-11-12 13:20:06,770 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,770 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,772 - INFO - Entry already exists for Stat_Name: max_fermi, Stat_Value: 3.80, UniqueKey: 1
+2024-11-12 13:20:06,774 - INFO - Inserted Data to table
+2024-11-12 13:20:06,774 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,774 - INFO - match = <re.Match object; span=(0, 18), match='count_fermi: 30000'>
+2024-11-12 13:20:06,774 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,774 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,777 - INFO - Entry already exists for Stat_Name: count_fermi, Stat_Value: 30000, UniqueKey: 1
+2024-11-12 13:20:06,778 - INFO - Inserted Data to table
+2024-11-12 13:20:06,778 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,778 - INFO - match = <re.Match object; span=(0, 24), match='marker_x_fermi: 828000.0'>
+2024-11-12 13:20:06,778 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,779 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,781 - INFO - Entry already exists for Stat_Name: marker_x_fermi, Stat_Value: 828000.0, UniqueKey: 1
+2024-11-12 13:20:06,782 - INFO - Inserted Data to table
+2024-11-12 13:20:06,782 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,783 - INFO - match = <re.Match object; span=(0, 23), match='marker_y_fermi: 36000.0'>
+2024-11-12 13:20:06,783 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,783 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,786 - INFO - Entry already exists for Stat_Name: marker_y_fermi, Stat_Value: 36000.0, UniqueKey: 1
+2024-11-12 13:20:06,788 - INFO - Inserted Data to table
+2024-11-12 13:20:06,788 - INFO - 
+ Line starts with [
+2024-11-12 13:20:06,788 - INFO - Table found : Statistical Analysis:EPE_Target_vs_Nominal_Mask_Simulation_f0d0
+2024-11-12 13:20:06,788 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,788 - INFO - match = None
+2024-11-12 13:20:06,788 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,788 - INFO - match = <re.Match object; span=(0, 17), match='mean_fermi: -1.15'>
+2024-11-12 13:20:06,788 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,789 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,795 - INFO - Entry already exists for Stat_Name: mean_fermi, Stat_Value: -1.15, UniqueKey: 1
+2024-11-12 13:20:06,796 - INFO - Inserted Data to table
+2024-11-12 13:20:06,796 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,797 - INFO - match = <re.Match object; span=(0, 15), match='std_fermi: 0.51'>
+2024-11-12 13:20:06,797 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,797 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,800 - INFO - Entry already exists for Stat_Name: std_fermi, Stat_Value: 0.51, UniqueKey: 1
+2024-11-12 13:20:06,801 - INFO - Inserted Data to table
+2024-11-12 13:20:06,801 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,802 - INFO - match = <re.Match object; span=(0, 15), match='max_fermi: 3.80'>
+2024-11-12 13:20:06,802 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,802 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,805 - INFO - Entry already exists for Stat_Name: max_fermi, Stat_Value: 3.80, UniqueKey: 1
+2024-11-12 13:20:06,806 - INFO - Inserted Data to table
+2024-11-12 13:20:06,806 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,806 - INFO - match = <re.Match object; span=(0, 18), match='count_fermi: 30000'>
+2024-11-12 13:20:06,806 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,806 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,809 - INFO - Entry already exists for Stat_Name: count_fermi, Stat_Value: 30000, UniqueKey: 1
+2024-11-12 13:20:06,811 - INFO - Inserted Data to table
+2024-11-12 13:20:06,811 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,811 - INFO - match = <re.Match object; span=(0, 24), match='marker_x_fermi: 828000.0'>
+2024-11-12 13:20:06,811 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,811 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,814 - INFO - Entry already exists for Stat_Name: marker_x_fermi, Stat_Value: 828000.0, UniqueKey: 1
+2024-11-12 13:20:06,815 - INFO - Inserted Data to table
+2024-11-12 13:20:06,816 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,816 - INFO - match = <re.Match object; span=(0, 23), match='marker_y_fermi: 36000.0'>
+2024-11-12 13:20:06,816 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,816 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,819 - INFO - Entry already exists for Stat_Name: marker_y_fermi, Stat_Value: 36000.0, UniqueKey: 1
+2024-11-12 13:20:06,821 - INFO - Inserted Data to table
+2024-11-12 13:20:06,821 - INFO - 
+ Line starts with [
+2024-11-12 13:20:06,821 - INFO - Table found : Statistical Analysis:EPE_Target_vs_Mask_Simulation_Posfocus
+2024-11-12 13:20:06,821 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,822 - INFO - match = None
+2024-11-12 13:20:06,822 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,822 - INFO - match = <re.Match object; span=(0, 17), match='mean_fermi: -1.15'>
+2024-11-12 13:20:06,822 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,822 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,828 - INFO - Entry already exists for Stat_Name: mean_fermi, Stat_Value: -1.15, UniqueKey: 1
+2024-11-12 13:20:06,830 - INFO - Inserted Data to table
+2024-11-12 13:20:06,830 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,831 - INFO - match = <re.Match object; span=(0, 15), match='std_fermi: 0.51'>
+2024-11-12 13:20:06,831 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,831 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,834 - INFO - Entry already exists for Stat_Name: std_fermi, Stat_Value: 0.51, UniqueKey: 1
+2024-11-12 13:20:06,836 - INFO - Inserted Data to table
+2024-11-12 13:20:06,836 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,836 - INFO - match = <re.Match object; span=(0, 15), match='max_fermi: 3.80'>
+2024-11-12 13:20:06,836 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,836 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,840 - INFO - Entry already exists for Stat_Name: max_fermi, Stat_Value: 3.80, UniqueKey: 1
+2024-11-12 13:20:06,842 - INFO - Inserted Data to table
+2024-11-12 13:20:06,842 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,842 - INFO - match = <re.Match object; span=(0, 18), match='count_fermi: 30000'>
+2024-11-12 13:20:06,842 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,842 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,845 - INFO - Entry already exists for Stat_Name: count_fermi, Stat_Value: 30000, UniqueKey: 1
+2024-11-12 13:20:06,847 - INFO - Inserted Data to table
+2024-11-12 13:20:06,847 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,847 - INFO - match = <re.Match object; span=(0, 24), match='marker_x_fermi: 828000.0'>
+2024-11-12 13:20:06,847 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,847 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,850 - INFO - Entry already exists for Stat_Name: marker_x_fermi, Stat_Value: 828000.0, UniqueKey: 1
+2024-11-12 13:20:06,852 - INFO - Inserted Data to table
+2024-11-12 13:20:06,852 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,852 - INFO - match = <re.Match object; span=(0, 23), match='marker_y_fermi: 36000.0'>
+2024-11-12 13:20:06,852 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,852 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,855 - INFO - Entry already exists for Stat_Name: marker_y_fermi, Stat_Value: 36000.0, UniqueKey: 1
+2024-11-12 13:20:06,857 - INFO - Inserted Data to table
+2024-11-12 13:20:06,857 - INFO - 
+ Line starts with [
+2024-11-12 13:20:06,858 - INFO - Table found : Statistical Analysis:EPE_Target_vs_Mask_Simulation_Posdose
+2024-11-12 13:20:06,858 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,858 - INFO - match = None
+2024-11-12 13:20:06,858 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,858 - INFO - match = <re.Match object; span=(0, 17), match='mean_fermi: -1.15'>
+2024-11-12 13:20:06,858 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,858 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,864 - INFO - Entry already exists for Stat_Name: mean_fermi, Stat_Value: -1.15, UniqueKey: 1
+2024-11-12 13:20:06,867 - INFO - Inserted Data to table
+2024-11-12 13:20:06,867 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,867 - INFO - match = <re.Match object; span=(0, 15), match='std_fermi: 0.51'>
+2024-11-12 13:20:06,867 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,867 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,870 - INFO - Entry already exists for Stat_Name: std_fermi, Stat_Value: 0.51, UniqueKey: 1
+2024-11-12 13:20:06,873 - INFO - Inserted Data to table
+2024-11-12 13:20:06,873 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,873 - INFO - match = <re.Match object; span=(0, 15), match='max_fermi: 3.80'>
+2024-11-12 13:20:06,873 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,873 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,876 - INFO - Entry already exists for Stat_Name: max_fermi, Stat_Value: 3.80, UniqueKey: 1
+2024-11-12 13:20:06,878 - INFO - Inserted Data to table
+2024-11-12 13:20:06,879 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,879 - INFO - match = <re.Match object; span=(0, 18), match='count_fermi: 30000'>
+2024-11-12 13:20:06,879 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,879 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,882 - INFO - Entry already exists for Stat_Name: count_fermi, Stat_Value: 30000, UniqueKey: 1
+2024-11-12 13:20:06,884 - INFO - Inserted Data to table
+2024-11-12 13:20:06,884 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,884 - INFO - match = <re.Match object; span=(0, 24), match='marker_x_fermi: 828000.0'>
+2024-11-12 13:20:06,885 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,885 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,888 - INFO - Entry already exists for Stat_Name: marker_x_fermi, Stat_Value: 828000.0, UniqueKey: 1
+2024-11-12 13:20:06,890 - INFO - Inserted Data to table
+2024-11-12 13:20:06,890 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,891 - INFO - match = <re.Match object; span=(0, 23), match='marker_y_fermi: 36000.0'>
+2024-11-12 13:20:06,891 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,891 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,894 - INFO - Entry already exists for Stat_Name: marker_y_fermi, Stat_Value: 36000.0, UniqueKey: 1
+2024-11-12 13:20:06,896 - INFO - Inserted Data to table
+2024-11-12 13:20:06,896 - INFO - 
+ Line starts with [
+2024-11-12 13:20:06,896 - INFO - Table found : Statistical Analysis:Width_of_PV_Band_by_Dose
+2024-11-12 13:20:06,896 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,896 - INFO - match = None
+2024-11-12 13:20:06,896 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,896 - INFO - match = <re.Match object; span=(0, 17), match='mean_fermi: -1.15'>
+2024-11-12 13:20:06,896 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,896 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,902 - INFO - Entry already exists for Stat_Name: mean_fermi, Stat_Value: -1.15, UniqueKey: 1
+2024-11-12 13:20:06,904 - INFO - Inserted Data to table
+2024-11-12 13:20:06,904 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,904 - INFO - match = <re.Match object; span=(0, 15), match='std_fermi: 0.51'>
+2024-11-12 13:20:06,904 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,904 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,907 - INFO - Entry already exists for Stat_Name: std_fermi, Stat_Value: 0.51, UniqueKey: 1
+2024-11-12 13:20:06,909 - INFO - Inserted Data to table
+2024-11-12 13:20:06,909 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,909 - INFO - match = <re.Match object; span=(0, 15), match='max_fermi: 3.80'>
+2024-11-12 13:20:06,910 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,910 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,913 - INFO - Entry already exists for Stat_Name: max_fermi, Stat_Value: 3.80, UniqueKey: 1
+2024-11-12 13:20:06,914 - INFO - Inserted Data to table
+2024-11-12 13:20:06,914 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,915 - INFO - match = <re.Match object; span=(0, 18), match='count_fermi: 30000'>
+2024-11-12 13:20:06,915 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,915 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,918 - INFO - Entry already exists for Stat_Name: count_fermi, Stat_Value: 30000, UniqueKey: 1
+2024-11-12 13:20:06,919 - INFO - Inserted Data to table
+2024-11-12 13:20:06,919 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,920 - INFO - match = <re.Match object; span=(0, 24), match='marker_x_fermi: 828000.0'>
+2024-11-12 13:20:06,920 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,920 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,923 - INFO - Entry already exists for Stat_Name: marker_x_fermi, Stat_Value: 828000.0, UniqueKey: 1
+2024-11-12 13:20:06,924 - INFO - Inserted Data to table
+2024-11-12 13:20:06,924 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,924 - INFO - match = <re.Match object; span=(0, 23), match='marker_y_fermi: 36000.0'>
+2024-11-12 13:20:06,925 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,925 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,927 - INFO - Entry already exists for Stat_Name: marker_y_fermi, Stat_Value: 36000.0, UniqueKey: 1
+2024-11-12 13:20:06,929 - INFO - Inserted Data to table
+2024-11-12 13:20:06,929 - INFO - 
+ Line starts with [
+2024-11-12 13:20:06,929 - INFO - Table found : Statistical Analysis:Width_of_PV_Band_by_Focus
+2024-11-12 13:20:06,929 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,929 - INFO - match = None
+2024-11-12 13:20:06,930 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,930 - INFO - match = <re.Match object; span=(0, 17), match='mean_fermi: -1.15'>
+2024-11-12 13:20:06,930 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,930 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,935 - INFO - Entry already exists for Stat_Name: mean_fermi, Stat_Value: -1.15, UniqueKey: 1
+2024-11-12 13:20:06,937 - INFO - Inserted Data to table
+2024-11-12 13:20:06,937 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,937 - INFO - match = <re.Match object; span=(0, 15), match='std_fermi: 0.51'>
+2024-11-12 13:20:06,937 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,937 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,940 - INFO - Entry already exists for Stat_Name: std_fermi, Stat_Value: 0.51, UniqueKey: 1
+2024-11-12 13:20:06,942 - INFO - Inserted Data to table
+2024-11-12 13:20:06,942 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,942 - INFO - match = <re.Match object; span=(0, 15), match='max_fermi: 3.80'>
+2024-11-12 13:20:06,942 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,943 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,945 - INFO - Entry already exists for Stat_Name: max_fermi, Stat_Value: 3.80, UniqueKey: 1
+2024-11-12 13:20:06,947 - INFO - Inserted Data to table
+2024-11-12 13:20:06,947 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,947 - INFO - match = <re.Match object; span=(0, 18), match='count_fermi: 30000'>
+2024-11-12 13:20:06,948 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,948 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,950 - INFO - Entry already exists for Stat_Name: count_fermi, Stat_Value: 30000, UniqueKey: 1
+2024-11-12 13:20:06,952 - INFO - Inserted Data to table
+2024-11-12 13:20:06,952 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,952 - INFO - match = <re.Match object; span=(0, 24), match='marker_x_fermi: 828000.0'>
+2024-11-12 13:20:06,952 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,952 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,955 - INFO - Entry already exists for Stat_Name: marker_x_fermi, Stat_Value: 828000.0, UniqueKey: 1
+2024-11-12 13:20:06,957 - INFO - Inserted Data to table
+2024-11-12 13:20:06,957 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,958 - INFO - match = <re.Match object; span=(0, 23), match='marker_y_fermi: 36000.0'>
+2024-11-12 13:20:06,958 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,958 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,961 - INFO - Entry already exists for Stat_Name: marker_y_fermi, Stat_Value: 36000.0, UniqueKey: 1
+2024-11-12 13:20:06,963 - INFO - Inserted Data to table
+2024-11-12 13:20:06,963 - INFO - Processed /home/emumba/Desktop/Rsync/9872/qor/fermi.txt...
+2024-11-12 13:20:06,964 - INFO - Processing /home/emumba/Desktop/Rsync/9871/qor/fermi.txt...
+2024-11-12 13:20:06,964 - INFO - Now in Function insert_meta 
+
+2024-11-12 13:20:06,964 - INFO - fermi_job_name : a7bcdfeg
+2024-11-12 13:20:06,964 - INFO - revision_commit : heads/feature/fermi2/dqtm3split-0-g44d2dea0a4a315e3e685475f7dc4288ee37d4155
+2024-11-12 13:20:06,964 - INFO - fermi_id : 9871
+2024-11-12 13:20:06,965 - INFO - Value assigned to fermi_job_name, fermi_id  and revision_commit
+2024-11-12 13:20:06,965 - INFO - fermi_job_name : a7bcdfeg
+2024-11-12 13:20:06,965 - INFO - fermi_id : 9871
+2024-11-12 13:20:06,965 - INFO - revision_commit : heads/feature/fermi2/dqtm3split-0-g44d2dea0a4a315e3e685475f7dc4288ee37d4155
+2024-11-12 13:20:06,968 - INFO - Updating existing entry for Fermi ID: 9871, Fermi_Job: a7bcdfeg, Revision_Commit: heads/feature/fermi2/dqtm3split-0-g44d2dea0a4a315e3e685475f7dc4288ee37d4155 
+2024-11-12 13:20:06,972 - INFO - Now in function process_fermi_file 
+2024-11-12 13:20:06,972 - INFO - file_path = /home/emumba/Desktop/Rsync/9871/qor/fermi.txt
+2024-11-12 13:20:06,973 - INFO - unique_key : 2
+2024-11-12 13:20:06,973 - INFO - 
+ Line starts with [
+2024-11-12 13:20:06,973 - INFO - Table found : Main Stats
+2024-11-12 13:20:06,973 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,973 - INFO - match = <re.Match object; span=(0, 24), match='fermi_job_name: a7bcdfeg'>
+2024-11-12 13:20:06,973 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,973 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,976 - INFO - Entry already exists for Stat_Name: fermi_job_name, Stat_Value: a7bcdfeg, UniqueKey: 2
+2024-11-12 13:20:06,977 - INFO - Inserted Data to table
+2024-11-12 13:20:06,978 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,978 - INFO - match = <re.Match object; span=(0, 40), match='revision_branch: feature/fermi/qtm3split'>
+2024-11-12 13:20:06,978 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,978 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,981 - INFO - Entry already exists for Stat_Name: revision_branch, Stat_Value: feature/fermi/qtm3split, UniqueKey: 2
+2024-11-12 13:20:06,983 - INFO - Inserted Data to table
+2024-11-12 13:20:06,983 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,983 - INFO - match = <re.Match object; span=(0, 92), match='revision_commit: heads/feature/fermi2/dqtm3split->
+2024-11-12 13:20:06,984 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,984 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,987 - INFO - Inserting new entry for Stat_Name: revision_commit with Stat_Value: heads/feature/fermi2/dqtm3split-0-g44d2dea0a4a315e3e685475f7dc4288ee37d4155, UniqueKey: 2
+2024-11-12 13:20:06,990 - ERROR - Error upserting stats for Stat_Name: revision_commit - (pymysql.err.DataError) (1406, "Data too long for column 'Stat_Value' at row 1")
+[SQL: INSERT INTO `Main_Stats` (`Stat_Name`, `Stat_Value`, `UniqueKey`) VALUES (%(Stat_Name)s, %(Stat_Value)s, %(UniqueKey)s)]
+[parameters: {'Stat_Name': 'revision_commit', 'Stat_Value': 'heads/feature/fermi2/dqtm3split-0-g44d2dea0a4a315e3e685475f7dc4288ee37d4155', 'UniqueKey': 2}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2024-11-12 13:20:06,991 - INFO - Inserted Data to table
+2024-11-12 13:20:06,991 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,991 - INFO - match = <re.Match object; span=(0, 25), match='revision_date: 2023-08-14'>
+2024-11-12 13:20:06,991 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,991 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:06,994 - INFO - Entry already exists for Stat_Name: revision_date, Stat_Value: 2023-08-14, UniqueKey: 2
+2024-11-12 13:20:06,997 - INFO - Inserted Data to table
+2024-11-12 13:20:06,997 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:06,997 - INFO - match = <re.Match object; span=(0, 14), match='fermi_id: 9871'>
+2024-11-12 13:20:06,997 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:06,997 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,000 - INFO - Entry already exists for Stat_Name: fermi_id, Stat_Value: 9871, UniqueKey: 2
+2024-11-12 13:20:07,002 - INFO - Inserted Data to table
+2024-11-12 13:20:07,002 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,002 - INFO - match = <re.Match object; span=(0, 6), match='gpu: 4'>
+2024-11-12 13:20:07,002 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,002 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,005 - INFO - Entry already exists for Stat_Name: gpu, Stat_Value: 4, UniqueKey: 2
+2024-11-12 13:20:07,007 - INFO - Inserted Data to table
+2024-11-12 13:20:07,007 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,007 - INFO - match = <re.Match object; span=(0, 30), match='expect_run_time_50_gpu: 720.15'>
+2024-11-12 13:20:07,007 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,007 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,010 - INFO - Entry already exists for Stat_Name: expect_run_time_50_gpu, Stat_Value: 720.15, UniqueKey: 2
+2024-11-12 13:20:07,012 - INFO - Inserted Data to table
+2024-11-12 13:20:07,012 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,012 - INFO - match = <re.Match object; span=(0, 31), match='expect_run_time_1_gpu: 34500.25'>
+2024-11-12 13:20:07,012 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,013 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,016 - INFO - Entry already exists for Stat_Name: expect_run_time_1_gpu, Stat_Value: 34500.25, UniqueKey: 2
+2024-11-12 13:20:07,017 - INFO - Inserted Data to table
+2024-11-12 13:20:07,017 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,018 - INFO - match = <re.Match object; span=(0, 17), match='user: exampleuser'>
+2024-11-12 13:20:07,018 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,018 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,021 - INFO - Entry already exists for Stat_Name: user, Stat_Value: exampleuser, UniqueKey: 2
+2024-11-12 13:20:07,022 - INFO - Inserted Data to table
+2024-11-12 13:20:07,022 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,023 - INFO - match = <re.Match object; span=(0, 21), match='name: exampleDesign01'>
+2024-11-12 13:20:07,023 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,023 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,026 - INFO - Entry already exists for Stat_Name: name, Stat_Value: exampleDesign01, UniqueKey: 2
+2024-11-12 13:20:07,028 - INFO - Inserted Data to table
+2024-11-12 13:20:07,028 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,028 - INFO - match = <re.Match object; span=(0, 25), match='max_err_per_partion: None'>
+2024-11-12 13:20:07,028 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,028 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,031 - INFO - Entry already exists for Stat_Name: max_err_per_partion, Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,033 - INFO - Inserted Data to table
+2024-11-12 13:20:07,033 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,033 - INFO - match = <re.Match object; span=(0, 18), match='total_errors: None'>
+2024-11-12 13:20:07,034 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,034 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,037 - INFO - Entry already exists for Stat_Name: total_errors, Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,038 - INFO - Inserted Data to table
+2024-11-12 13:20:07,038 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,038 - INFO - match = <re.Match object; span=(0, 13), match='partition: 36'>
+2024-11-12 13:20:07,038 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,038 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,041 - INFO - Entry already exists for Stat_Name: partition, Stat_Value: 36, UniqueKey: 2
+2024-11-12 13:20:07,043 - INFO - Inserted Data to table
+2024-11-12 13:20:07,043 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,043 - INFO - match = <re.Match object; span=(0, 7), match='grid: 8'>
+2024-11-12 13:20:07,043 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,043 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,046 - INFO - Entry already exists for Stat_Name: grid, Stat_Value: 8, UniqueKey: 2
+2024-11-12 13:20:07,048 - INFO - Inserted Data to table
+2024-11-12 13:20:07,048 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,048 - INFO - match = <re.Match object; span=(0, 26), match='optimizer_iterations: None'>
+2024-11-12 13:20:07,048 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,048 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,051 - INFO - Entry already exists for Stat_Name: optimizer_iterations, Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,053 - INFO - Inserted Data to table
+2024-11-12 13:20:07,053 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,053 - INFO - match = <re.Match object; span=(0, 17), match='force_flag: False'>
+2024-11-12 13:20:07,053 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,053 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,056 - INFO - Entry already exists for Stat_Name: force_flag, Stat_Value: False, UniqueKey: 2
+2024-11-12 13:20:07,058 - INFO - Inserted Data to table
+2024-11-12 13:20:07,058 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,058 - INFO - match = <re.Match object; span=(0, 23), match='force_screenshot: False'>
+2024-11-12 13:20:07,058 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,059 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,062 - INFO - Entry already exists for Stat_Name: force_screenshot, Stat_Value: False, UniqueKey: 2
+2024-11-12 13:20:07,063 - INFO - Inserted Data to table
+2024-11-12 13:20:07,064 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,064 - INFO - match = <re.Match object; span=(0, 21), match='mpi_retry_count: None'>
+2024-11-12 13:20:07,064 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,064 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,067 - INFO - Entry already exists for Stat_Name: mpi_retry_count, Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,069 - INFO - Inserted Data to table
+2024-11-12 13:20:07,069 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,069 - INFO - match = <re.Match object; span=(0, 25), match='num_qtm3_iterations: None'>
+2024-11-12 13:20:07,069 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,069 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,072 - INFO - Entry already exists for Stat_Name: num_qtm3_iterations, Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,074 - INFO - Inserted Data to table
+2024-11-12 13:20:07,074 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,074 - INFO - match = <re.Match object; span=(0, 25), match='num_qtm4_iterations: None'>
+2024-11-12 13:20:07,074 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,075 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,078 - INFO - Entry already exists for Stat_Name: num_qtm4_iterations, Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,080 - INFO - Inserted Data to table
+2024-11-12 13:20:07,080 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,080 - INFO - match = <re.Match object; span=(0, 25), match='num_qtm5_iterations: None'>
+2024-11-12 13:20:07,080 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,080 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,083 - INFO - Entry already exists for Stat_Name: num_qtm5_iterations, Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,085 - INFO - Inserted Data to table
+2024-11-12 13:20:07,085 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,085 - INFO - match = <re.Match object; span=(0, 29), match='mask_num_deleted_shapes: None'>
+2024-11-12 13:20:07,085 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,086 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,089 - INFO - Entry already exists for Stat_Name: mask_num_deleted_shapes, Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,090 - INFO - Inserted Data to table
+2024-11-12 13:20:07,090 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,091 - INFO - match = <re.Match object; span=(0, 29), match='mask_num_upsized_shapes: None'>
+2024-11-12 13:20:07,091 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,091 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,094 - INFO - Entry already exists for Stat_Name: mask_num_upsized_shapes, Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,096 - INFO - Inserted Data to table
+2024-11-12 13:20:07,096 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,096 - INFO - match = <re.Match object; span=(0, 27), match='num_pixel_corrections: None'>
+2024-11-12 13:20:07,096 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,096 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,099 - INFO - Entry already exists for Stat_Name: num_pixel_corrections, Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,101 - INFO - Inserted Data to table
+2024-11-12 13:20:07,101 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,101 - INFO - match = <re.Match object; span=(0, 26), match='num_part_corrections: None'>
+2024-11-12 13:20:07,101 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,101 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,104 - INFO - Entry already exists for Stat_Name: num_part_corrections, Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,106 - INFO - Inserted Data to table
+2024-11-12 13:20:07,106 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,106 - INFO - match = <re.Match object; span=(0, 31), match='delete_mask_polygon_count: None'>
+2024-11-12 13:20:07,106 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,106 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,109 - INFO - Entry already exists for Stat_Name: delete_mask_polygon_count, Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,110 - INFO - Inserted Data to table
+2024-11-12 13:20:07,111 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,111 - INFO - match = <re.Match object; span=(0, 29), match='delete_mask_polygon_max: None'>
+2024-11-12 13:20:07,111 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,111 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,114 - INFO - Entry already exists for Stat_Name: delete_mask_polygon_max, Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,115 - INFO - Inserted Data to table
+2024-11-12 13:20:07,115 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,115 - INFO - match = <re.Match object; span=(0, 29), match='delete_mask_polygon_min: None'>
+2024-11-12 13:20:07,116 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,116 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,118 - INFO - Entry already exists for Stat_Name: delete_mask_polygon_min, Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,120 - INFO - Inserted Data to table
+2024-11-12 13:20:07,120 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,120 - INFO - match = <re.Match object; span=(0, 33), match='upsizing_mask_polygon_count: None'>
+2024-11-12 13:20:07,120 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,120 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,123 - INFO - Entry already exists for Stat_Name: upsizing_mask_polygon_count, Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,124 - INFO - Inserted Data to table
+2024-11-12 13:20:07,125 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,125 - INFO - match = <re.Match object; span=(0, 31), match='upsizing_mask_polygon_max: None'>
+2024-11-12 13:20:07,125 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,125 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,128 - INFO - Entry already exists for Stat_Name: upsizing_mask_polygon_max, Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,130 - INFO - Inserted Data to table
+2024-11-12 13:20:07,130 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,130 - INFO - match = <re.Match object; span=(0, 31), match='upsizing_mask_polygon_min: None'>
+2024-11-12 13:20:07,130 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,130 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,133 - INFO - Entry already exists for Stat_Name: upsizing_mask_polygon_min, Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,134 - INFO - Inserted Data to table
+2024-11-12 13:20:07,134 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,135 - INFO - match = <re.Match object; span=(0, 36), match='number_of_optimized_partitions: 1024'>
+2024-11-12 13:20:07,135 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,135 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,138 - INFO - Entry already exists for Stat_Name: number_of_optimized_partitions, Stat_Value: 1024, UniqueKey: 2
+2024-11-12 13:20:07,139 - INFO - Inserted Data to table
+2024-11-12 13:20:07,139 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,139 - INFO - match = <re.Match object; span=(0, 32), match='total_number_of_partitions: 1024'>
+2024-11-12 13:20:07,139 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,139 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,142 - INFO - Entry already exists for Stat_Name: total_number_of_partitions, Stat_Value: 1024, UniqueKey: 2
+2024-11-12 13:20:07,143 - INFO - Inserted Data to table
+2024-11-12 13:20:07,144 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,144 - INFO - match = <re.Match object; span=(0, 19), match='parsing_time: False'>
+2024-11-12 13:20:07,144 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,144 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,147 - INFO - Entry already exists for Stat_Name: parsing_time, Stat_Value: False, UniqueKey: 2
+2024-11-12 13:20:07,148 - INFO - Inserted Data to table
+2024-11-12 13:20:07,148 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,148 - INFO - match = <re.Match object; span=(0, 20), match='design_size: 0.85785'>
+2024-11-12 13:20:07,148 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,148 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,151 - INFO - Entry already exists for Stat_Name: design_size, Stat_Value: 0.85785, UniqueKey: 2
+2024-11-12 13:20:07,152 - INFO - Inserted Data to table
+2024-11-12 13:20:07,152 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,152 - INFO - match = <re.Match object; span=(0, 23), match='mask_file_size: 2258.88'>
+2024-11-12 13:20:07,152 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,152 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,155 - INFO - Entry already exists for Stat_Name: mask_file_size, Stat_Value: 2258.88, UniqueKey: 2
+2024-11-12 13:20:07,157 - INFO - Inserted Data to table
+2024-11-12 13:20:07,157 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,157 - INFO - match = <re.Match object; span=(0, 19), match='machine_name: cdp28'>
+2024-11-12 13:20:07,157 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,157 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,160 - INFO - Entry already exists for Stat_Name: machine_name, Stat_Value: cdp28, UniqueKey: 2
+2024-11-12 13:20:07,162 - INFO - Inserted Data to table
+2024-11-12 13:20:07,162 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,162 - INFO - match = <re.Match object; span=(0, 25), match='run_date_time: 2024-08-01'>
+2024-11-12 13:20:07,162 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,162 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,165 - INFO - Entry already exists for Stat_Name: run_date_time, Stat_Value: 2024-08-01, UniqueKey: 2
+2024-11-12 13:20:07,166 - INFO - Inserted Data to table
+2024-11-12 13:20:07,166 - INFO - 
+ Line starts with [
+2024-11-12 13:20:07,166 - INFO - Table found : Runtime Analysis Stats
+2024-11-12 13:20:07,167 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,167 - INFO - match = <re.Match object; span=(0, 27), match='target_prep_runtime: 420.75'>
+2024-11-12 13:20:07,167 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,167 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,170 - INFO - Entry already exists for Stat_Name: target_prep_runtime, Stat_Value: 420.75, UniqueKey: 2
+2024-11-12 13:20:07,171 - INFO - Inserted Data to table
+2024-11-12 13:20:07,171 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,171 - INFO - match = <re.Match object; span=(0, 14), match='ctm_fg: 830.40'>
+2024-11-12 13:20:07,171 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,171 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,174 - INFO - Entry already exists for Stat_Name: ctm_fg, Stat_Value: 830.40, UniqueKey: 2
+2024-11-12 13:20:07,176 - INFO - Inserted Data to table
+2024-11-12 13:20:07,176 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,176 - INFO - match = <re.Match object; span=(0, 15), match='qtm_fg: 3960.60'>
+2024-11-12 13:20:07,176 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,176 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,179 - INFO - Entry already exists for Stat_Name: qtm_fg, Stat_Value: 3960.60, UniqueKey: 2
+2024-11-12 13:20:07,180 - INFO - Inserted Data to table
+2024-11-12 13:20:07,180 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,180 - INFO - match = <re.Match object; span=(0, 17), match='ctm_prep: 2300.25'>
+2024-11-12 13:20:07,180 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,180 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,183 - INFO - Entry already exists for Stat_Name: ctm_prep, Stat_Value: 2300.25, UniqueKey: 2
+2024-11-12 13:20:07,184 - INFO - Inserted Data to table
+2024-11-12 13:20:07,184 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,184 - INFO - match = <re.Match object; span=(0, 17), match='qtm0_prep: 880.00'>
+2024-11-12 13:20:07,184 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,184 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,187 - INFO - Entry already exists for Stat_Name: qtm0_prep, Stat_Value: 880.00, UniqueKey: 2
+2024-11-12 13:20:07,188 - INFO - Inserted Data to table
+2024-11-12 13:20:07,188 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,188 - INFO - match = <re.Match object; span=(0, 18), match='qtm1_prep: 1070.50'>
+2024-11-12 13:20:07,188 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,188 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,191 - INFO - Entry already exists for Stat_Name: qtm1_prep, Stat_Value: 1070.50, UniqueKey: 2
+2024-11-12 13:20:07,192 - INFO - Inserted Data to table
+2024-11-12 13:20:07,192 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,192 - INFO - match = <re.Match object; span=(0, 18), match='qtm2_prep: 1150.60'>
+2024-11-12 13:20:07,192 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,192 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,195 - INFO - Entry already exists for Stat_Name: qtm2_prep, Stat_Value: 1150.60, UniqueKey: 2
+2024-11-12 13:20:07,196 - INFO - Inserted Data to table
+2024-11-12 13:20:07,196 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,196 - INFO - match = <re.Match object; span=(0, 17), match='qtm3_prep: 630.75'>
+2024-11-12 13:20:07,196 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,196 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,199 - INFO - Entry already exists for Stat_Name: qtm3_prep, Stat_Value: 630.75, UniqueKey: 2
+2024-11-12 13:20:07,200 - INFO - Inserted Data to table
+2024-11-12 13:20:07,200 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,200 - INFO - match = <re.Match object; span=(0, 12), match='qtm4_prep: 0'>
+2024-11-12 13:20:07,201 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,201 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,203 - INFO - Entry already exists for Stat_Name: qtm4_prep, Stat_Value: 0, UniqueKey: 2
+2024-11-12 13:20:07,204 - INFO - Inserted Data to table
+2024-11-12 13:20:07,205 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,205 - INFO - match = <re.Match object; span=(0, 12), match='qtm5_prep: 0'>
+2024-11-12 13:20:07,205 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,205 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,207 - INFO - Entry already exists for Stat_Name: qtm5_prep, Stat_Value: 0, UniqueKey: 2
+2024-11-12 13:20:07,209 - INFO - Inserted Data to table
+2024-11-12 13:20:07,209 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,209 - INFO - match = <re.Match object; span=(0, 19), match='qtm0_total: 1300.00'>
+2024-11-12 13:20:07,209 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,209 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,211 - INFO - Entry already exists for Stat_Name: qtm0_total, Stat_Value: 1300.00, UniqueKey: 2
+2024-11-12 13:20:07,213 - INFO - Inserted Data to table
+2024-11-12 13:20:07,213 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,213 - INFO - match = <re.Match object; span=(0, 19), match='qtm1_total: 1650.75'>
+2024-11-12 13:20:07,213 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,213 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,215 - INFO - Entry already exists for Stat_Name: qtm1_total, Stat_Value: 1650.75, UniqueKey: 2
+2024-11-12 13:20:07,217 - INFO - Inserted Data to table
+2024-11-12 13:20:07,217 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,217 - INFO - match = <re.Match object; span=(0, 19), match='qtm2_total: 2000.90'>
+2024-11-12 13:20:07,217 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,217 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,219 - INFO - Entry already exists for Stat_Name: qtm2_total, Stat_Value: 2000.90, UniqueKey: 2
+2024-11-12 13:20:07,221 - INFO - Inserted Data to table
+2024-11-12 13:20:07,221 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,221 - INFO - match = <re.Match object; span=(0, 19), match='qtm3_total: 4550.00'>
+2024-11-12 13:20:07,221 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,221 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,223 - INFO - Entry already exists for Stat_Name: qtm3_total, Stat_Value: 4550.00, UniqueKey: 2
+2024-11-12 13:20:07,225 - INFO - Inserted Data to table
+2024-11-12 13:20:07,225 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,225 - INFO - match = <re.Match object; span=(0, 13), match='qtm4_total: 0'>
+2024-11-12 13:20:07,225 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,225 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,228 - INFO - Entry already exists for Stat_Name: qtm4_total, Stat_Value: 0, UniqueKey: 2
+2024-11-12 13:20:07,229 - INFO - Inserted Data to table
+2024-11-12 13:20:07,229 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,229 - INFO - match = <re.Match object; span=(0, 13), match='qtm5_total: 0'>
+2024-11-12 13:20:07,229 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,229 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,232 - INFO - Entry already exists for Stat_Name: qtm5_total, Stat_Value: 0, UniqueKey: 2
+2024-11-12 13:20:07,233 - INFO - Inserted Data to table
+2024-11-12 13:20:07,233 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,233 - INFO - match = <re.Match object; span=(0, 22), match='ctm_exec_time: 3200.00'>
+2024-11-12 13:20:07,233 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,233 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,236 - INFO - Entry already exists for Stat_Name: ctm_exec_time, Stat_Value: 3200.00, UniqueKey: 2
+2024-11-12 13:20:07,237 - INFO - Inserted Data to table
+2024-11-12 13:20:07,237 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,237 - INFO - match = <re.Match object; span=(0, 23), match='qtm_exec_time: 11200.00'>
+2024-11-12 13:20:07,237 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,237 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,240 - INFO - Entry already exists for Stat_Name: qtm_exec_time, Stat_Value: 11200.00, UniqueKey: 2
+2024-11-12 13:20:07,241 - INFO - Inserted Data to table
+2024-11-12 13:20:07,241 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,241 - INFO - match = <re.Match object; span=(0, 30), match='postprocess_exec_time: 1400.00'>
+2024-11-12 13:20:07,241 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,241 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,244 - INFO - Entry already exists for Stat_Name: postprocess_exec_time, Stat_Value: 1400.00, UniqueKey: 2
+2024-11-12 13:20:07,245 - INFO - Inserted Data to table
+2024-11-12 13:20:07,245 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,245 - INFO - match = <re.Match object; span=(0, 29), match='total_fermi_runtime: 16200.00'>
+2024-11-12 13:20:07,245 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,245 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,248 - INFO - Entry already exists for Stat_Name: total_fermi_runtime, Stat_Value: 16200.00, UniqueKey: 2
+2024-11-12 13:20:07,249 - INFO - Inserted Data to table
+2024-11-12 13:20:07,249 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,249 - INFO - match = <re.Match object; span=(0, 25), match='the_checker_runtime: None'>
+2024-11-12 13:20:07,249 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,249 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,252 - INFO - Entry already exists for Stat_Name: the_checker_runtime, Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,253 - INFO - Inserted Data to table
+2024-11-12 13:20:07,253 - INFO - 
+ Line starts with [
+2024-11-12 13:20:07,253 - INFO - Table found : Geometric Analysis Stats
+2024-11-12 13:20:07,253 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,253 - INFO - match = <re.Match object; span=(0, 41), match='high_curvature_internal_checking_count: 0'>
+2024-11-12 13:20:07,253 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,253 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,256 - INFO - Entry already exists for Stat_Name: high_curvature_internal_checking_count, Stat_Value: 0, UniqueKey: 2
+2024-11-12 13:20:07,257 - INFO - Inserted Data to table
+2024-11-12 13:20:07,257 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,257 - INFO - match = <re.Match object; span=(0, 47), match='high_curvature_internal_checking_max_value: 0.0'>
+2024-11-12 13:20:07,257 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,257 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,260 - INFO - Entry already exists for Stat_Name: high_curvature_internal_checking_max_value, Stat_Value: 0.0, UniqueKey: 2
+2024-11-12 13:20:07,262 - INFO - Inserted Data to table
+2024-11-12 13:20:07,262 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,262 - INFO - match = <re.Match object; span=(0, 47), match='high_curvature_internal_checking_min_value: 0.0'>
+2024-11-12 13:20:07,262 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,262 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,265 - INFO - Entry already exists for Stat_Name: high_curvature_internal_checking_min_value, Stat_Value: 0.0, UniqueKey: 2
+2024-11-12 13:20:07,266 - INFO - Inserted Data to table
+2024-11-12 13:20:07,266 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,266 - INFO - match = <re.Match object; span=(0, 44), match='high_curvature_internal_checking_marker_x: 0'>
+2024-11-12 13:20:07,266 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,266 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,269 - INFO - Entry already exists for Stat_Name: high_curvature_internal_checking_marker_x, Stat_Value: 0, UniqueKey: 2
+2024-11-12 13:20:07,270 - INFO - Inserted Data to table
+2024-11-12 13:20:07,270 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,270 - INFO - match = <re.Match object; span=(0, 44), match='high_curvature_internal_checking_marker_y: 0'>
+2024-11-12 13:20:07,270 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,271 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,273 - INFO - Entry already exists for Stat_Name: high_curvature_internal_checking_marker_y, Stat_Value: 0, UniqueKey: 2
+2024-11-12 13:20:07,274 - INFO - Inserted Data to table
+2024-11-12 13:20:07,275 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,275 - INFO - match = <re.Match object; span=(0, 41), match='high_curvature_external_checking_count: 0'>
+2024-11-12 13:20:07,275 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,275 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,277 - INFO - Entry already exists for Stat_Name: high_curvature_external_checking_count, Stat_Value: 0, UniqueKey: 2
+2024-11-12 13:20:07,279 - INFO - Inserted Data to table
+2024-11-12 13:20:07,279 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,279 - INFO - match = <re.Match object; span=(0, 47), match='high_curvature_external_checking_max_value: 0.0'>
+2024-11-12 13:20:07,279 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,279 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,282 - INFO - Entry already exists for Stat_Name: high_curvature_external_checking_max_value, Stat_Value: 0.0, UniqueKey: 2
+2024-11-12 13:20:07,283 - INFO - Inserted Data to table
+2024-11-12 13:20:07,283 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,283 - INFO - match = <re.Match object; span=(0, 47), match='high_curvature_external_checking_min_value: 0.0'>
+2024-11-12 13:20:07,283 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,283 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,286 - INFO - Entry already exists for Stat_Name: high_curvature_external_checking_min_value, Stat_Value: 0.0, UniqueKey: 2
+2024-11-12 13:20:07,287 - INFO - Inserted Data to table
+2024-11-12 13:20:07,287 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,288 - INFO - match = <re.Match object; span=(0, 44), match='high_curvature_external_checking_marker_x: 0'>
+2024-11-12 13:20:07,288 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,288 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,290 - INFO - Entry already exists for Stat_Name: high_curvature_external_checking_marker_x, Stat_Value: 0, UniqueKey: 2
+2024-11-12 13:20:07,291 - INFO - Inserted Data to table
+2024-11-12 13:20:07,292 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,292 - INFO - match = <re.Match object; span=(0, 44), match='high_curvature_external_checking_marker_y: 0'>
+2024-11-12 13:20:07,292 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,292 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,294 - INFO - Entry already exists for Stat_Name: high_curvature_external_checking_marker_y, Stat_Value: 0, UniqueKey: 2
+2024-11-12 13:20:07,296 - INFO - Inserted Data to table
+2024-11-12 13:20:07,296 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,296 - INFO - match = <re.Match object; span=(0, 17), match='mrc_area_count: 0'>
+2024-11-12 13:20:07,296 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,296 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,299 - INFO - Entry already exists for Stat_Name: mrc_area_count, Stat_Value: 0, UniqueKey: 2
+2024-11-12 13:20:07,300 - INFO - Inserted Data to table
+2024-11-12 13:20:07,300 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,300 - INFO - match = <re.Match object; span=(0, 23), match='mrc_area_max_value: 0.0'>
+2024-11-12 13:20:07,300 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,300 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,303 - INFO - Entry already exists for Stat_Name: mrc_area_max_value, Stat_Value: 0.0, UniqueKey: 2
+2024-11-12 13:20:07,304 - INFO - Inserted Data to table
+2024-11-12 13:20:07,304 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,304 - INFO - match = <re.Match object; span=(0, 23), match='mrc_area_min_value: 0.0'>
+2024-11-12 13:20:07,304 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,304 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,307 - INFO - Entry already exists for Stat_Name: mrc_area_min_value, Stat_Value: 0.0, UniqueKey: 2
+2024-11-12 13:20:07,308 - INFO - Inserted Data to table
+2024-11-12 13:20:07,308 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,308 - INFO - match = <re.Match object; span=(0, 20), match='mrc_area_marker_x: 0'>
+2024-11-12 13:20:07,308 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,308 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,311 - INFO - Entry already exists for Stat_Name: mrc_area_marker_x, Stat_Value: 0, UniqueKey: 2
+2024-11-12 13:20:07,312 - INFO - Inserted Data to table
+2024-11-12 13:20:07,312 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,312 - INFO - match = <re.Match object; span=(0, 20), match='mrc_area_marker_y: 0'>
+2024-11-12 13:20:07,312 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,312 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,315 - INFO - Entry already exists for Stat_Name: mrc_area_marker_y, Stat_Value: 0, UniqueKey: 2
+2024-11-12 13:20:07,316 - INFO - Inserted Data to table
+2024-11-12 13:20:07,317 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,317 - INFO - match = <re.Match object; span=(0, 38), match='imrcfix_max_correction_max_value: None'>
+2024-11-12 13:20:07,317 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,317 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,320 - INFO - Entry already exists for Stat_Name: imrcfix_max_correction_max_value, Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,321 - INFO - Inserted Data to table
+2024-11-12 13:20:07,321 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,321 - INFO - match = <re.Match object; span=(0, 58), match='imrcfix_total_number_of_fixed_mrc_width_errors_co>
+2024-11-12 13:20:07,321 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,321 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,324 - INFO - Inserting new entry for Stat_Name: imrcfix_total_number_of_fixed_mrc_width_errors_count with Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,326 - ERROR - Error upserting stats for Stat_Name: imrcfix_total_number_of_fixed_mrc_width_errors_count - (pymysql.err.DataError) (1406, "Data too long for column 'Stat_Name' at row 1")
+[SQL: INSERT INTO `Geometric_Analysis_Stats` (`Stat_Name`, `Stat_Value`, `UniqueKey`) VALUES (%(Stat_Name)s, %(Stat_Value)s, %(UniqueKey)s)]
+[parameters: {'Stat_Name': 'imrcfix_total_number_of_fixed_mrc_width_errors_count', 'Stat_Value': 'None', 'UniqueKey': 2}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2024-11-12 13:20:07,327 - INFO - Inserted Data to table
+2024-11-12 13:20:07,327 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,327 - INFO - match = <re.Match object; span=(0, 68), match='imrcfix_total_number_of_partially_fixed_mrc_width>
+2024-11-12 13:20:07,327 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,327 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,330 - INFO - Inserting new entry for Stat_Name: imrcfix_total_number_of_partially_fixed_mrc_width_errors_count with Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,332 - ERROR - Error upserting stats for Stat_Name: imrcfix_total_number_of_partially_fixed_mrc_width_errors_count - (pymysql.err.DataError) (1406, "Data too long for column 'Stat_Name' at row 1")
+[SQL: INSERT INTO `Geometric_Analysis_Stats` (`Stat_Name`, `Stat_Value`, `UniqueKey`) VALUES (%(Stat_Name)s, %(Stat_Value)s, %(UniqueKey)s)]
+[parameters: {'Stat_Name': 'imrcfix_total_number_of_partially_fixed_mrc_width_errors_count', 'Stat_Value': 'None', 'UniqueKey': 2}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2024-11-12 13:20:07,332 - INFO - Inserted Data to table
+2024-11-12 13:20:07,332 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,333 - INFO - match = <re.Match object; span=(0, 53), match='imrcfix_the_worst_width_error_overall_max_value: >
+2024-11-12 13:20:07,333 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,333 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,335 - INFO - Entry already exists for Stat_Name: imrcfix_the_worst_width_error_overall_max_value, Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,337 - INFO - Inserted Data to table
+2024-11-12 13:20:07,337 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,337 - INFO - match = <re.Match object; span=(0, 60), match='imrcfix_total_number_of_fixed_mrc_spacing_errors_>
+2024-11-12 13:20:07,337 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,337 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,340 - INFO - Inserting new entry for Stat_Name: imrcfix_total_number_of_fixed_mrc_spacing_errors_count with Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,342 - ERROR - Error upserting stats for Stat_Name: imrcfix_total_number_of_fixed_mrc_spacing_errors_count - (pymysql.err.DataError) (1406, "Data too long for column 'Stat_Name' at row 1")
+[SQL: INSERT INTO `Geometric_Analysis_Stats` (`Stat_Name`, `Stat_Value`, `UniqueKey`) VALUES (%(Stat_Name)s, %(Stat_Value)s, %(UniqueKey)s)]
+[parameters: {'Stat_Name': 'imrcfix_total_number_of_fixed_mrc_spacing_errors_count', 'Stat_Value': 'None', 'UniqueKey': 2}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2024-11-12 13:20:07,343 - INFO - Inserted Data to table
+2024-11-12 13:20:07,343 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,343 - INFO - match = <re.Match object; span=(0, 70), match='imrcfix_total_number_of_partially_fixed_mrc_spaci>
+2024-11-12 13:20:07,343 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,343 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,346 - INFO - Inserting new entry for Stat_Name: imrcfix_total_number_of_partially_fixed_mrc_spacing_errors_count with Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,348 - ERROR - Error upserting stats for Stat_Name: imrcfix_total_number_of_partially_fixed_mrc_spacing_errors_count - (pymysql.err.DataError) (1406, "Data too long for column 'Stat_Name' at row 1")
+[SQL: INSERT INTO `Geometric_Analysis_Stats` (`Stat_Name`, `Stat_Value`, `UniqueKey`) VALUES (%(Stat_Name)s, %(Stat_Value)s, %(UniqueKey)s)]
+[parameters: {'Stat_Name': 'imrcfix_total_number_of_partially_fixed_mrc_spacing_errors_count', 'Stat_Value': 'None', 'UniqueKey': 2}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2024-11-12 13:20:07,348 - INFO - Inserted Data to table
+2024-11-12 13:20:07,349 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,349 - INFO - match = <re.Match object; span=(0, 55), match='imrcfix_the_worst_spacing_error_overall_max_value>
+2024-11-12 13:20:07,349 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,349 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,352 - INFO - Entry already exists for Stat_Name: imrcfix_the_worst_spacing_error_overall_max_value, Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,353 - INFO - Inserted Data to table
+2024-11-12 13:20:07,353 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,354 - INFO - match = <re.Match object; span=(0, 57), match='imrcfix_total_number_of_unimproved_mrc_errors_cou>
+2024-11-12 13:20:07,354 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,354 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,356 - INFO - Inserting new entry for Stat_Name: imrcfix_total_number_of_unimproved_mrc_errors_count with Stat_Value: None, UniqueKey: 2
+2024-11-12 13:20:07,359 - ERROR - Error upserting stats for Stat_Name: imrcfix_total_number_of_unimproved_mrc_errors_count - (pymysql.err.DataError) (1406, "Data too long for column 'Stat_Name' at row 1")
+[SQL: INSERT INTO `Geometric_Analysis_Stats` (`Stat_Name`, `Stat_Value`, `UniqueKey`) VALUES (%(Stat_Name)s, %(Stat_Value)s, %(UniqueKey)s)]
+[parameters: {'Stat_Name': 'imrcfix_total_number_of_unimproved_mrc_errors_count', 'Stat_Value': 'None', 'UniqueKey': 2}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2024-11-12 13:20:07,359 - INFO - Inserted Data to table
+2024-11-12 13:20:07,359 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,359 - INFO - match = <re.Match object; span=(0, 43), match='high_curvature_internal_checking_setting: 7'>
+2024-11-12 13:20:07,359 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,359 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,362 - INFO - Entry already exists for Stat_Name: high_curvature_internal_checking_setting, Stat_Value: 7, UniqueKey: 2
+2024-11-12 13:20:07,364 - INFO - Inserted Data to table
+2024-11-12 13:20:07,364 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,364 - INFO - match = <re.Match object; span=(0, 43), match='high_curvature_external_checking_setting: 7'>
+2024-11-12 13:20:07,364 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,364 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,367 - INFO - Entry already exists for Stat_Name: high_curvature_external_checking_setting, Stat_Value: 7, UniqueKey: 2
+2024-11-12 13:20:07,368 - INFO - Inserted Data to table
+2024-11-12 13:20:07,368 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,368 - INFO - match = <re.Match object; span=(0, 21), match='mrc_area_setting: 520'>
+2024-11-12 13:20:07,368 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,368 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,371 - INFO - Entry already exists for Stat_Name: mrc_area_setting, Stat_Value: 520, UniqueKey: 2
+2024-11-12 13:20:07,372 - INFO - Inserted Data to table
+2024-11-12 13:20:07,372 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,373 - INFO - match = <re.Match object; span=(0, 25), match='mrc_spacing_setting: 13.0'>
+2024-11-12 13:20:07,373 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,373 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,375 - INFO - Entry already exists for Stat_Name: mrc_spacing_setting, Stat_Value: 13.0, UniqueKey: 2
+2024-11-12 13:20:07,376 - INFO - Inserted Data to table
+2024-11-12 13:20:07,377 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,377 - INFO - match = <re.Match object; span=(0, 23), match='mrc_width_setting: 13.0'>
+2024-11-12 13:20:07,377 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,377 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,380 - INFO - Entry already exists for Stat_Name: mrc_width_setting, Stat_Value: 13.0, UniqueKey: 2
+2024-11-12 13:20:07,382 - INFO - Inserted Data to table
+2024-11-12 13:20:07,382 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,382 - INFO - match = <re.Match object; span=(0, 18), match='mrc_width_count: 0'>
+2024-11-12 13:20:07,382 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,382 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,385 - INFO - Entry already exists for Stat_Name: mrc_width_count, Stat_Value: 0, UniqueKey: 2
+2024-11-12 13:20:07,386 - INFO - Inserted Data to table
+2024-11-12 13:20:07,386 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,386 - INFO - match = <re.Match object; span=(0, 24), match='mrc_width_max_value: 0.0'>
+2024-11-12 13:20:07,386 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,386 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,389 - INFO - Entry already exists for Stat_Name: mrc_width_max_value, Stat_Value: 0.0, UniqueKey: 2
+2024-11-12 13:20:07,390 - INFO - Inserted Data to table
+2024-11-12 13:20:07,390 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,390 - INFO - match = <re.Match object; span=(0, 24), match='mrc_width_min_value: 0.0'>
+2024-11-12 13:20:07,390 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,390 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,393 - INFO - Entry already exists for Stat_Name: mrc_width_min_value, Stat_Value: 0.0, UniqueKey: 2
+2024-11-12 13:20:07,394 - INFO - Inserted Data to table
+2024-11-12 13:20:07,394 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,395 - INFO - match = <re.Match object; span=(0, 21), match='mrc_width_marker_x: 0'>
+2024-11-12 13:20:07,395 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,395 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,397 - INFO - Entry already exists for Stat_Name: mrc_width_marker_x, Stat_Value: 0, UniqueKey: 2
+2024-11-12 13:20:07,398 - INFO - Inserted Data to table
+2024-11-12 13:20:07,399 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,399 - INFO - match = <re.Match object; span=(0, 21), match='mrc_width_marker_y: 0'>
+2024-11-12 13:20:07,399 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,399 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,401 - INFO - Entry already exists for Stat_Name: mrc_width_marker_y, Stat_Value: 0, UniqueKey: 2
+2024-11-12 13:20:07,402 - INFO - Inserted Data to table
+2024-11-12 13:20:07,403 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,403 - INFO - match = <re.Match object; span=(0, 20), match='mrc_spacing_count: 0'>
+2024-11-12 13:20:07,403 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,403 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,405 - INFO - Entry already exists for Stat_Name: mrc_spacing_count, Stat_Value: 0, UniqueKey: 2
+2024-11-12 13:20:07,406 - INFO - Inserted Data to table
+2024-11-12 13:20:07,407 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,407 - INFO - match = <re.Match object; span=(0, 26), match='mrc_spacing_max_value: 0.0'>
+2024-11-12 13:20:07,407 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,407 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,409 - INFO - Entry already exists for Stat_Name: mrc_spacing_max_value, Stat_Value: 0.0, UniqueKey: 2
+2024-11-12 13:20:07,410 - INFO - Inserted Data to table
+2024-11-12 13:20:07,411 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,411 - INFO - match = <re.Match object; span=(0, 26), match='mrc_spacing_min_value: 0.0'>
+2024-11-12 13:20:07,411 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,411 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,413 - INFO - Entry already exists for Stat_Name: mrc_spacing_min_value, Stat_Value: 0.0, UniqueKey: 2
+2024-11-12 13:20:07,414 - INFO - Inserted Data to table
+2024-11-12 13:20:07,415 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,415 - INFO - match = <re.Match object; span=(0, 23), match='mrc_spacing_marker_x: 0'>
+2024-11-12 13:20:07,415 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,415 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,417 - INFO - Entry already exists for Stat_Name: mrc_spacing_marker_x, Stat_Value: 0, UniqueKey: 2
+2024-11-12 13:20:07,418 - INFO - Inserted Data to table
+2024-11-12 13:20:07,418 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,419 - INFO - match = <re.Match object; span=(0, 23), match='mrc_spacing_marker_y: 0'>
+2024-11-12 13:20:07,419 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,419 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,421 - INFO - Entry already exists for Stat_Name: mrc_spacing_marker_y, Stat_Value: 0, UniqueKey: 2
+2024-11-12 13:20:07,422 - INFO - Inserted Data to table
+2024-11-12 13:20:07,422 - INFO - 
+ Line starts with [
+2024-11-12 13:20:07,422 - INFO - Table found : Statistical Analysis:EPE_Target_vs_Mask_Simulation_Negfocus
+2024-11-12 13:20:07,423 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,423 - INFO - match = None
+2024-11-12 13:20:07,423 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,423 - INFO - match = <re.Match object; span=(0, 17), match='mean_fermi: -1.15'>
+2024-11-12 13:20:07,423 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,423 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,425 - INFO - Entry already exists for Stat_Name: mean_fermi, Stat_Value: -1.15, UniqueKey: 2
+2024-11-12 13:20:07,427 - INFO - Inserted Data to table
+2024-11-12 13:20:07,427 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,427 - INFO - match = <re.Match object; span=(0, 15), match='std_fermi: 0.51'>
+2024-11-12 13:20:07,427 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,427 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,429 - INFO - Entry already exists for Stat_Name: std_fermi, Stat_Value: 0.51, UniqueKey: 2
+2024-11-12 13:20:07,431 - INFO - Inserted Data to table
+2024-11-12 13:20:07,431 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,431 - INFO - match = <re.Match object; span=(0, 15), match='max_fermi: 3.80'>
+2024-11-12 13:20:07,431 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,431 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,434 - INFO - Entry already exists for Stat_Name: max_fermi, Stat_Value: 3.80, UniqueKey: 2
+2024-11-12 13:20:07,435 - INFO - Inserted Data to table
+2024-11-12 13:20:07,435 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,435 - INFO - match = <re.Match object; span=(0, 18), match='count_fermi: 30000'>
+2024-11-12 13:20:07,435 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,435 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,438 - INFO - Entry already exists for Stat_Name: count_fermi, Stat_Value: 30000, UniqueKey: 2
+2024-11-12 13:20:07,439 - INFO - Inserted Data to table
+2024-11-12 13:20:07,439 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,439 - INFO - match = <re.Match object; span=(0, 24), match='marker_x_fermi: 828000.0'>
+2024-11-12 13:20:07,439 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,439 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,442 - INFO - Entry already exists for Stat_Name: marker_x_fermi, Stat_Value: 828000.0, UniqueKey: 2
+2024-11-12 13:20:07,443 - INFO - Inserted Data to table
+2024-11-12 13:20:07,443 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,444 - INFO - match = <re.Match object; span=(0, 23), match='marker_y_fermi: 36000.0'>
+2024-11-12 13:20:07,444 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,444 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,446 - INFO - Entry already exists for Stat_Name: marker_y_fermi, Stat_Value: 36000.0, UniqueKey: 2
+2024-11-12 13:20:07,447 - INFO - Inserted Data to table
+2024-11-12 13:20:07,448 - INFO - 
+ Line starts with [
+2024-11-12 13:20:07,448 - INFO - Table found : Statistical Analysis:EPE_Target_vs_Mask_Simulation_Negdose
+2024-11-12 13:20:07,448 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,448 - INFO - match = None
+2024-11-12 13:20:07,448 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,448 - INFO - match = <re.Match object; span=(0, 17), match='mean_fermi: -1.15'>
+2024-11-12 13:20:07,448 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,448 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,450 - INFO - Entry already exists for Stat_Name: mean_fermi, Stat_Value: -1.15, UniqueKey: 2
+2024-11-12 13:20:07,452 - INFO - Inserted Data to table
+2024-11-12 13:20:07,452 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,452 - INFO - match = <re.Match object; span=(0, 15), match='std_fermi: 0.51'>
+2024-11-12 13:20:07,452 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,452 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,455 - INFO - Entry already exists for Stat_Name: std_fermi, Stat_Value: 0.51, UniqueKey: 2
+2024-11-12 13:20:07,456 - INFO - Inserted Data to table
+2024-11-12 13:20:07,456 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,456 - INFO - match = <re.Match object; span=(0, 15), match='max_fermi: 3.80'>
+2024-11-12 13:20:07,456 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,456 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,459 - INFO - Entry already exists for Stat_Name: max_fermi, Stat_Value: 3.80, UniqueKey: 2
+2024-11-12 13:20:07,460 - INFO - Inserted Data to table
+2024-11-12 13:20:07,460 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,460 - INFO - match = <re.Match object; span=(0, 18), match='count_fermi: 30000'>
+2024-11-12 13:20:07,460 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,460 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,463 - INFO - Entry already exists for Stat_Name: count_fermi, Stat_Value: 30000, UniqueKey: 2
+2024-11-12 13:20:07,464 - INFO - Inserted Data to table
+2024-11-12 13:20:07,464 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,464 - INFO - match = <re.Match object; span=(0, 24), match='marker_x_fermi: 828000.0'>
+2024-11-12 13:20:07,464 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,464 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,467 - INFO - Entry already exists for Stat_Name: marker_x_fermi, Stat_Value: 828000.0, UniqueKey: 2
+2024-11-12 13:20:07,468 - INFO - Inserted Data to table
+2024-11-12 13:20:07,468 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,468 - INFO - match = <re.Match object; span=(0, 23), match='marker_y_fermi: 36000.0'>
+2024-11-12 13:20:07,468 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,468 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,471 - INFO - Entry already exists for Stat_Name: marker_y_fermi, Stat_Value: 36000.0, UniqueKey: 2
+2024-11-12 13:20:07,473 - INFO - Inserted Data to table
+2024-11-12 13:20:07,473 - INFO - 
+ Line starts with [
+2024-11-12 13:20:07,473 - INFO - Table found : Statistical Analysis:EPE_Target_vs_Nominal_Mask_Simulation_f0d0
+2024-11-12 13:20:07,473 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,473 - INFO - match = None
+2024-11-12 13:20:07,473 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,473 - INFO - match = <re.Match object; span=(0, 17), match='mean_fermi: -1.15'>
+2024-11-12 13:20:07,473 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,473 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,476 - INFO - Entry already exists for Stat_Name: mean_fermi, Stat_Value: -1.15, UniqueKey: 2
+2024-11-12 13:20:07,477 - INFO - Inserted Data to table
+2024-11-12 13:20:07,477 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,477 - INFO - match = <re.Match object; span=(0, 15), match='std_fermi: 0.51'>
+2024-11-12 13:20:07,477 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,477 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,480 - INFO - Entry already exists for Stat_Name: std_fermi, Stat_Value: 0.51, UniqueKey: 2
+2024-11-12 13:20:07,481 - INFO - Inserted Data to table
+2024-11-12 13:20:07,482 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,482 - INFO - match = <re.Match object; span=(0, 15), match='max_fermi: 3.80'>
+2024-11-12 13:20:07,482 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,482 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,484 - INFO - Entry already exists for Stat_Name: max_fermi, Stat_Value: 3.80, UniqueKey: 2
+2024-11-12 13:20:07,485 - INFO - Inserted Data to table
+2024-11-12 13:20:07,486 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,486 - INFO - match = <re.Match object; span=(0, 18), match='count_fermi: 30000'>
+2024-11-12 13:20:07,486 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,486 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,488 - INFO - Entry already exists for Stat_Name: count_fermi, Stat_Value: 30000, UniqueKey: 2
+2024-11-12 13:20:07,489 - INFO - Inserted Data to table
+2024-11-12 13:20:07,489 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,490 - INFO - match = <re.Match object; span=(0, 24), match='marker_x_fermi: 828000.0'>
+2024-11-12 13:20:07,490 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,490 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,492 - INFO - Entry already exists for Stat_Name: marker_x_fermi, Stat_Value: 828000.0, UniqueKey: 2
+2024-11-12 13:20:07,493 - INFO - Inserted Data to table
+2024-11-12 13:20:07,494 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,494 - INFO - match = <re.Match object; span=(0, 23), match='marker_y_fermi: 36000.0'>
+2024-11-12 13:20:07,494 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,494 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,496 - INFO - Entry already exists for Stat_Name: marker_y_fermi, Stat_Value: 36000.0, UniqueKey: 2
+2024-11-12 13:20:07,497 - INFO - Inserted Data to table
+2024-11-12 13:20:07,498 - INFO - 
+ Line starts with [
+2024-11-12 13:20:07,498 - INFO - Table found : Statistical Analysis:EPE_Target_vs_Mask_Simulation_Posfocus
+2024-11-12 13:20:07,498 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,498 - INFO - match = None
+2024-11-12 13:20:07,498 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,498 - INFO - match = <re.Match object; span=(0, 17), match='mean_fermi: -1.15'>
+2024-11-12 13:20:07,498 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,498 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,500 - INFO - Entry already exists for Stat_Name: mean_fermi, Stat_Value: -1.15, UniqueKey: 2
+2024-11-12 13:20:07,502 - INFO - Inserted Data to table
+2024-11-12 13:20:07,502 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,502 - INFO - match = <re.Match object; span=(0, 15), match='std_fermi: 0.51'>
+2024-11-12 13:20:07,502 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,502 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,505 - INFO - Entry already exists for Stat_Name: std_fermi, Stat_Value: 0.51, UniqueKey: 2
+2024-11-12 13:20:07,506 - INFO - Inserted Data to table
+2024-11-12 13:20:07,506 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,506 - INFO - match = <re.Match object; span=(0, 15), match='max_fermi: 3.80'>
+2024-11-12 13:20:07,506 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,506 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,509 - INFO - Entry already exists for Stat_Name: max_fermi, Stat_Value: 3.80, UniqueKey: 2
+2024-11-12 13:20:07,511 - INFO - Inserted Data to table
+2024-11-12 13:20:07,511 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,511 - INFO - match = <re.Match object; span=(0, 18), match='count_fermi: 30000'>
+2024-11-12 13:20:07,511 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,511 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,514 - INFO - Entry already exists for Stat_Name: count_fermi, Stat_Value: 30000, UniqueKey: 2
+2024-11-12 13:20:07,515 - INFO - Inserted Data to table
+2024-11-12 13:20:07,515 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,515 - INFO - match = <re.Match object; span=(0, 24), match='marker_x_fermi: 828000.0'>
+2024-11-12 13:20:07,515 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,515 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,518 - INFO - Entry already exists for Stat_Name: marker_x_fermi, Stat_Value: 828000.0, UniqueKey: 2
+2024-11-12 13:20:07,520 - INFO - Inserted Data to table
+2024-11-12 13:20:07,520 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,520 - INFO - match = <re.Match object; span=(0, 23), match='marker_y_fermi: 36000.0'>
+2024-11-12 13:20:07,520 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,520 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,523 - INFO - Entry already exists for Stat_Name: marker_y_fermi, Stat_Value: 36000.0, UniqueKey: 2
+2024-11-12 13:20:07,525 - INFO - Inserted Data to table
+2024-11-12 13:20:07,525 - INFO - 
+ Line starts with [
+2024-11-12 13:20:07,525 - INFO - Table found : Statistical Analysis:EPE_Target_vs_Mask_Simulation_Posdose
+2024-11-12 13:20:07,525 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,525 - INFO - match = None
+2024-11-12 13:20:07,525 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,526 - INFO - match = <re.Match object; span=(0, 17), match='mean_fermi: -1.15'>
+2024-11-12 13:20:07,526 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,526 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,529 - INFO - Entry already exists for Stat_Name: mean_fermi, Stat_Value: -1.15, UniqueKey: 2
+2024-11-12 13:20:07,530 - INFO - Inserted Data to table
+2024-11-12 13:20:07,530 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,531 - INFO - match = <re.Match object; span=(0, 15), match='std_fermi: 0.51'>
+2024-11-12 13:20:07,531 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,531 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,533 - INFO - Entry already exists for Stat_Name: std_fermi, Stat_Value: 0.51, UniqueKey: 2
+2024-11-12 13:20:07,535 - INFO - Inserted Data to table
+2024-11-12 13:20:07,535 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,535 - INFO - match = <re.Match object; span=(0, 15), match='max_fermi: 3.80'>
+2024-11-12 13:20:07,535 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,535 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,538 - INFO - Entry already exists for Stat_Name: max_fermi, Stat_Value: 3.80, UniqueKey: 2
+2024-11-12 13:20:07,539 - INFO - Inserted Data to table
+2024-11-12 13:20:07,539 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,539 - INFO - match = <re.Match object; span=(0, 18), match='count_fermi: 30000'>
+2024-11-12 13:20:07,539 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,540 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,542 - INFO - Entry already exists for Stat_Name: count_fermi, Stat_Value: 30000, UniqueKey: 2
+2024-11-12 13:20:07,543 - INFO - Inserted Data to table
+2024-11-12 13:20:07,544 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,544 - INFO - match = <re.Match object; span=(0, 24), match='marker_x_fermi: 828000.0'>
+2024-11-12 13:20:07,544 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,544 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,547 - INFO - Entry already exists for Stat_Name: marker_x_fermi, Stat_Value: 828000.0, UniqueKey: 2
+2024-11-12 13:20:07,548 - INFO - Inserted Data to table
+2024-11-12 13:20:07,548 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,548 - INFO - match = <re.Match object; span=(0, 23), match='marker_y_fermi: 36000.0'>
+2024-11-12 13:20:07,548 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,549 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,551 - INFO - Entry already exists for Stat_Name: marker_y_fermi, Stat_Value: 36000.0, UniqueKey: 2
+2024-11-12 13:20:07,552 - INFO - Inserted Data to table
+2024-11-12 13:20:07,553 - INFO - 
+ Line starts with [
+2024-11-12 13:20:07,553 - INFO - Table found : Statistical Analysis:Width_of_PV_Band_by_Dose
+2024-11-12 13:20:07,553 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,553 - INFO - match = None
+2024-11-12 13:20:07,553 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,553 - INFO - match = <re.Match object; span=(0, 17), match='mean_fermi: -1.15'>
+2024-11-12 13:20:07,553 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,553 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,556 - INFO - Entry already exists for Stat_Name: mean_fermi, Stat_Value: -1.15, UniqueKey: 2
+2024-11-12 13:20:07,557 - INFO - Inserted Data to table
+2024-11-12 13:20:07,557 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,558 - INFO - match = <re.Match object; span=(0, 15), match='std_fermi: 0.51'>
+2024-11-12 13:20:07,558 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,558 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,560 - INFO - Entry already exists for Stat_Name: std_fermi, Stat_Value: 0.51, UniqueKey: 2
+2024-11-12 13:20:07,562 - INFO - Inserted Data to table
+2024-11-12 13:20:07,562 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,562 - INFO - match = <re.Match object; span=(0, 15), match='max_fermi: 3.80'>
+2024-11-12 13:20:07,562 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,562 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,565 - INFO - Entry already exists for Stat_Name: max_fermi, Stat_Value: 3.80, UniqueKey: 2
+2024-11-12 13:20:07,566 - INFO - Inserted Data to table
+2024-11-12 13:20:07,566 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,566 - INFO - match = <re.Match object; span=(0, 18), match='count_fermi: 30000'>
+2024-11-12 13:20:07,566 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,567 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,569 - INFO - Entry already exists for Stat_Name: count_fermi, Stat_Value: 30000, UniqueKey: 2
+2024-11-12 13:20:07,571 - INFO - Inserted Data to table
+2024-11-12 13:20:07,571 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,571 - INFO - match = <re.Match object; span=(0, 24), match='marker_x_fermi: 828000.0'>
+2024-11-12 13:20:07,571 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,571 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,574 - INFO - Entry already exists for Stat_Name: marker_x_fermi, Stat_Value: 828000.0, UniqueKey: 2
+2024-11-12 13:20:07,575 - INFO - Inserted Data to table
+2024-11-12 13:20:07,575 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,575 - INFO - match = <re.Match object; span=(0, 23), match='marker_y_fermi: 36000.0'>
+2024-11-12 13:20:07,575 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,575 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,578 - INFO - Entry already exists for Stat_Name: marker_y_fermi, Stat_Value: 36000.0, UniqueKey: 2
+2024-11-12 13:20:07,579 - INFO - Inserted Data to table
+2024-11-12 13:20:07,580 - INFO - 
+ Line starts with [
+2024-11-12 13:20:07,580 - INFO - Table found : Statistical Analysis:Width_of_PV_Band_by_Focus
+2024-11-12 13:20:07,580 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,580 - INFO - match = None
+2024-11-12 13:20:07,580 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,580 - INFO - match = <re.Match object; span=(0, 17), match='mean_fermi: -1.15'>
+2024-11-12 13:20:07,580 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,580 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,583 - INFO - Entry already exists for Stat_Name: mean_fermi, Stat_Value: -1.15, UniqueKey: 2
+2024-11-12 13:20:07,584 - INFO - Inserted Data to table
+2024-11-12 13:20:07,584 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,584 - INFO - match = <re.Match object; span=(0, 15), match='std_fermi: 0.51'>
+2024-11-12 13:20:07,585 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,585 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,587 - INFO - Entry already exists for Stat_Name: std_fermi, Stat_Value: 0.51, UniqueKey: 2
+2024-11-12 13:20:07,588 - INFO - Inserted Data to table
+2024-11-12 13:20:07,589 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,589 - INFO - match = <re.Match object; span=(0, 15), match='max_fermi: 3.80'>
+2024-11-12 13:20:07,589 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,589 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,591 - INFO - Entry already exists for Stat_Name: max_fermi, Stat_Value: 3.80, UniqueKey: 2
+2024-11-12 13:20:07,592 - INFO - Inserted Data to table
+2024-11-12 13:20:07,593 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,593 - INFO - match = <re.Match object; span=(0, 18), match='count_fermi: 30000'>
+2024-11-12 13:20:07,593 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,593 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,595 - INFO - Entry already exists for Stat_Name: count_fermi, Stat_Value: 30000, UniqueKey: 2
+2024-11-12 13:20:07,597 - INFO - Inserted Data to table
+2024-11-12 13:20:07,597 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,597 - INFO - match = <re.Match object; span=(0, 24), match='marker_x_fermi: 828000.0'>
+2024-11-12 13:20:07,597 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,597 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,600 - INFO - Entry already exists for Stat_Name: marker_x_fermi, Stat_Value: 828000.0, UniqueKey: 2
+2024-11-12 13:20:07,602 - INFO - Inserted Data to table
+2024-11-12 13:20:07,602 - INFO - 
+ Line has : in it 
+
+2024-11-12 13:20:07,602 - INFO - match = <re.Match object; span=(0, 23), match='marker_y_fermi: 36000.0'>
+2024-11-12 13:20:07,602 - INFO - Value assigned to stat_name and stat_value
+2024-11-12 13:20:07,602 - INFO - Now in Function insert_stats 
+
+2024-11-12 13:20:07,605 - INFO - Entry already exists for Stat_Name: marker_y_fermi, Stat_Value: 36000.0, UniqueKey: 2
+2024-11-12 13:20:07,606 - INFO - Inserted Data to table
+2024-11-12 13:20:07,607 - INFO - Processed /home/emumba/Desktop/Rsync/9871/qor/fermi.txt...

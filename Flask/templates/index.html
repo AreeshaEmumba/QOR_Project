@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fermi Metadata</title>
+        <style>
+        form {
+            margin-bottom: 20px;
+        }
+        label, input, button {
+            display: block;
+            margin-bottom: 10px;
+        }
+        </style>
+</head>
+<body>
+    <h1>Search Job Metadata</h1>
+
+    <form method="POST">
+        <label for="search_fermi_id">Enter Job ID (Fermi ID):</label>
+        <input type="text" id="search_fermi_id" name="search_fermi_id">
+
+        <label for="search_fermi_name">Enter Job Name (Fermi Name):</label>
+        <input type="text" id="search_fermi_name" name="search_fermi_name">
+
+        <label for="search_revision_commit">Enter Revision Commit:</label>
+        <input type="text" id="search_revision_commit" name="search_revision_commit">
+
+        <button type="submit">Search</button>
+    </form>
+
+    <h1>Search Results</h1>
+
+    {% if fermi_id %}
+        <h3>Metadata</h3>
+        <table border="1">
+            <tr>
+                <th>Fermi ID</th>
+                <th>Fermi Name</th>
+                <th>Revision Commit</th>
+            </tr>
+            <tr>
+                <td>{{ fermi_id }}</td>
+                <td>{{ fermi_name }}</td>
+                <td>{{ revision_commit }}</td>
+            </tr>
+        </table>
+    {% endif %}
+
+    <h3>Table Data</h3>
+    {% for table_name, data in table_data.items() %}
+        <h4>{{ table_name }}</h4>
+        <table border="1">
+            <tr>
+                <th>Stat Name</th>
+                <th>Stat Value</th>
+            </tr>
+            {% for stat_name, stat_value in data %}
+                <tr>
+                    <td>{{ stat_name }}</td>
+                    <td>{{ stat_value }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endfor %}
+    
+</body>
+</html>
