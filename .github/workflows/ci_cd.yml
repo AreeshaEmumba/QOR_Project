@@ -91,7 +91,7 @@ jobs:
   # Build job, runs only if tests pass
   build:
     runs-on: ubuntu-latest
-    needs: [test, merge]  # Only run if `test` job passes or 'merge' has happened in case of pull-request
+    needs: [test]  # Only run if `test` job passes or 'merge' has happened in case of pull-request
 
     steps:
       - name: Checkout code
