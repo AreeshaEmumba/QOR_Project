@@ -50,6 +50,13 @@ jobs:
         run: |
           docker-compose -f docker-compose.yml up -d
 
+        # Node.js packages need to be installed in the root directory
+      - name: Install Node.js dependencies
+        run: |
+          npm install newman@4
+          npm install newman-reporter-html  # Install the HTML reporter for Newman
+          npm install --legacy-peer-deps
+
       - name: Run Postman tests with Newman
         run: |
           npx newman run Postman/QOR_Project.postman_collection.json -r cli,html --reporter-html-export Postman/newman_results.html --verbose --bail false
