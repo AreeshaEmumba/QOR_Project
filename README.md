@@ -132,4 +132,35 @@ To run the Flask app in a Docker container, follow these steps:
 
 2. **Go to Deployed App**: Click the URL where the app is deployed `127.0.0.1:5000`
 
+## Running the Postman Collection and Sending Test Results via Email
 
+In your Postman folder, you have the following files:
+- `QOR_Project.postman_collection.json`: The Postman collection file that contains the API tests.
+- `package.json`: The configuration file for Node.js and the dependencies, including Newman for running the Postman collection.
+- `send_email.py`: A Python script that sends the test results via email after running the tests.
+- `node_modules/`: The directory where npm packages, including Newman, are installed.
+
+### Steps to Manually Run the Newman Command and Send Email
+
+#### 1. Install Dependencies
+
+Before running the collection, you need to install the necessary Node.js dependencies:
+
+- **Install Node.js**: Ensure that Node.js and npm (Node Package Manager) are installed on your system. You can check by running:
+  ```bash
+  node -v
+  npm -v
+  ```
+- **Install newman**:
+- **Install msmtp and necessary dependencies**:
+
+#### 2. Run the Postman Collection
+- **Run the collection**: Run the collection by typing the following command:
+```bash
+newman run QOR_Project.postman_collection.json -r html reporter-html-export newman_results.html
+```
+
+This will run the collection `QOR_Project.postman_collection.json` and save the results as an html file `newman_results.html`.
+
+#### 3. Send the results in email
+- **Run the python script**: Run the send_email.py file to send the 
