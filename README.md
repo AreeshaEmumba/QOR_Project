@@ -175,3 +175,57 @@ python send_email.py
 - Ensure the email settings in the script are properly configured (e.g., SMTP server, sender email, and recipients).
 
 ## Set up a CI/CD pipeline
+This project includes two GitHub Actions workflows to automate testing, building, deploying, and notifying during the development lifecycle:
+
+### 1. CI/CD Pipeline on Push (`ci_cd_on_push.yml`)
+
+This workflow is triggered whenever code is pushed to the `main` branch. It ensures that all changes are properly tested, built, and deployed. The steps are as follows:
+
+1. **Run Tests:**
+   - Executes Postman tests using Newman.
+   - Generates an HTML report of test results (`Postman/newman_results.html`) as an artifact.
+
+2. **Build Docker Image:**
+   - Builds the Docker image (`qor_project`) if all tests pass.
+
+3. **Deploy the Application:**
+   - Deploys the app using Docker Compose if the build succeeds.
+
+4. **Send Notification:**
+   - Sends a notification to the configured Slack channel (`U07J17B6WLX`) to confirm successful deployment.
+
+
+### 2. CI/CD Pipeline on Pull Request (`cicd_on_pull.yml`)
+
+This workflow is triggered whenever a pull request is opened or updated for the `main` branch. It ensures code changes are validated and merged before deployment. The steps are as follows:
+
+1. **Run Tests:**
+   - Executes Postman tests using Newman.
+   - Generates an HTML report of test results (`Postman/newman_results.html`) as an artifact.
+
+2. **Automated Merge:**
+   - Automatically merges the pull request branch into `main` if all tests pass.
+   - Uses a `--no-ff` strategy with a custom commit message.
+
+3. **Build Docker Image:**
+   - Builds the Docker image (`qor_project`) after a successful merge.
+
+4. **Deploy the Application:**
+   - Deploys the app using Docker Compose if the build succeeds.
+
+5. **Send Notification:**
+   - Sends a notification to the configured Slack channel (`U07J17B6WLX`) to confirm successful deployment.
+
+### Key Features
+
+- **Automated Testing:** Both workflows ensure that all changes are validated using Postman tests before proceeding to the next stages.
+- **Docker Integration:** The app is containerized and deployed using Docker Compose for consistent and reliable deployments.
+- **Slack Notifications:** Notifications are sent to inform the team of deployment status.
+- **Pull Request Merging:** The `cicd_on_pull.yml` workflow automates the process of merging pull requests that pass testing, simplifying the development process.
+
+### Artifacts and Logs
+
+- Test results are stored as an artifact (`Postman/newman_results.html`) and can be downloaded for review.
+- Workflow logs are accessible in the **Actions** tab of the repository for troubleshooting.
+
+
