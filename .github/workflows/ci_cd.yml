@@ -68,7 +68,7 @@ jobs:
           docker-compose -f docker-compose.yml down
 
       - name: Save test results as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v
         with:
           name: newman_results
           path: Postman/newman_results.html
