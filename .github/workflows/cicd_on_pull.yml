@@ -79,24 +79,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Git
-        uses: actions/setup-git@v2
-
-      - name: Configure Git user
+      - name: Configure Git
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
 
-      - name: Merge branch into main
-        run: |
-          git fetch origin
-          git checkout main
-          git merge --no-ff ${{ github.head_ref }} -m "Automated merge from ${{ github.head_ref }} into main"
-          
-      - name: Push merge
-        run: |
-          git push origin main
+      - name: Fetch latest changes
+        run: git fetch origin
 
+      - name: Checkout main branch
+        run: git checkout main
+
+      - name: Merge branch into main
+        run: git merge --no-ff ${{ github.head_ref }} -m "Automated merge from ${{ github.head_ref }} into main"
+
+      - name: Push merge to main
+        run: git push origin main
      
   # Build job, runs only if tests pass
   build:
