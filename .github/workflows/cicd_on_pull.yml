@@ -73,6 +73,7 @@ jobs:
   # Merge job, only on pull requests, runs if tests pass
   merge:
     runs-on: ubuntu-latest
+    needs: test
 
     steps:
       - name: Checkout code
