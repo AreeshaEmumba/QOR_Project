@@ -76,17 +76,17 @@ jobs:
     needs: test
   
     steps:
-      - name: Checkout PR branch
+      - name: Checkout the PR branch
         uses: actions/checkout@v3
-  
-      - name: Fetch main branch
-        run: |
-          git fetch origin main  # Fetch the main branch from the remote
-  
-      - name: Merge changes
-        run: |
-          git checkout main  # Now checkout the main branch after fetching
-          git merge --no-ff ${{ github.head_ref }}  # Merge the PR branch into main
+      
+      - name: Fetch all branches
+        run: git fetch --all
+      
+      - name: Checkout the main branch
+        run: git checkout main  # Now this should work after fetching all branches
+      
+      - name: Merge the PR branch into main
+        run: git merge --no-ff ${{ github.head_ref }}
      
   # Build job, runs only if tests pass
   build:
