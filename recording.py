@@ -7,7 +7,7 @@ import logging
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError
 
 # Configure logging to overwrite the file each time the script runs
-logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s', filemode='w')
+logging.basicConfig(filename='recording.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s', filemode='w')
 # Base class for the SQLAlchemy ORM
 Base = declarative_base()
 
