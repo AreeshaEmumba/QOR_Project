@@ -1,8 +1,12 @@
 import argparse
 import os
 import shutil
+import logging
+# Configure logging to overwrite the file each time the script runs
+logging.basicConfig(filename='parsing.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s', filemode='w')
 
 def parse_log_file(log_file_path, output_file_path):
+    logging.info(f"Now in function parse_log_file ")
     # Define categories for the stats based on the key names
     # Main Stats category
     main_stats_keys = [
@@ -94,6 +98,9 @@ def parse_log_file(log_file_path, output_file_path):
 
     # Read the log file and categorize the stats
     with open(log_file_path, 'r') as log_file:
+
+        logging.info(f"Opening {log_file} in read mode and Categorizing the stat based on the predefined keys")
+
         for line in log_file:
             if '=' in line:
                 # Split the line by '=' and strip any extra spaces
@@ -113,6 +120,9 @@ def parse_log_file(log_file_path, output_file_path):
 
     # Write the categorized stats to the output file
     with open(output_file_path, 'w') as output_file:
+
+        logging.info(f"Write the categorized stats to the {output_file}")
+
         output_file.write('[Main Stats]\n')
         for stat, value in main_stats.items():
             output_file.write(f'{stat}: {value}\n')
@@ -130,19 +140,27 @@ def parse_log_file(log_file_path, output_file_path):
             for stat, value in stats.items():
                 output_file.write(f'{stat}: {value}\n')
 
-    print(f"Data Parsed and and saved to {output_file_path}")
+    logging.info(f"Data Parsed and and saved to {output_file_path}")
+
 def copy_qor_folder(jobid_folder, rsync_directory):
+    logging.info(f"Now in function copy_qor_folder ")
+
     qor_folder = os.path.join(jobid_folder, 'qor')
+    logging.info(f"qor_folder : {qor_folder}")
+
     if os.path.exists(qor_folder):
+        logging.info(f"qor_folder does exits")
         # Define the destination path to include both jobid folder and qor folder
         destination = os.path.join(rsync_directory, os.path.basename(jobid_folder), 'qor')
+        logging.info(f"destination : {destination}")
         # Copy the qor folder (including the folder itself) to the destination
         shutil.copytree(qor_folder, destination, dirs_exist_ok=True)
-        print(f"Copied QOR folder to {destination}.")
+        logging.info(f"Copied QOR folder to {destination}.")
     else:
-        print(f"QOR folder does not exist in {jobid_folder}.")
+        logging.info(f"QOR folder does not exist in {jobid_folder}.")
 
 def main():
+    logging.info(f"Now n function main")
     parser = argparse.ArgumentParser(description="Process log files and manage job directories.")
     parser.add_argument('-l', '--location', required=True, help="Path to the directory containing jobid folders.")
     parser.add_argument('-id', '--jobid', required=True, help="ID of the job (jobid folder name).")
@@ -153,6 +171,7 @@ def main():
 
     # Hardcoded rsync directory path
     rsync_directory = '/home/emumba/Desktop/Rsync' 
+    logging.info(f"rsync_directory : {rsync_directory}")
 
     # Construct paths for the log file and fermi.txt output
     jobid_folder = os.path.join(args.location, args.jobid)
@@ -160,16 +179,22 @@ def main():
     qor_output_folder = os.path.join(jobid_folder, 'qor')
     output_file_path = os.path.join(qor_output_folder, 'fermi.txt')
 
+    logging.info(f"jobid_folder : {jobid_folder}")
+    logging.info(f"log_file_path : {log_file_path}")
+    logging.info(f"qor_output_folder : {qor_output_folder}")
+    logging.info(f"output_file_path : {output_file_path}")
+
     # Parse the log file and save fermi.txt if -p is provided
     if args.parse:
         if not os.path.exists(log_file_path):
-            print(f"Log file {log_file_path} not found.")
+            logging.info(f"Log file {log_file_path} not found.")
             return
         os.makedirs(qor_output_folder, exist_ok=True)
         parse_log_file(log_file_path, output_file_path)
 
     # Copy QOR folder to rsync directory if -r is provided
     if args.rsync:
+        logging.info(f"")
         copy_qor_folder(jobid_folder, rsync_directory)
 
 if __name__ == '__main__':
