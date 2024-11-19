@@ -113,8 +113,7 @@ jobs:
       - name: Determine status
         id: determine-status
         run: |
-          echo "Job status: ${{ job.status }}"  # Debugging step
-          if [[ "${{ job.status }}" == "cancelled" ]]; then
+          if [[ "${{ needs.test.result }}" == "cancelled" || "${{ needs.build.result }}" == "cancelled" || "${{ needs.deploy.result }}" == "cancelled" ]]; then
             echo "❌ CI/CD Pipeline (ci_cd_on_push) was cancelled" 
             echo "slack-message=❌ CI/CD Pipeline (ci_cd_on_push) was cancelled" >> $GITHUB_ENV
           elif [[ "${{ needs.test.result }}" == "failure" ]]; then
