@@ -142,7 +142,10 @@ jobs:
       - name: Determine status
         id: determine-status
         run: |
-          if [[ "${{ needs.test.result }}" == "failure" ]]; then
+          if [[ "${{ needs.test.result }}" == "cancelled" || "${{ needs.build.result }}" == "cancelled" || "${{ needs.deploy.result }}" == "cancelled" ]]; then
+            echo "❌ CI/CD Pipeline (cicd_on_pull) was cancelled"
+            echo "slack-message=❌ CI/CD Pipeline (cicd_on_pull) was cancelled" >> $GITHUB_ENV 
+          elif [[ "${{ needs.test.result }}" == "failure" ]]; then
             echo "❌ CI/CD Pipeline (cicd_on_pull) failed at job: test"
             echo "slack-message=❌ CI/CD Pipeline (cicd_on_pull) failed at job: test" >> $GITHUB_ENV
           elif [[ "${{ needs.build.result }}" == "failure" ]]; then
