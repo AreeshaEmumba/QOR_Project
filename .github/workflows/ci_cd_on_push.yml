@@ -106,13 +106,22 @@ jobs:
   # Notify job, runs after deploy
   notify:
     runs-on: ubuntu-latest
-    needs: deploy  # Runs after deploy completes
+    needs: [test, build, deploy]
 
     steps:
       - name: Send Slack notification
+        if: always()
         uses: slackapi/slack-github-action@v1.23.0
         with:
           channel-id: 'U07J17B6WLX'
-          slack-message: 'Deployment has been successfully completed.'
+          slack-message: ${{ steps.determine-status.outputs.slack-message }}
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+
+      - name: Determine status
+        id: determine-status
+        run: |
+          if [[ "${{ job.status }}" == "failure" ]]; then
+            echo "slack-message=❌ CI/CD Pipeline failed at job: ${{ job.name }}" >> $GITHUB_ENV
+          else
+            echo "slack-message=✅ CI/CD Pipeline completed successfully." >> $GITHUB_ENV
