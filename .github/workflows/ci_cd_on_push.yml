@@ -8,7 +8,7 @@ on:
 jobs:
   # Job for running all Postman tests
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout code
@@ -72,7 +72,7 @@ jobs:
 
   # Build job, runs only if tests pass
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: [test]  # Only run if `test` job passes
 
     steps:
@@ -86,7 +86,7 @@ jobs:
 
   # Deploy job, runs only if build passes
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: build  # Only run if `build` job passes
 
     steps:
@@ -105,7 +105,7 @@ jobs:
 
   # Notify job, always runs
   notify:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: [test, build, deploy]
     if: always()  # Ensures this job runs regardless of previous job results
   
