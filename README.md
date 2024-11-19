@@ -19,6 +19,7 @@ Technologies Used
 - Newman: For running Postman tests in the CI/CD pipeline.
 - GitHub Actions: For CI/CD automation.
 - msmtp: For sending email notifications.
+- Ubuntu: This project is compatible with Ubuntu (version 22.04)
 
 ## Log File Parsing Script: `parsing.py`
 
