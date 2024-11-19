@@ -120,6 +120,7 @@ jobs:
             echo "slack-message=❌ CI/CD Pipeline failed at job: deploy" >> $GITHUB_ENV
           else
             echo "slack-message=✅ CI/CD Pipeline completed successfully." >> $GITHUB_ENV
+          fi
           echo "status=${{ job.status }}"
           outputs:
            slack-message: ${{ env.slack-message }}
