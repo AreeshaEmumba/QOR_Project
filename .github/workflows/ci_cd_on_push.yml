@@ -109,8 +109,22 @@ jobs:
     needs: [test, build, deploy]
 
     steps:
+      - name: Determine status
+        id: determine-status
+        run: |
+          if [[ "${{ needs.test.result }}" == "failure" ]]; then
+            echo "slack-message=❌ CI/CD Pipeline failed at job: test" >> $GITHUB_ENV
+          elif [[ "${{ needs.build.result }}" == "failure" ]]; then
+            echo "slack-message=❌ CI/CD Pipeline failed at job: build" >> $GITHUB_ENV
+          elif [[ "${{ needs.deploy.result }}" == "failure" ]]; then
+            echo "slack-message=❌ CI/CD Pipeline failed at job: deploy" >> $GITHUB_ENV
+          else
+            echo "slack-message=✅ CI/CD Pipeline completed successfully." >> $GITHUB_ENV
+          echo "status=${{ job.status }}"
+          outputs:
+           slack-message: ${{ env.slack-message }}
+
       - name: Send Slack notification
-        if: always()
         uses: slackapi/slack-github-action@v1.23.0
         with:
           channel-id: 'U07J17B6WLX'
@@ -118,10 +132,3 @@ jobs:
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
 
-      - name: Determine status
-        id: determine-status
-        run: |
-          if [[ "${{ job.status }}" == "failure" ]]; then
-            echo "slack-message=❌ CI/CD Pipeline failed at job: ${{ job.name }}" >> $GITHUB_ENV
-          else
-            echo "slack-message=✅ CI/CD Pipeline completed successfully." >> $GITHUB_ENV
