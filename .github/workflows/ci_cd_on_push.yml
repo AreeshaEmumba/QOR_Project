@@ -103,33 +103,37 @@ jobs:
         run: |
           docker-compose -f docker-compose.yml up -d
 
-  # Notify job, runs after deploy
+  # Notify job, always runs
   notify:
     runs-on: ubuntu-latest
     needs: [test, build, deploy]
+    if: always()  # Ensures this job runs regardless of previous job results
 
     steps:
       - name: Determine status
         id: determine-status
         run: |
           if [[ "${{ needs.test.result }}" == "failure" ]]; then
+            echo "❌ CI/CD Pipeline failed at job: test"
             echo "slack-message=❌ CI/CD Pipeline failed at job: test" >> $GITHUB_ENV
           elif [[ "${{ needs.build.result }}" == "failure" ]]; then
+            echo "❌ CI/CD Pipeline failed at job: build"
             echo "slack-message=❌ CI/CD Pipeline failed at job: build" >> $GITHUB_ENV
           elif [[ "${{ needs.deploy.result }}" == "failure" ]]; then
+            echo "❌ CI/CD Pipeline failed at job: deploy"
             echo "slack-message=❌ CI/CD Pipeline failed at job: deploy" >> $GITHUB_ENV
           else
+            echo "✅ CI/CD Pipeline completed successfully."
             echo "slack-message=✅ CI/CD Pipeline completed successfully." >> $GITHUB_ENV
           fi
-          echo "status=${{ job.status }}"
-          outputs:
-           slack-message: ${{ env.slack-message }}
+        shell: bash
 
       - name: Send Slack notification
         uses: slackapi/slack-github-action@v1.23.0
         with:
           channel-id: 'U07J17B6WLX'
-          slack-message: ${{ steps.determine-status.outputs.slack-message }}
+          slack-message: ${{ env.slack-message }}
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+
 
