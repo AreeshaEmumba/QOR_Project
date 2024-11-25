@@ -143,7 +143,7 @@ jobs:
   # Notify job, always runs
   notify:
     runs-on: ubuntu-22.04
-    needs: [test, build, deploy]
+    needs: [test, merge, build, deploy]
     if: always()  # Ensures this job runs regardless of previous job results
   
     steps:
