@@ -1,0 +1,177 @@
+name: New CI CD on Pull Request
+
+on:
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  # Job for running all Postman tests
+  test:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22.11.0'
+
+      - name: Install dependencies
+        working-directory: Docker/app
+        run: |
+          pip install -r requirements.txt
+
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v2
+
+      - name: Install Docker Compose via Package Manager
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+
+      # Temporarily deploy app for testing
+      - name: Deploy app for testing
+        working-directory: Docker
+        run: |
+          docker-compose -f docker-compose.yml up -d
+      
+      - name: Verify API is running
+        run: |
+          for i in {1..10}; do
+            curl -s http://127.0.0.1:5000/ && break || sleep 5
+          done
+      
+      - name: Install Postman CLI
+        run: |
+          curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
+      
+      - name: Login to Postman CLI
+        run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
+      
+      - name: Run API tests
+        run: |
+          postman collection run "39504789-c2e86b55-1998-453a-be88-24ee50f51cb2" -e "39504789-9ff11fbd-26f3-45da-98bd-65f8381db7b2" --verbose
+      
+      - name: Fetch Docker container logs
+        if: failure()
+        run: docker-compose logs
+
+      # Stop and remove temporary test deployment
+      - name: Stop test deployment
+        working-directory: Docker
+        run: |
+          docker-compose -f docker-compose.yml down
+
+      - name: Save test results as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: newman_results
+          path: Postman/newman_results.html
+
+  # Merge job, only on pull requests, runs if tests pass
+  merge:
+    runs-on: ubuntu-22.04
+    needs: test
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      - name: Fetch all branches
+        run: git fetch --all
+
+      - name: Checkout main branch
+        run: git checkout main
+
+      - name: Fetch the pull request branch
+        run: git fetch origin ${{ github.head_ref }}
+
+      - name: Merge pull request branch into main
+        run: git merge origin/${{ github.head_ref }} --no-ff -m "Automated merge from ${{ github.head_ref }} into main"
+
+      - name: Push merge to main
+        run: git push origin main
+
+  # Build job, runs only if tests pass
+  build:
+    runs-on: ubuntu-22.04
+    needs: merge  # Only run if `merge` job passes
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build Docker image
+        working-directory: Docker
+        run: |
+          docker build -t qor_project .
+
+  # Deploy job, runs only if build passes
+  deploy:
+    runs-on: ubuntu-22.04
+    needs: build  # Only run if `build` job passes
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Docker Compose via Package Manager
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+
+      - name: Deploy the app
+        working-directory: Docker
+        run: |
+          docker-compose -f docker-compose.yml up -d
+
+  # Notify job, always runs
+  notify:
+    runs-on: ubuntu-22.04
+    needs: [test, build, deploy]
+    if: always()  # Ensures this job runs regardless of previous job results
+  
+    steps:
+      - name: Determine status
+        id: determine-status
+        run: |
+          if [[ "${{ needs.test.result }}" == "cancelled" || "${{ needs.build.result }}" == "cancelled" || "${{ needs.deploy.result }}" == "cancelled" ]]; then
+            echo "❌ CI/CD Pipeline (new_ci_cd_on_pull) was cancelled" 
+            echo "slack-message=❌ CI/CD Pipeline (new_ci_cd_on_pull) was cancelled" >> $GITHUB_ENV
+          elif [[ "${{ needs.test.result }}" == "failure" ]]; then
+            echo "❌ CI/CD Pipeline (new_ci_cd_on_pull) failed at job: test"
+            echo "slack-message=❌ CI/CD Pipeline (new_ci_cd_on_pull) failed at job: test" >> $GITHUB_ENV
+          elif [[ "${{ needs.build.result }}" == "failure" ]]; then
+            echo "❌ CI/CD Pipeline (new_ci_cd_on_pull) failed at job: build"
+            echo "slack-message=❌ CI/CD Pipeline (new_ci_cd_on_pull) failed at job: build" >> $GITHUB_ENV
+          elif [[ "${{ needs.deploy.result }}" == "failure" ]]; then
+            echo "❌ CI/CD Pipeline (new_ci_cd_on_pull) failed at job: deploy"
+            echo "slack-message=❌ CI/CD Pipeline (new_ci_cd_on_pull) failed at job: deploy" >> $GITHUB_ENV
+          else
+            echo "✅ CI/CD Pipeline (new_ci_cd_on_pull) completed successfully."
+            echo "slack-message=✅ CI/CD Pipeline (new_ci_cd_on_pull) completed successfully." >> $GITHUB_ENV
+          fi
+        shell: bash
+  
+      - name: Send Slack notification
+        uses: slackapi/slack-github-action@v1.23.0
+        with:
+          channel-id: 'U07J17B6WLX'
+          slack-message: ${{ env.slack-message }}
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
