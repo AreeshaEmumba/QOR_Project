@@ -44,17 +44,27 @@ jobs:
         working-directory: Docker
         run: |
           docker-compose -f docker-compose.yml up -d
-
+      
+      - name: Verify API is running
+        run: |
+          for i in {1..10}; do
+            curl -s http://127.0.0.1:5000/ && break || sleep 5
+          done
+      
       - name: Install Postman CLI
         run: |
           curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
-          
+      
       - name: Login to Postman CLI
         run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
-        
+      
       - name: Run API tests
         run: |
-          postman collection run "39504789-c2e86b55-1998-453a-be88-24ee50f51cb2" -e "39504789-9ff11fbd-26f3-45da-98bd-65f8381db7b2"
+          postman collection run "39504789-c2e86b55-1998-453a-be88-24ee50f51cb2" -e "39504789-9ff11fbd-26f3-45da-98bd-65f8381db7b2" --verbose
+      
+      - name: Fetch Docker container logs
+        if: failure()
+        run: docker-compose logs
 
       # Stop and remove temporary test deployment
       - name: Stop test deployment
