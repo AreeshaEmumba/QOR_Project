@@ -26,6 +26,25 @@ jobs:
         with:
           node-version: '22.11.0'
 
+      - name: Install dependencies
+        working-directory: Docker/app
+        run: |
+          pip install -r requirements.txt
+
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v2
+
+      - name: Install Docker Compose via Package Manager
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+
+      # Temporarily deploy app for testing
+      - name: Deploy app for testing
+        working-directory: Docker
+        run: |
+          docker-compose -f docker-compose.yml up -d
+
       - name: Install Postman CLI
         run: |
           curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
@@ -36,6 +55,12 @@ jobs:
       - name: Run API tests
         run: |
           postman collection run "39504789-c2e86b55-1998-453a-be88-24ee50f51cb2" -e "39504789-9ff11fbd-26f3-45da-98bd-65f8381db7b2"
+
+      # Stop and remove temporary test deployment
+      - name: Stop test deployment
+        working-directory: Docker
+        run: |
+          docker-compose -f docker-compose.yml down
 
       - name: Save test results as artifact
         uses: actions/upload-artifact@v4
@@ -65,14 +90,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Install dependencies
-        working-directory: Docker/app
-        run: |
-          pip install -r requirements.txt
-
-      - name: Set up Docker
-        uses: docker/setup-buildx-action@v2
 
       - name: Install Docker Compose via Package Manager
         run: |
