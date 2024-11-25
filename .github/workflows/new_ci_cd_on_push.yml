@@ -122,20 +122,20 @@ jobs:
         id: determine-status
         run: |
           if [[ "${{ needs.test.result }}" == "cancelled" || "${{ needs.build.result }}" == "cancelled" || "${{ needs.deploy.result }}" == "cancelled" ]]; then
-            echo "❌ CI/CD Pipeline (ci_cd_on_push) was cancelled" 
-            echo "slack-message=❌ CI/CD Pipeline (ci_cd_on_push) was cancelled" >> $GITHUB_ENV
+            echo "❌ CI/CD Pipeline (new_ci_cd_on_push) was cancelled" 
+            echo "slack-message=❌ CI/CD Pipeline (new_ci_cd_on_push) was cancelled" >> $GITHUB_ENV
           elif [[ "${{ needs.test.result }}" == "failure" ]]; then
-            echo "❌ CI/CD Pipeline (ci_cd_on_push) failed at job: test"
-            echo "slack-message=❌ CI/CD Pipeline (ci_cd_on_push) failed at job: test" >> $GITHUB_ENV
+            echo "❌ CI/CD Pipeline (new_ci_cd_on_push) failed at job: test"
+            echo "slack-message=❌ CI/CD Pipeline (new_ci_cd_on_push) failed at job: test" >> $GITHUB_ENV
           elif [[ "${{ needs.build.result }}" == "failure" ]]; then
-            echo "❌ CI/CD Pipeline (ci_cd_on_push) failed at job: build"
-            echo "slack-message=❌ CI/CD Pipeline (ci_cd_on_push) failed at job: build" >> $GITHUB_ENV
+            echo "❌ CI/CD Pipeline (new_ci_cd_on_push) failed at job: build"
+            echo "slack-message=❌ CI/CD Pipeline (new_ci_cd_on_push) failed at job: build" >> $GITHUB_ENV
           elif [[ "${{ needs.deploy.result }}" == "failure" ]]; then
-            echo "❌ CI/CD Pipeline (ci_cd_on_push) failed at job: deploy"
-            echo "slack-message=❌ CI/CD Pipeline (ci_cd_on_push) failed at job: deploy" >> $GITHUB_ENV
+            echo "❌ CI/CD Pipeline (new_ci_cd_on_push) failed at job: deploy"
+            echo "slack-message=❌ CI/CD Pipeline (new_ci_cd_on_push) failed at job: deploy" >> $GITHUB_ENV
           else
-            echo "✅ CI/CD Pipeline (ci_cd_on_push) completed successfully."
-            echo "slack-message=✅ CI/CD Pipeline (ci_cd_on_push) completed successfully." >> $GITHUB_ENV
+            echo "✅ CI/CD Pipeline (new_ci_cd_on_push) completed successfully."
+            echo "slack-message=✅ CI/CD Pipeline (new_ci_cd_on_push) completed successfully." >> $GITHUB_ENV
           fi
         shell: bash
   
