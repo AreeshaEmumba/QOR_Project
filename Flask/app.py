@@ -118,6 +118,18 @@ def index():
             except ValueError:
                 return "Invalid Job ID entered."
 
+        if search_fermi_name:
+            try:
+                metadata = MetaData.query.filter_by(Fermi_Name=search_fermi_name).first()
+            except ValueError:
+                return "Invalid Job Name entered."
+
+        if search_revision_commit:
+            try:
+                metadata = MetaData.query.filter_by(Revision_Commit=search_revision_commit).first()
+            except ValueError:
+                return "Invalid Revision Commit entered."
+
         # If two or more fields are provided, validate that they match the same record
         if search_fermi_id and search_fermi_name:
             if metadata and metadata.Fermi_Name != search_fermi_name:
