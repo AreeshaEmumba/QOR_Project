@@ -146,19 +146,19 @@ jobs:
         run: |
           if [[ "${{ needs.test.result }}" == "cancelled" || "${{ needs.build.result }}" == "cancelled" || "${{ needs.deploy.result }}" == "cancelled" ]]; then
             echo "❌ CI/CD Pipeline (cicd_on_pull) was cancelled"
-            echo "slack-message=❌ CI/CD Pipeline (cicd_on_pull) was cancelled" >> $GITHUB_ENV 
+            echo "slack-message=❌ CI/CD Pipeline (cicd_on_pull) was cancelled. Triggered by ${{ github.actor }}" >> $GITHUB_ENV 
           elif [[ "${{ needs.test.result }}" == "failure" ]]; then
             echo "❌ CI/CD Pipeline (cicd_on_pull) failed at job: test"
-            echo "slack-message=❌ CI/CD Pipeline (cicd_on_pull) failed at job: test" >> $GITHUB_ENV
+            echo "slack-message=❌ CI/CD Pipeline (cicd_on_pull) failed at job: test. Triggered by ${{ github.actor }}" >> $GITHUB_ENV
           elif [[ "${{ needs.build.result }}" == "failure" ]]; then
             echo "❌ CI/CD Pipeline (cicd_on_pull) failed at job: build"
-            echo "slack-message=❌ CI/CD Pipeline (cicd_on_pull) failed at job: build" >> $GITHUB_ENV
+            echo "slack-message=❌ CI/CD Pipeline (cicd_on_pull) failed at job: build. Triggered by ${{ github.actor }}" >> $GITHUB_ENV
           elif [[ "${{ needs.deploy.result }}" == "failure" ]]; then
             echo "❌ CI/CD Pipeline (cicd_on_pull) failed at job: deploy"
-            echo "slack-message=❌ CI/CD Pipeline (cicd_on_pull) failed at job: deploy" >> $GITHUB_ENV
+            echo "slack-message=❌ CI/CD Pipeline (cicd_on_pull) failed at job: deploy. Triggered by ${{ github.actor }}" >> $GITHUB_ENV
           else
             echo "✅ CI/CD Pipeline (cicd_on_pull) completed successfully."
-            echo "slack-message=✅ CI/CD Pipeline (cicd_on_pull) completed successfully." >> $GITHUB_ENV
+            echo "slack-message=✅ CI/CD Pipeline (cicd_on_pull) completed successfully. Triggered by ${{ github.actor }}" >> $GITHUB_ENV
           fi
         shell: bash
 
